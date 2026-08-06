@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#061d30">
+  <meta name="description" content="Percorso interattivo su Luigi Pirandello: crisi delle certezze, immagine del mondo, poetica, opere e conclusione.">
+  <title>Luigi Pirandello — Percorso interattivo</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.webp">
+  <link rel="icon" href="assets/icons/icon-192.webp">
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#percorso">Salta al percorso</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Pirandello, torna alla copertina">
+      <span class="brand-mark" aria-hidden="true">LP</span>
+      <span class="brand-name">LUIGI PIRANDELLO</span>
+    </a>
+    <nav class="main-nav" aria-label="Navigazione principale">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#mondo-precedente" data-stage-link>Percorso</a></li>
+        <li><a href="#opere" data-stage-link>Opere</a></li>
+        <li><a href="#mappa-finale">Mappe</a></li>
+        <li><a href="#profilo">Profilo</a></li>
+      </ul>
+    </nav>
+    <div class="header-tools" role="group" aria-label="Strumenti di lettura">
+      <button class="icon-button" type="button" data-font-toggle aria-label="Cambia dimensione del testo" title="Dimensione testo">Aa</button>
+      <button class="icon-button" type="button" data-theme-toggle aria-label="Attiva modalità scura" title="Modalità scura">☾</button>
+      <button class="icon-button" type="button" data-notes-toggle aria-expanded="false" aria-controls="notes-panel" aria-label="Apri appunti" title="Appunti">✎</button>
+    </div>
+  </header>
+
+  <section id="home" aria-labelledby="cover-title">
+    <h1 id="cover-title" hidden>Luigi Pirandello — copertina interattiva</h1>
+    <div class="cover-shell">
+      <img class="cover-art" src="assets/images/copertina-pirandello.webp" alt="Copertina illustrata del percorso su Luigi Pirandello con cinque tappe, figure chiave, mappe, timeline e quiz" width="1536" height="1024">
+      <a class="cover-hotspot hot-1" href="#mondo-precedente" aria-label="Tappa 1: Il mondo precedente e la filosofia di base">Il mondo precedente e la filosofia di base</a>
+      <a class="cover-hotspot hot-2" href="#immagine-del-mondo" aria-label="Tappa 2: L’immagine del mondo">L’immagine del mondo</a>
+      <a class="cover-hotspot hot-3" href="#poetica" aria-label="Tappa 3: La poetica">La poetica</a>
+      <a class="cover-hotspot hot-4" href="#opere" aria-label="Tappa 4: Le opere">Le opere</a>
+      <a class="cover-hotspot hot-5" href="#conclusione" aria-label="Tappa 5: Conclusione">Conclusione</a>
+      <a class="cover-hotspot hot-themes" href="#mappa-identita" aria-label="Esplora figure e temi chiave">Figure e temi chiave</a>
+      <a class="cover-hotspot hot-maps" href="#mappa-finale" aria-label="Apri mappe e schemi">Mappe e schemi</a>
+      <a class="cover-hotspot hot-timeline" href="#timeline" data-open-timeline aria-label="Apri la timeline interattiva">Timeline interattiva</a>
+      <a class="cover-hotspot hot-quiz" href="#quiz-finale" aria-label="Vai al quiz finale">Quiz finale</a>
+    </div>
+
+    <div class="cover-mobile">
+      <p class="stage-kicker">PWA DIDATTICA · QUINTO ANNO</p>
+      <h1>Luigi<br>Pirandello</h1>
+      <p>Un percorso interattivo per comprendere la crisi delle certezze, l’immagine del mondo, la poetica e le opere di uno dei grandi protagonisti del Novecento.</p>
+      <p><small>a cura di gbprof e Libera</small></p>
+      <div class="mobile-stage-grid">
+        <a class="mobile-stage-card" href="#mondo-precedente"><span class="stage-number">1</span><strong>Il mondo precedente e la filosofia di base</strong><span>→</span></a>
+        <a class="mobile-stage-card" href="#immagine-del-mondo"><span class="stage-number">2</span><strong>L’immagine del mondo</strong><span>→</span></a>
+        <a class="mobile-stage-card" href="#poetica"><span class="stage-number">3</span><strong>La poetica</strong><span>→</span></a>
+        <a class="mobile-stage-card" href="#opere"><span class="stage-number">4</span><strong>Le opere</strong><span>→</span></a>
+        <a class="mobile-stage-card" href="#conclusione"><span class="stage-number">5</span><strong>Conclusione</strong><span>→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <div class="page-layout" id="percorso">
+    <aside class="side-index" aria-label="Indice del percorso">
+      <nav aria-label="Indice laterale delle cinque tappe">
+        <h2>Le cinque tappe</h2>
+        <ol>
+          <li><a href="#mondo-precedente">1. Mondo precedente</a></li>
+          <li><a href="#immagine-del-mondo">2. Immagine del mondo</a></li>
+          <li><a href="#poetica">3. Poetica</a></li>
+          <li><a href="#opere">4. Opere</a></li>
+          <li><a href="#conclusione">5. Conclusione</a></li>
+        </ol>
+      </nav>
+      <p class="mini-help">Scorciatoie: Alt + ← / → per muoversi tra le tappe. Le immagini si possono ingrandire; gli appunti si salvano nel dispositivo.</p>
+    </aside>
+
+    <main>
+      <article class="stage reading" id="mondo-precedente" data-stage="1" aria-labelledby="titolo-mondo-precedente">
+        <p class="stage-kicker">Prima tappa</p>
+        <h2 id="titolo-mondo-precedente">Il mondo precedente e la filosofia di base</h2>
+        <p class="generative-question"><strong>Domanda generatrice:</strong> che cosa accade all’identità quando il mondo non può più essere osservato da un unico punto di vista?</p>
+
+        <p class="lead">Pirandello nasce nel 1867 dentro un secolo convinto di poter conoscere la realtà. La sua opera matura quando quella fiducia comincia a incrinarsi: il problema non è soltanto che alcune certezze si rivelano false, ma che diventa incerto il punto da cui chiamiamo qualcosa “vero”.</p>
+
+        <h3>Il mondo che sembrava ordinato</h3>
+        <p>La cultura positivista aveva affidato alla scienza, all’osservazione e ai fatti la speranza di descrivere oggettivamente la realtà. L’individuo era pensato come un soggetto riconoscibile e relativamente unitario: possedeva un nome, un carattere, un posto nella famiglia e nella società. Anche il romanzo naturalista cercava cause verificabili nei comportamenti umani, nell’ambiente e nell’eredità.</p>
+        <p>Questa immagine non fu mai compatta né universalmente condivisa, ma costituì una delle grandi promesse dell’Ottocento: il mondo può essere ordinato, l’uomo può essere classificato, i fatti possono condurre alla verità.</p>
+
+        <table class="compare-table">
+          <caption>Dalla certezza alla frattura</caption>
+          <thead><tr><th>Fiducia ottocentesca</th><th>Frattura novecentesca</th><th>Domanda pirandelliana</th></tr></thead>
+          <tbody>
+            <tr><td>La realtà è una e osservabile.</td><td>Ogni osservatore la incontra da una prospettiva.</td><td>Chi può possedere tutta la verità?</td></tr>
+            <tr><td>L’io è unitario e riconoscibile.</td><td>La psicologia scopre zone inconsce e personalità molteplici.</td><td>Sono quello che credo o quello che gli altri vedono?</td></tr>
+            <tr><td>Famiglia e lavoro danno identità.</td><td>I ruoli sociali possono diventare costrizione e alienazione.</td><td>La forma mi rende qualcuno o mi imprigiona?</td></tr>
+            <tr><td>I fatti risolvono il dubbio.</td><td>Gli stessi fatti assumono significati incompatibili.</td><td>Che cosa resta quando i documenti non bastano?</td></tr>
+          </tbody>
+        </table>
+
+        <h3>Le fratture</h3>
+        <div class="concept-grid">
+          <section class="concept-card"><h4>Nuova psicologia</h4><p>Gli studi sulla personalità e sull’inconscio rendono l’io meno trasparente a sé stesso. Pirandello conosce in particolare le ricerche di Alfred Binet sulle alterazioni della personalità: dentro l’unità apparente possono convivere disposizioni e immagini differenti.</p></section>
+          <section class="concept-card"><h4>Società moderna</h4><p>Burocrazia, impiego, denaro e vita urbana moltiplicano i ruoli. Famiglia e lavoro, invece di essere rifugi sicuri, possono fissare l’individuo in una parte che non coincide con il suo movimento interiore.</p></section>
+          <section class="concept-card"><h4>Crisi della conoscenza</h4><p>La scienza continua a produrre sapere; ciò che entra in crisi è l’idea ingenua che un osservatore possa essere esterno alla realtà e possederla tutta. Le prospettive non sono capricci: sono condizioni del conoscere.</p></section>
+          <section class="concept-card"><h4>Vita come divenire</h4><p>Il pensiero pirandelliano dialoga con il vitalismo contemporaneo, spesso accostato a Bergson: la vita è movimento, mentre ogni definizione la arresta in una forma. Non è una dipendenza filosofica totale, ma una convergenza decisiva.</p></section>
+        </div>
+
+        <figure class="media-figure">
+          <button type="button" data-lightbox data-caption="Schema originale recuperato: concezione filosofica, vita come divenire incessante."><img src="assets/images/Filosofia-Pirandello.webp" alt="Schema originale sulla concezione filosofica: realtà come divenire incessante" loading="lazy" width="1536" height="1024"></button>
+          <figcaption>Schema originale recuperato dalla prima PWA. La formulazione è stata precisata nel testo: Pirandello dialoga con il vitalismo, senza ridursi a una semplice applicazione di Bergson.</figcaption>
+        </figure>
+
+        <div class="video-grid" role="group" aria-label="Video introduttivo su Pirandello">
+          <section class="video-card"><span class="video-icon" aria-hidden="true">▶</span><div><h4>Presentazione di Luigi Pirandello</h4><p>Video HeyGen già presente nella PWA originale. Introduce il passaggio dalle certezze ottocentesche al problema dell’identità.</p><a class="button-link" href="https://app.heygen.com/embeds/70ac565e14cd4e8b83052dc76434961e" target="_blank" rel="noopener noreferrer">Apri il video HeyGen ↗</a></div></section>
+        </div>
+
+        <div class="callout"><strong>La frattura decisiva.</strong> Il mondo precedente credeva nell’ordine, nell’unità dell’individuo e nella possibilità di conoscere la realtà. Pirandello scopre invece la molteplicità, l’instabilità e il conflitto tra le interpretazioni del reale.</div>
+        <p class="bridge">Se l’ordine non è più garantito, la domanda cambia: non basta chiedere “com’è il mondo?”, bisogna chiedere “da quale sguardo prende forma?”. È qui che nasce l’immagine pirandelliana del mondo.</p>
+        <nav class="stage-nav" aria-label="Navigazione dalla prima tappa"><a href="#home">← Copertina</a><a href="#immagine-del-mondo">Tappa 2: l’immagine del mondo →</a></nav>
+      </article>
+
+      <article class="stage reading" id="immagine-del-mondo" data-stage="2" aria-labelledby="titolo-immagine-mondo">
+        <p class="stage-kicker">Seconda tappa · centro concettuale</p>
+        <h2 id="titolo-immagine-mondo">L’immagine del mondo</h2>
+        <p class="generative-question">Se nessuno coincide con tutte le immagini che gli altri hanno di lui, <strong>dove si trova la sua vera identità?</strong></p>
+
+        <p class="lead">Le opere di Pirandello muovono da un contrasto: la vita è un divenire incessante, mentre l’individuo e la società hanno bisogno di forme stabili. Appena diciamo “io sono questo”, arrestiamo qualcosa che sta già cambiando.</p>
+
+        <h3>Vita e forma</h3>
+        <p>La <strong>vita</strong> è movimento, trasformazione, passaggio da uno stato all’altro. La <strong>forma</strong> è il nome, il ruolo, il carattere e l’immagine nella quale quel movimento viene fissato. Chi resta imprigionato in una forma sperimenta una morte interiore; chi tenta di distruggerle tutte rischia però di non essere più riconoscibile nemmeno a sé stesso.</p>
+        <p>La forma, dunque, non è soltanto un male imposto dall’esterno. È insieme prigione e condizione dell’esistenza sociale. Senza una maschera si soffoca; senza alcuna maschera non si può agire. Il fu Mattia Pascal rende narrativamente esatto questo paradosso.</p>
+
+        <h3>Realtà multiforme e incomunicabilità</h3>
+        <p>Ogni immagine globale della realtà è una proiezione soggettiva: il reale appare multiforme, mobile, composto da prospettive. Da qui nasce l’incomunicabilità. Non significa che gli uomini non parlino, ma che attribuiscano alle stesse parole significati nati da mondi interiori diversi.</p>
+        <p>Pirandello estende questa crisi alle strutture della società borghese. La famiglia può diventare il luogo dei rancori e delle definizioni imposte; il lavoro può ridurre l’uomo a funzione. I pilastri sociali proteggono, ma nello stesso gesto immobilizzano.</p>
+
+        <h3>Uno, nessuno e centomila</h3>
+        <p>L’individuo crede di essere <strong>uno</strong>; scopre di essere <strong>centomila</strong> nelle immagini differenti degli altri; quando cerca un nucleo stabile sotto quelle immagini, rischia di trovarsi <strong>nessuno</strong>. Non è uno slogan sull’incertezza: è una struttura tragica dell’identità moderna.</p>
+
+        <div class="interactive-map" id="mappa-identita" role="group" aria-label="Mappa interattiva dell’immagine del mondo. Attiva un nodo per definizione ed esempio">
+          <button class="map-node" type="button" data-concept="relativismo">Relativismo</button>
+          <button class="map-node center" type="button" data-concept="identita">Identità</button>
+          <button class="map-node" type="button" data-concept="maschera">Maschera</button>
+          <button class="map-node" type="button" data-concept="vita">Vita</button>
+          <button class="map-node" type="button" data-concept="forma">Forma</button>
+          <button class="map-node" type="button" data-concept="incomunicabilita">Incomunicabilità</button>
+          <button class="map-node" type="button" data-concept="follia">Follia</button>
+          <button class="map-node" type="button" data-concept="verita">Verità plurale</button>
+          <button class="map-node" type="button" data-concept="personaggio">Persona / personaggio</button>
+        </div>
+
+        <div class="media-gallery" role="group" aria-label="Schemi originali sull’immagine del mondo">
+          <figure class="media-figure"><button type="button" data-lightbox data-caption="La realtà è multiforme e genera incomunicabilità."><img src="assets/images/Realta-Pirandello.webp" alt="Mappa originale: la realtà è multiforme" loading="lazy" width="1536" height="1024"></button><figcaption>La realtà multiforme e l’incomunicabilità.</figcaption></figure>
+          <figure class="media-figure"><button type="button" data-lightbox data-caption="Famiglia e lavoro come forme della società borghese."><img src="assets/images/Societa-Pirandello.webp" alt="Mappa originale su Pirandello e la società borghese" loading="lazy" width="1024" height="1536"></button><figcaption>Famiglia, lavoro e maschere collettive.</figcaption></figure>
+          <figure class="media-figure"><button type="button" data-lightbox data-caption="Conseguenze: solitudine, incomunicabilità, scoperta del nessuno."><img src="assets/images/Conseguenze-Pirandello.webp" alt="Mappa originale sulle conseguenze dell’incomunicabilità" loading="lazy" width="1536" height="1024"></button><figcaption>Le conseguenze sull’individuo.</figcaption></figure>
+          <figure class="media-figure"><button type="button" data-lightbox data-caption="Schema generale originale della visione del mondo."><img src="assets/images/Mondo-Pirandello.webp" alt="Mappa originale della visione del mondo di Pirandello" loading="lazy" width="1536" height="1024"></button><figcaption>La mappa generale della prima PWA, conservata.</figcaption></figure>
+        </div>
+
+        <h3>La follia: fuga o lucidità?</h3>
+        <p>La follia può essere la forma nella quale la società isola ciò che non comprende, ma può anche diventare una prospettiva capace di rivelare la follia della presunta normalità. In Pirandello non libera automaticamente: talvolta protegge, talvolta condanna, spesso fa entrambe le cose. Enrico IV ne offre l’esempio più radicale.</p>
+        <p class="bridge">Questa immagine del mondo non resta teoria. Per diventare letteratura deve trovare un modo di scomporre le apparenze e mostrare insieme il riso e la ferita: nasce così la poetica dell’umorismo.</p>
+        <nav class="stage-nav" aria-label="Navigazione dalla seconda tappa"><a href="#mondo-precedente">← Tappa 1</a><a href="#poetica">Tappa 3: la poetica →</a></nav>
+      </article>
+
+      <article class="stage reading" id="poetica" data-stage="3" aria-labelledby="titolo-poetica">
+        <p class="stage-kicker">Terza tappa</p>
+        <h2 id="titolo-poetica">La poetica</h2>
+        <p class="generative-question">Come può l’arte rappresentare una realtà che cambia volto appena cambia lo sguardo?</p>
+
+        <h3>L’umorismo: non una definizione, ma un meccanismo</h3>
+        <p>Pirandello non è soltanto un pensatore: la sua immagine del mondo diventa una forma artistica precisa. Nel saggio <em>L’umorismo</em> (1908) distingue il comico dall’umoristico attraverso il celebre esempio della vecchia signora imbellettata.</p>
+
+        <ol class="mechanism">
+          <li><strong>Contrasto.</strong> Una donna anziana appare vestita e truccata come una giovane: qualcosa contraddice le aspettative.</li>
+          <li><strong>Avvertimento.</strong> La percezione è immediata; nasce il riso. È l’avvertimento del contrario, cioè il comico.</li>
+          <li><strong>Riflessione.</strong> Lo sguardo non si ferma: immagina le ragioni umane di quel comportamento.</li>
+          <li><strong>Dolore.</strong> Forse la donna teme di perdere il marito più giovane e soffre mentre cerca di nascondere il tempo.</li>
+          <li><strong>Trasformazione.</strong> Il riso non scompare necessariamente, ma diventa inquieto e non può più essere innocente.</li>
+          <li><strong>Sentimento.</strong> Si passa al sentimento del contrario: comico e tragico restano compresenti.</li>
+        </ol>
+
+        <blockquote>«Perché appunto la riflessione, lavorando in me, mi ha fatto andar oltre a quel primo avvertimento, o piuttosto, più addentro: da quel primo avvertimento del contrario mi ha fatto passare a questo sentimento del contrario.»<footer>Luigi Pirandello, <cite>L’umorismo</cite></footer></blockquote>
+
+        <p>L’umorismo è dunque una <strong>scomposizione</strong>: rivela le contraddizioni che l’immagine ordinaria tiene insieme. Non conduce a una consolazione sentimentale. Comprendere le ragioni della vecchia signora non cancella il ridicolo; impedisce però di ridurla a caricatura.</p>
+
+        <figure class="media-figure"><button type="button" data-lightbox data-caption="Schema originale: dall’avvertimento al sentimento del contrario."><img src="assets/images/Umorismo-Pirandello.webp" alt="Schema originale dell’umorismo pirandelliano" loading="lazy" width="1536" height="1024"></button><figcaption>Lo schema originario è mantenuto e affiancato dal meccanismo in sei passaggi.</figcaption></figure>
+
+        <h3>Dall’immagine del mondo alla forma letteraria</h3>
+        <div class="concept-grid">
+          <section class="concept-card"><h4>Persona e personaggio</h4><p>La persona vive e cambia; il personaggio viene fissato in tratti riconoscibili. La società trasforma continuamente persone vive in personaggi sociali.</p><ul class="tag-list"><li class="tag">Sei personaggi</li><li class="tag">Enrico IV</li></ul></section>
+          <section class="concept-card"><h4>Grottesco e straniamento</h4><p>Il quotidiano appare improvvisamente assurdo. Un gesto, un dettaglio o una situazione fanno vedere dall’esterno ciò che sembrava naturale.</p><ul class="tag-list"><li class="tag">Il treno ha fischiato</li><li class="tag">La patente</li></ul></section>
+          <section class="concept-card"><h4>Crisi del personaggio tradizionale</h4><p>Il protagonista non possiede più un’identità coerente da realizzare: indaga, perde, cambia o dissolve le forme che lo definivano.</p><ul class="tag-list"><li class="tag">Mattia Pascal</li><li class="tag">Moscarda</li></ul></section>
+          <section class="concept-card"><h4>Teatro nel teatro</h4><p>La rappresentazione mostra i propri limiti. Attori e personaggi entrano in conflitto perché non esiste una forma scenica capace di restituire tutta la vita.</p><ul class="tag-list"><li class="tag">Metateatro</li><li class="tag">Verità plurale</li></ul></section>
+        </div>
+
+        <div class="video-grid" role="group" aria-label="Video sulla poetica">
+          <section class="video-card"><span class="video-icon" aria-hidden="true">▶</span><div><h4>L’eco di Pirandello: l’umorismo</h4><p>Video originale conservato. Serve a ripercorrere il passaggio dal comico alla comprensione inquieta.</p><a class="button-link" href="https://www.youtube.com/watch?v=s5cgx1ypTsE" target="_blank" rel="noopener noreferrer">Guarda su YouTube ↗</a></div></section>
+        </div>
+
+        <p class="bridge">L’umorismo, il personaggio e il metateatro non sono tecniche aggiunte dall’esterno: sono la forma necessaria di un mondo senza centro. Nelle opere vedremo questo pensiero diventare vita narrata e azione scenica.</p>
+        <nav class="stage-nav" aria-label="Navigazione dalla terza tappa"><a href="#immagine-del-mondo">← Tappa 2</a><a href="#opere">Tappa 4: le opere →</a></nav>
+      </article>
+
+      <article class="stage reading" id="opere" data-stage="4" aria-labelledby="titolo-opere">
+        <p class="stage-kicker">Quarta tappa</p>
+        <h2 id="titolo-opere">Le opere</h2>
+        <p class="generative-question">Che cosa accade a una persona quando prova a spezzare la forma con cui gli altri la riconoscono?</p>
+        <p class="lead">Novelle, romanzi e teatro non illustrano una teoria già conclusa: sono esperimenti. Ogni opera mette un individuo dentro una forma, produce una frattura e osserva il prezzo della possibile liberazione.</p>
+
+        <div class="work-grid" role="group" aria-label="Indice delle opere">
+          <section class="work-card"><h4>Novelle</h4><p>Il laboratorio del quotidiano: una vita apparentemente normale si spezza e rivela l’assurdità della forma.</p><a class="button-link" href="#novelle">Esplora le novelle</a></section>
+          <section class="work-card"><h4>Romanzi</h4><p>Mattia Pascal e Vitangelo Moscarda tentano due diverse uscite dall’identità: sostituirla o distruggerla.</p><a class="button-link" href="#romanzi">Esplora i romanzi</a></section>
+          <section class="work-card"><h4>Teatro</h4><p>Le verità diventano azione scenica; persona e personaggio si separano e la rappresentazione processa sé stessa.</p><a class="button-link" href="#teatro">Esplora il teatro</a></section>
+          <section class="work-card"><h4>Nucleo centrale</h4><p><em>Così è (se vi pare)</em> conserva la lezione estesa, i dialoghi e la mappa del lavoro originario.</p><a class="button-link" href="#cosi">Vai a Così è (se vi pare)</a></section>
+        </div>
+
+        <section id="novelle" aria-labelledby="titolo-novelle">
+          <h3 id="titolo-novelle">Le novelle: il laboratorio del quotidiano</h3>
+          <p>Le <em>Novelle per un anno</em> collocano spesso personaggi comuni dentro situazioni riconoscibili. Un fatto minimo rompe l’automatismo: un fischio, una richiesta, un giudizio sociale. Il personaggio vede improvvisamente dall’esterno la propria vita e compie un gesto che agli altri appare folle. La liberazione, però, è quasi sempre provvisoria o pagata con l’esclusione.</p>
+
+          <details class="work-detail" open>
+            <summary>Il treno ha fischiato — la vita oltre la forma</summary>
+            <div class="work-content">
+              <ol class="work-sequence">
+                <li><span>1</span><div><strong>Prima di leggere.</strong> Può un suono insignificante restituire a un uomo la percezione di un mondo dimenticato?</div></li>
+                <li><span>2</span><div><strong>Situazione iniziale.</strong> Belluca è un impiegato mite, schiacciato dal lavoro e da una famiglia soffocante.</div></li>
+                <li><span>3</span><div><strong>Frattura.</strong> Nella notte sente il fischio di un treno e immagina viaggi, città e spazi lontani.</div></li>
+                <li><span>4</span><div><strong>Conflitto.</strong> In ufficio si ribella; i colleghi interpretano il gesto come follia perché conoscono soltanto la sua maschera di uomo obbediente.</div></li>
+                <li><span>5</span><div><strong>Immagine del mondo.</strong> La vita eccede la forma quotidiana: l’immaginazione riapre per un istante il flusso.</div></li>
+                <li><span>6</span><div><strong>Significato.</strong> Belluca non abbandona davvero la propria condizione; conquista uno spazio mentale che gli consente di sopportarla.</div></li>
+              </ol>
+              <p><strong>Domanda di interpretazione:</strong> Belluca si libera oppure inventa una compensazione che rende nuovamente tollerabile la prigione?</p>
+            </div>
+          </details>
+
+          <details class="work-detail">
+            <summary>La patente — quando la maschera diventa mestiere</summary>
+            <div class="work-content">
+              <p>Rosario Chiàrchiaro è considerato uno iettatore. La società lo esclude, ma egli comprende che non può convincerla del contrario: chiede allora una “patente” ufficiale per trasformare il pregiudizio in una fonte di reddito. La maschera viene subita e insieme utilizzata.</p>
+              <p>L’umorismo nasce dal rovesciamento: ciò che appare una richiesta assurda rivela la violenza di una comunità che ha già distrutto l’identità dell’uomo. Chiàrchiaro non sceglie liberamente il personaggio; prende possesso dell’unica forma che gli è stata concessa.</p>
+              <p><strong>Domanda di interpretazione:</strong> dominare una maschera significa liberarsene o arrendersi definitivamente al giudizio degli altri?</p>
+            </div>
+          </details>
+
+          <details class="work-detail">
+            <summary>La signora Frola e il signor Ponza — dalla novella al teatro</summary>
+            <div class="work-content"><p>La novella contiene il nucleo narrativo di <em>Così è (se vi pare)</em>: due versioni incompatibili della stessa vicenda e una comunità incapace di rispettare il mistero dell’altro. Il passaggio al teatro trasforma l’enigma in un esperimento collettivo: il pubblico assiste al bisogno sociale di stabilire chi sia sano, chi sia folle e chi dica la verità.</p></div>
+          </details>
+        </section>
+
+        <section id="romanzi" aria-labelledby="titolo-romanzi">
+          <h3 id="titolo-romanzi">I romanzi: identità, fuga, dissoluzione</h3>
+
+          <details class="work-detail" id="mattia" open>
+            <summary>Il fu Mattia Pascal (1904)</summary>
+            <div class="work-content">
+              <p><strong>Prima di leggere.</strong> Se tutti ci credessero morti, saremmo finalmente liberi o perderemmo la possibilità stessa di esistere?</p>
+              <p><strong>Situazione iniziale.</strong> Mattia, nato in una famiglia benestante e rimasto presto orfano, vede andare in rovina il patrimonio. Un matrimonio infelice, la suocera e il lavoro di bibliotecario trasformano la sua vita in una forma mortificante.</p>
+              <p><strong>La frattura.</strong> Fuggito a Montecarlo, vince al casinò. Durante il viaggio di ritorno legge che un cadavere è stato riconosciuto come il suo. Accetta la falsa morte e nasce Adriano Meis.</p>
+              <p><strong>Il conflitto.</strong> La nuova identità sembra libertà, ma non ha esistenza giuridica. Adriano non può denunciare un furto, sposare Adriana né partecipare pienamente alla vita sociale. Fuori dalla forma non trova autenticità: trova impotenza.</p>
+              <p><strong>Il ritorno.</strong> Simula il suicidio di Adriano Meis e torna a Miragno. La moglie si è risposata; la vecchia vita non può essere ripresa. Mattia resta spettatore e visita la tomba che porta il suo nome: «Io sono il fu Mattia Pascal».</p>
+
+              <div class="media-gallery">
+                <figure class="media-figure"><button type="button" data-lightbox data-caption="Il fu Mattia Pascal: contesto, svolta, conseguenze e ritorno."><img src="assets/images/Mattia1.webp" alt="Mappa de Il fu Mattia Pascal: contesto, vita, cambiamento e ritorno" loading="lazy" width="2048" height="1365"></button><figcaption>Schema narrativo originale recuperato.</figcaption></figure>
+                <figure class="media-figure"><button type="button" data-lightbox data-caption="Lettura del romanzo attraverso immagine del mondo e poetica."><img src="assets/images/Mattia2.webp" alt="Mappa interpretativa de Il fu Mattia Pascal" loading="lazy" width="2048" height="1365"></button><figcaption>Quadro interpretativo originale recuperato.</figcaption></figure>
+              </div>
+
+              <h4>L’immagine del mondo nell’opera</h4>
+              <p>Il romanzo è un laboratorio nel quale l’identità appare come costruzione fragile, dipendente dallo sguardo degli altri e dalle forme sociali. La “morte per errore” svela il paradosso fondamentale: senza una maschera riconosciuta l’individuo non può agire, amare o difendersi.</p>
+              <p>Pirandello rovescia così il mito romantico dell’autenticità: siamo prigionieri delle forme, ma non possiamo esistere senza di esse. Anche l’invettiva contro Copernico segnala la perdita di un centro capace di fondare un’identità stabile.</p>
+              <h4>La poetica nell’opera</h4>
+              <p>Il comico della fuga, del colpo di fortuna e del cambio di nome si trasforma in sentimento del contrario. Dietro l’apparente rinascita emerge la tragedia silenziosa di un uomo che, liberandosi di una maschera, le perde tutte.</p>
+              <div class="video-grid"><section class="video-card"><span class="video-icon" aria-hidden="true">▶</span><div><h4>Il fu Mattia Pascal</h4><p>Video originale di gbprof, Libera e HeyGen. Aiuta a ricostruire il paradosso della libertà senza identità.</p><a class="button-link" href="https://www.youtube.com/watch?v=iVvGlZ-rriM" target="_blank" rel="noopener noreferrer">Guarda su YouTube ↗</a></div></section></div>
+              <p><strong>Domanda di interpretazione:</strong> il fallimento di Mattia dimostra che bisogna accettare la propria forma o che nessuna forma può coincidere definitivamente con la vita?</p>
+            </div>
+          </details>
+
+          <details class="work-detail" id="moscarda">
+            <summary>Uno, nessuno e centomila (1926)</summary>
+            <div class="work-content">
+              <p><strong>Prima di leggere.</strong> Quale dettaglio del nostro corpo vedono tutti tranne noi?</p>
+              <p><strong>La frattura.</strong> La moglie fa notare a Vitangelo Moscarda che il suo naso pende verso destra. Il dettaglio minimo apre un dubbio radicale: l’immagine che ciascuno ha di sé non coincide con quelle costruite dagli altri.</p>
+              <p><strong>Il conflitto.</strong> Moscarda cerca di distruggere le identità sociali attribuitegli. Sfratta due anziani inquilini e subito dopo dona loro la casa; chiude la banca ereditata dal padre; provoca la reazione di familiari e soci, che tentano di farlo interdire.</p>
+              <p><strong>L’esito.</strong> Devolve i beni in opere di carità e si ritira in un ospizio. Rinuncia a nome, memoria e progetto, tentando di coincidere con il puro fluire della vita.</p>
+
+              <div class="media-gallery">
+                <figure class="media-figure"><button type="button" data-lightbox data-caption="Uno, nessuno e centomila: contesto, epifania del naso, trama ed esito."><img src="assets/images/Uno-nessuno-centomila.webp" alt="Schema narrativo di Uno, nessuno e centomila" loading="lazy" width="2048" height="1365"></button><figcaption>Schema narrativo originale.</figcaption></figure>
+                <figure class="media-figure"><button type="button" data-lightbox data-caption="Identità come riflesso, smascheramento e dissoluzione delle forme."><img src="assets/images/Uno-nessuno-centomila2.webp" alt="Mappa interpretativa di Uno, nessuno e centomila" loading="lazy" width="2048" height="1365"></button><figcaption>Mappa interpretativa originale.</figcaption></figure>
+              </div>
+
+              <h4>L’immagine del mondo nell’opera</h4>
+              <p>Qui l’identità non si incrina per un caso esterno, come in Mattia Pascal, ma per un atto di conoscenza. L’io è una somma di riflessi incompatibili. Ogni azione con cui Moscarda tenta di liberarsi genera nuove immagini e nuove prigioni.</p>
+              <h4>Il finale: liberazione o annullamento?</h4>
+              <p>Moscarda non sostituisce una forma con un’altra: tenta di negarle tutte. La sua liberazione ha il prezzo della dissoluzione dell’io. Il finale non propone un modello da imitare; porta al limite la contraddizione tra vita e forma.</p>
+              <div class="video-grid"><section class="video-card"><span class="video-icon" aria-hidden="true">▶</span><div><h4>Uno, nessuno e centomila</h4><p>Video originale conservato. Utile per seguire dal naso “storto” alla distruzione delle identità sociali.</p><a class="button-link" href="https://www.youtube.com/watch?v=98AOicZe5aI" target="_blank" rel="noopener noreferrer">Guarda su YouTube ↗</a></div></section></div>
+              <p><strong>Domanda di interpretazione:</strong> che cosa resta dell’individuo quando tutte le forme vengono distrutte?</p>
+            </div>
+          </details>
+        </section>
+
+        <section id="teatro" aria-labelledby="titolo-teatro">
+          <h3 id="titolo-teatro">Il teatro: quando la crisi diventa azione</h3>
+          <p>Nel teatro la pluralità delle verità non viene soltanto spiegata: entra in scena. I personaggi agiscono contemporaneamente, si contraddicono e costringono lo spettatore a decidere senza possedere una posizione esterna. La rappresentazione finisce così per mettere in discussione sé stessa.</p>
+
+          <details class="work-detail" id="cosi" open>
+            <summary>Così è (se vi pare) (1917) — il nucleo del relativismo</summary>
+            <div class="work-content">
+              <p><strong>Prima di leggere.</strong> Abbiamo il diritto di conoscere la verità di un’altra persona quando quella ricerca distrugge l’equilibrio che le consente di vivere?</p>
+              <p><strong>Situazione iniziale.</strong> In una cittadina di provincia arriva la famiglia Ponza: il signor Ponza, la moglie e la suocera, signora Frola. Madre e figlia non si incontrano mai. Il paese trasforma l’anomalia in un caso da risolvere.</p>
+              <p><strong>Le due verità.</strong> Ponza afferma che la prima moglie, figlia della Frola, è morta e che la suocera, impazzita, scambia la seconda moglie per la figlia. Frola sostiene l’opposto: la figlia è viva, mentre Ponza, sconvolto, ha bisogno di crederla una seconda moglie.</p>
+              <p><strong>Il conflitto.</strong> Il paese cerca documenti, superstiti e prove. Laudisi ride della pretesa di entrare nell’animo altrui e stabilire dall’esterno una verità che i due protagonisti vivono come reale.</p>
+              <p><strong>Il finale.</strong> La signora Ponza appare velata. Dichiara di essere la figlia della Frola, la seconda moglie di Ponza e, per sé, nessuna: «Io sono colei che mi si crede».</p>
+
+              <figure class="media-figure"><button type="button" data-lightbox data-caption="Così è (se vi pare): relativismo, comunità, umorismo e significato."><img src="assets/images/Cosi2.webp" alt="Mappa concettuale di Così è (se vi pare)" loading="lazy" width="2048" height="1365"></button><figcaption>La mappa valida della lezione originale è conservata. La prima mappa, richiamata ma assente nel vecchio repository, è stata ricostruita nella sequenza HTML precedente.</figcaption></figure>
+
+              <h4>Una commedia corale e una violenza collettiva</h4>
+              <p>L’opera non ha un unico protagonista. Il paese vuole classificare la famiglia Ponza per ristabilire il proprio ordine. La curiosità non è innocente: costringe tre persone ferite a esporre il loro dolore perché la comunità non sopporta una vita che sfugge alle categorie.</p>
+              <p>Laudisi non afferma banalmente che “tutto è vero”. Mostra che la realtà della persona è inseparabile dagli sguardi che la costruiscono e dai mondi interiori nei quali viene vissuta. Ponza e Frola non possiedono due opinioni intercambiabili: abitano due realtà incompatibili.</p>
+
+              <details class="source-dialogue"><summary>Testo: documenti, prove e «dati di fatto»</summary><blockquote>SIRELLI – Cosicché non ci resta che da credere all’uno o da credere all’altra, così, senza prove?
+LAUDISI – Volete seguire il mio consiglio? Credete a tutti e due.
+SIRELLI – Se l’una ti dice bianco e l’altro nero?
+LAUDISI – E allora non credete a nessuno dei due!
+SIRELLI – Mancano le prove, i dati di fatto; ma la verità, perdio, sarà da una parte o dall’altra!
+LAUDISI – I dati di fatto, già! Io non so che farmene, perché per me la realtà non consiste in essi, ma nell’animo di quei due, in cui non posso figurarmi d’entrare, se non per quel tanto che essi me ne dicono.</blockquote></details>
+
+              <details class="source-dialogue"><summary>Testo: Laudisi e lo sguardo degli altri</summary><blockquote>LAUDISI – Tutt’e due, qua, vedete me. Mi vedete, è vero? [...] Tu sei sicuro di toccarmi come mi vedi. [...] È sicura anche lei di toccarmi come mi vede? Non può dubitare di lei. Ma per carità, non dica a suo marito, né a mia sorella, né a mia nipote come mi vede, perché le diranno che lei s’inganna. Mentre lei non s’inganna affatto! Perché io sono realmente come mi vede lei! Ma ciò non toglie che io sia anche realmente come mi vedono gli altri.
+SIGNORA SIRELLI – E come, dunque, lei cambia dall’uno all’altro?
+LAUDISI – Ma sicuro che cambio, signora mia! E lei no, forse? [...] Rispetti ciò che vedono e toccano gli altri, anche se sia il contrario!</blockquote></details>
+
+              <details class="source-dialogue" open><summary>Testo: il dialogo finale</summary><blockquote>SIGNORA PONZA – Che cosa? La verità? È solo questa: che io sono, sì, la figlia della signora Frola –
+TUTTI – Ah!
+SIGNORA PONZA – e la seconda moglie del signor Ponza –
+TUTTI – Oh! E come?
+SIGNORA PONZA – Sì; e per me nessuna! Nessuna!
+IL PREFETTO – Ah, no, per sé, lei, signora: sarà l’una o l’altra!
+SIGNORA PONZA – Nossignori. Per me, io sono colei che mi si crede.</blockquote></details>
+
+              <h4>Filosofia e poetica nell’opera</h4>
+              <p><strong>Relativismo:</strong> la verità non è separabile dalla prospettiva che la vive. <strong>Identità:</strong> la signora Ponza non può offrire un io puro dietro le interpretazioni. <strong>Incomunicabilità:</strong> ogni personaggio parla da un mondo che gli altri possono ascoltare, non abitare. <strong>Umorismo:</strong> la curiosità borghese appare comica finché la riflessione non ne rivela la crudeltà.</p>
+              <p>Il significato filosofico del finale non è che la verità non esista, ma che nessun osservatore possieda una posizione assoluta dalla quale esaurirla. La signora Ponza tutela anche, con la propria risposta, una pietà che la comunità ha violato.</p>
+
+              <div class="video-grid"><section class="video-card"><span class="video-icon" aria-hidden="true">▶</span><div><h4>Pirandello: Così è (se vi pare)</h4><p>Video originale di gbprof, Libera e HeyGen. La visione serve a ricomporre personaggi, due versioni e significato del finale.</p><a class="button-link" href="https://www.youtube.com/watch?v=9pYdHj98EaU" target="_blank" rel="noopener noreferrer">Guarda su YouTube ↗</a></div></section></div>
+
+              <div class="knowledge-grid">
+                <section class="knowledge-card"><h4>Comprensione</h4><p>Ricostruisci le due versioni senza contaminarle: chi sarebbe morto secondo Ponza? Chi sarebbe impazzito secondo Frola?</p></section>
+                <section class="knowledge-card"><h4>Interpretazione</h4><p>La risposta finale protegge Ponza e Frola, oppure dimostra che la signora Ponza non possiede più un’identità propria?</p></section>
+              </div>
+            </div>
+          </details>
+
+          <details class="work-detail" id="sei-personaggi">
+            <summary>Sei personaggi in cerca d’autore (1921)</summary>
+            <div class="work-content">
+              <p><strong>Prima di leggere.</strong> È più reale una persona che cambia o un personaggio che non può più cambiare?</p>
+              <p><strong>Irruzione.</strong> Durante le prove di una compagnia, sei personaggi abbandonati dal loro autore chiedono che la propria storia venga rappresentata. Non sono attori: portano una vicenda già vissuta e fissata.</p>
+              <p><strong>Il conflitto.</strong> Gli attori imitano i personaggi, ma questi non si riconoscono. Ogni rappresentazione altera voce, gesto e dolore. L’incomunicabilità entra così nel cuore stesso dell’arte.</p>
+              <p><strong>Il paradosso.</strong> L’uomo muta continuamente e può diventare “nessuno”; il personaggio è sempre qualcuno, perché la sua forma è immutabile. Questa maggiore realtà è però una condanna: non può sottrarsi al proprio dramma.</p>
+
+              <details class="source-dialogue"><summary>Testo: il Padre e il Capocomico sulla realtà del personaggio</summary><blockquote>IL PADRE – Un personaggio, signore, può sempre domandare a un uomo chi è. Perché un personaggio ha veramente una vita sua, segnata di caratteri suoi, per cui è sempre “qualcuno”. Mentre un uomo [...] può non esser “nessuno”.
+IL CAPOCOMICO – Più reale di me?
+IL PADRE – Se la sua realtà può cangiare dall’oggi al domani...
+IL CAPOCOMICO – Cangia continuamente, come quella di tutti!
+IL PADRE – Ma la nostra no, signore! Non cangia, non può cangiare, perché già fissata per sempre: realtà immutabile.</blockquote></details>
+
+              <details class="source-dialogue"><summary>Testo: parole e incomunicabilità</summary><blockquote>IL PADRE – Abbiamo tutti dentro un mondo di cose; ciascuno un suo mondo di cose! E come possiamo intenderci, signore, se nelle parole ch’io dico metto il senso e il valore delle cose come sono dentro di me; mentre chi le ascolta, inevitabilmente le assume col senso e col valore che hanno per sé, del mondo com’egli l’ha dentro? Crediamo d’intenderci; non c’intendiamo mai!</blockquote></details>
+
+              <div class="media-gallery">
+                <figure class="media-figure"><button type="button" data-lightbox data-caption="Sei personaggi: temi, crisi dell’arte, paradosso uomo/personaggio."><img src="assets/images/Sei-1.webp" alt="Mappa dei nuclei concettuali dei Sei personaggi in cerca d’autore" loading="lazy" width="2048" height="1365"></button><figcaption>Temi e paradosso ontologico.</figcaption></figure>
+                <figure class="media-figure"><button type="button" data-lightbox data-caption="Arte, rappresentazione, incomunicabilità e forma come prigione."><img src="assets/images/Sei-2.webp" alt="Due mappe su arte, incomunicabilità e forma nei Sei personaggi" loading="lazy" width="2048" height="1365"></button><figcaption>Le due mappe originali recuperate.</figcaption></figure>
+              </div>
+
+              <h4>Metateatro e ambiguità del finale</h4>
+              <p>Il teatro rappresenta la propria impossibilità di restituire una vita in modo definitivo. Il finale, sospeso tra morte reale e rappresentata, non permette di separare nettamente finzione e realtà: il Capocomico non sa più se ciò che è accaduto appartenga alla scena o alla vita.</p>
+              <div class="video-grid"><section class="video-card"><span class="video-icon" aria-hidden="true">▶</span><div><h4>Sei personaggi in cerca d’autore</h4><p>Video originale conservato. Serve a visualizzare l’irruzione dei personaggi e il conflitto con attori e Capocomico.</p><a class="button-link" href="https://www.youtube.com/watch?v=9N5_iJvgra0" target="_blank" rel="noopener noreferrer">Guarda su YouTube ↗</a></div></section></div>
+            </div>
+          </details>
+
+          <details class="work-detail" id="enrico-iv">
+            <summary>Enrico IV (1922) — la maschera scelta</summary>
+            <div class="work-content">
+              <p><strong>Prima di leggere.</strong> Che cosa accade se una persona, dopo aver ritrovato la lucidità, scopre che gli altri hanno continuato a vivere senza di lei?</p>
+              <p><strong>La situazione iniziale.</strong> Durante una cavalcata in costume, un giovane che interpreta l’imperatore Enrico IV cade da cavallo e impazzisce, credendosi davvero il personaggio storico. I familiari costruiscono intorno a lui una corte fittizia.</p>
+              <p><strong>La frattura.</strong> Dopo anni guarisce, ma non lo rivela. La vita degli altri è andata avanti; la donna amata, Matilde, è ormai legata a Belcredi. Continuare a recitare gli consente di osservare la commedia sociale da una posizione protetta.</p>
+              <p><strong>Il conflitto.</strong> Gli altri organizzano una messa in scena per provocare uno shock risolutivo. Enrico rivela la propria lucidità: la pazzia non è più soltanto malattia, ma una forma scelta per sottrarsi al tempo e ai ruoli imposti.</p>
+              <p><strong>Il finale.</strong> Dopo aver ferito mortalmente Belcredi, non può più tornare alla vita comune. La maschera che aveva scelto diventa necessità definitiva: «Ora sì… per forza… qua insieme, qua insieme… e per sempre!»</p>
+              <h4>Immagine del mondo e poetica</h4>
+              <p>Enrico comprende la relatività delle forme sociali, ma non raggiunge una libertà semplice. La follia è insieme rifugio, lucidità e prigione. Il tempo degli altri scorre; il personaggio resta fissato. Ancora una volta, uscire da una forma significa precipitare in un’altra.</p>
+              <p><strong>Domanda di interpretazione:</strong> Enrico sceglie davvero la maschera oppure trasforma in scelta ciò che non riesce più a cambiare?</p>
+            </div>
+          </details>
+        </section>
+
+        <p class="bridge">Dalle novelle al metateatro, ogni opera ha verificato la stessa ipotesi: l’identità vive soltanto nelle forme, ma nessuna forma contiene tutta la vita. Ora possiamo ricomporre il percorso senza trasformarlo in una formula.</p>
+        <nav class="stage-nav" aria-label="Navigazione dalla quarta tappa"><a href="#poetica">← Tappa 3</a><a href="#conclusione">Tappa 5: conclusione →</a></nav>
+      </article>
+
+      <article class="stage reading" id="conclusione" data-stage="5" aria-labelledby="titolo-conclusione">
+        <p class="stage-kicker">Quinta tappa</p>
+        <h2 id="titolo-conclusione">Conclusione</h2>
+        <p class="generative-question">Che cosa resta dell’individuo quando tutte le forme vengono distrutte?</p>
+
+        <p class="lead">Pirandello appartiene pienamente al Novecento perché non si limita a raccontare una crisi: inventa forme letterarie capaci di farla vivere al lettore e allo spettatore. Il relativismo diventa conflitto, l’identità diventa personaggio, l’incomunicabilità diventa scena.</p>
+
+        <h3>Il percorso ricomposto</h3>
+        <ol class="work-sequence">
+          <li><span>1</span><div><strong>Mondo precedente.</strong> Positivismo, scienza e società borghese promettono una realtà conoscibile e un individuo unitario.</div></li>
+          <li><span>2</span><div><strong>Crisi delle certezze.</strong> Psicologia, modernità e pluralità delle prospettive rendono l’io meno trasparente e il reale meno compatto.</div></li>
+          <li><span>3</span><div><strong>Immagine del mondo.</strong> La vita fluisce; la forma fissa. Ogni persona è molteplice e dipende anche dallo sguardo degli altri.</div></li>
+          <li><span>4</span><div><strong>Poetica.</strong> La riflessione umoristica scompone le apparenze; il metateatro mostra l’impossibilità di una rappresentazione definitiva.</div></li>
+          <li><span>5</span><div><strong>Opere.</strong> Mattia, Moscarda, Ponza, Frola, i Sei personaggi ed Enrico IV sperimentano diverse fughe dalla forma e ne pagano il prezzo.</div></li>
+        </ol>
+
+        <h3>Risposte provvisorie alle domande essenziali</h3>
+        <div class="knowledge-grid">
+          <section class="knowledge-card"><h4>Perché l’identità non è stabile?</h4><p>Perché la vita cambia e perché ogni individuo esiste in immagini differenti: la propria e quelle costruite dagli altri.</p></section>
+          <section class="knowledge-card"><h4>Che cosa sono le maschere?</h4><p>Ruoli e definizioni che imprigionano la vita, ma rendono possibile il riconoscimento sociale. Non basta toglierle per essere liberi.</p></section>
+          <section class="knowledge-card"><h4>Perché non esiste una sola verità?</h4><p>Perché ogni conoscenza nasce da una prospettiva. Questo non rende uguali tutte le affermazioni: impedisce a una prospettiva di credersi assoluta.</p></section>
+          <section class="knowledge-card"><h4>Perché i personaggi non comunicano?</h4><p>Perché le parole ricevono senso dentro mondi interiori diversi. Parlare non garantisce che ciò che viene compreso coincida con ciò che si voleva dire.</p></section>
+          <section class="knowledge-card"><h4>Che cosa significa «Io sono colei che mi si crede»?</h4><p>Che la verità della persona non può essere isolata dagli sguardi e dalle relazioni che costruiscono la sua identità.</p></section>
+          <section class="knowledge-card"><h4>Perché la follia è ambigua?</h4><p>Può spezzare la normalità e offrire lucidità, ma può anche escludere e fissare l’individuo in una forma ancora più rigida.</p></section>
+        </div>
+
+        <h3 id="mappa-finale">La grande mappa finale</h3>
+        <p>Attiva ogni nodo per aprire definizione ed esempio. La mappa non procede dalla biografia: mette al centro la domanda sull’identità.</p>
+        <div class="interactive-map" role="group" aria-label="Mappa concettuale finale interattiva">
+          <button class="map-node" type="button" data-concept="positivismo">Crisi del Positivismo</button>
+          <button class="map-node" type="button" data-concept="relativismo">Relativismo</button>
+          <button class="map-node center" type="button" data-concept="identita">Chi sono?</button>
+          <button class="map-node" type="button" data-concept="maschera">Maschera</button>
+          <button class="map-node" type="button" data-concept="vita">Vita</button>
+          <button class="map-node" type="button" data-concept="forma">Forma</button>
+          <button class="map-node" type="button" data-concept="umorismo">Umorismo</button>
+          <button class="map-node" type="button" data-concept="follia">Follia</button>
+          <button class="map-node" type="button" data-concept="personaggio">Personaggio</button>
+          <button class="map-node" type="button" data-concept="incomunicabilita">Incomunicabilità</button>
+          <button class="map-node" type="button" data-concept="teatro">Metateatro</button>
+          <button class="map-node" type="button" data-concept="verita">Verità plurale</button>
+        </div>
+
+        <figure class="media-figure"><button type="button" data-lightbox data-caption="Sintesi generale originale di Luigi Pirandello."><img src="assets/images/Conclusione.webp" alt="Mappa originale di sintesi generale su Luigi Pirandello" loading="lazy" width="2048" height="1365"></button><figcaption>La sintesi visiva della PWA originale è conservata come documento del percorso precedente.</figcaption></figure>
+
+        <h3>Saperi irrinunciabili</h3>
+        <ol>
+          <li>Pirandello mette in crisi l’idea di una realtà unica e pienamente oggettiva.</li>
+          <li>La vita è movimento; la forma è la fissazione necessaria e soffocante di quel movimento.</li>
+          <li>L’identità dipende anche dallo sguardo degli altri: uno, nessuno e centomila.</li>
+          <li>Famiglia, lavoro e società possono trasformarsi in maschere collettive.</li>
+          <li>L’incomunicabilità nasce dalla diversità dei mondi interiori e dei significati.</li>
+          <li>Il comico è avvertimento del contrario; l’umoristico nasce dalla riflessione e diventa sentimento del contrario.</li>
+          <li>Mattia Pascal dimostra l’impossibilità di vivere senza una forma sociale riconosciuta.</li>
+          <li>Moscarda porta la liberazione dalle forme fino alla dissoluzione dell’io.</li>
+          <li><em>Così è (se vi pare)</em> mette in scena verità incompatibili e il bisogno violento di classificare l’altro.</li>
+          <li>I <em>Sei personaggi</em> rendono visibile la crisi della rappresentazione e il paradosso persona/personaggio.</li>
+          <li>In <em>Enrico IV</em> la follia è insieme maschera, rifugio, lucidità e prigione.</li>
+          <li>Pirandello non offre una via d’uscita semplice: mostra il costo di ogni forma e di ogni tentativo di distruggerla.</li>
+        </ol>
+
+        <section class="quiz" id="quiz-finale" aria-labelledby="quiz-title">
+          <h3 id="quiz-title">Quiz finale</h3>
+          <p>Dieci domande per verificare non le date isolate, ma i collegamenti tra mondo precedente, immagine del mondo, poetica e opere.</p>
+          <form id="final-quiz">
+            <div data-quiz-questions></div>
+            <button class="button-link" type="submit">Calcola il risultato</button>
+            <p class="quiz-result" data-quiz-result tabindex="-1" hidden></p>
+          </form>
+        </section>
+
+        <section id="profilo" aria-labelledby="profilo-title">
+          <h3 id="profilo-title">Profilo essenziale</h3>
+          <p>Luigi Pirandello nasce ad Agrigento nel 1867. Studia tra Palermo, Roma e Bonn. La crisi economica familiare del 1903 e la malattia della moglie Antonietta Portulano segnano gli anni in cui compone <em>Il fu Mattia Pascal</em>. Dal 1916 intensifica la produzione teatrale; nel 1921 <em>Sei personaggi in cerca d’autore</em> rivoluziona la scena europea. Riceve il Nobel per la letteratura nel 1934 e muore a Roma nel 1936. Questi dati contano qui soltanto dove illuminano il passaggio dalla narrativa al teatro e la sua indagine sulla forma.</p>
+          <h4>Galleria iconografica recuperata</h4>
+          <p>Le immagini che nella prima PWA introducevano le singole lezioni restano disponibili come memoria visiva del progetto originario.</p>
+          <div class="media-gallery">
+            <figure class="media-figure"><button type="button" data-lightbox data-caption="Ritratto di Luigi Pirandello usato nella lezione sull’immagine del mondo."><img src="assets/images/Pirandello-ritratto.webp" alt="Ritratto illustrato di Luigi Pirandello" loading="lazy" width="1024" height="1536"></button><figcaption>Ritratto della lezione generale.</figcaption></figure>
+            <figure class="media-figure"><button type="button" data-lightbox data-caption="Pirandello e Mattia Pascal, immagine della lezione originale."><img src="assets/images/Mattia-Pirandello.webp" alt="Composizione illustrata con Pirandello e Mattia Pascal" loading="lazy" width="1209" height="2048"></button><figcaption>Il fu Mattia Pascal.</figcaption></figure>
+            <figure class="media-figure"><button type="button" data-lightbox data-caption="Pirandello e Vitangelo Moscarda, immagine della lezione originale."><img src="assets/images/Pirandello-Moscarda.webp" alt="Composizione illustrata con Pirandello e Vitangelo Moscarda" loading="lazy" width="1365" height="2048"></button><figcaption>Uno, nessuno e centomila.</figcaption></figure>
+            <figure class="media-figure"><button type="button" data-lightbox data-caption="Immagine verticale di Pirandello recuperata dalla conclusione e dai Sei personaggi."><img src="assets/images/IMG_3679.webp" alt="Luigi Pirandello in una composizione verticale" loading="lazy" width="1365" height="2048"></button><figcaption>Conclusione e Sei personaggi.</figcaption></figure>
+            <figure class="media-figure"><button type="button" data-lightbox data-caption="Immagine di Pirandello associata alla lezione sull’umorismo."><img src="assets/images/IMG_3697.webp" alt="Ritratto verticale di Luigi Pirandello per la lezione sull’umorismo" loading="lazy" width="683" height="1024"></button><figcaption>L’umorismo.</figcaption></figure>
+            <figure class="media-figure"><button type="button" data-lightbox data-caption="Immagine di Pirandello associata a Così è (se vi pare)."><img src="assets/images/IMG_3728.webp" alt="Ritratto verticale di Luigi Pirandello per Così è se vi pare" loading="lazy" width="683" height="1024"></button><figcaption>Così è (se vi pare).</figcaption></figure>
+          </div>
+        </section>
+
+        <p class="bridge"><strong>Ciò che Pirandello lascia aperto.</strong> Non esiste un io puro da liberare semplicemente dalle maschere. Esiste una vita che eccede ogni forma e, nello stesso tempo, ha bisogno di forme per diventare riconoscibile. È questa contraddizione, non uno slogan relativista, a renderlo ancora nostro contemporaneo.</p>
+        <nav class="stage-nav" aria-label="Navigazione conclusiva"><a href="#opere">← Tappa 4</a><a href="#home">Torna alla copertina ↑</a></nav>
+      </article>
+    </main>
+  </div>
+
+  <aside class="notes-panel" id="notes-panel" data-open="false" aria-label="Appunti personali">
+    <div class="notes-head"><h2>Appunti</h2><button class="dialog-close" type="button" data-notes-close aria-label="Chiudi appunti">×</button></div>
+    <textarea id="notes-text" aria-label="Testo degli appunti" placeholder="Scrivi qui: gli appunti si salvano automaticamente su questo dispositivo."></textarea>
+    <div class="notes-actions"><button type="button" data-notes-export>Esporta .txt</button><button type="button" data-notes-clear>Svuota</button><span class="save-status" aria-live="polite">Pronto</span></div>
+  </aside>
+
+  <dialog id="image-dialog" aria-labelledby="image-dialog-title">
+    <div class="dialog-head"><h2 id="image-dialog-title" data-dialog-caption>Schema</h2><button class="dialog-close" type="button" data-dialog-close aria-label="Chiudi immagine">×</button></div>
+    <div class="dialog-body"><img src="assets/images/Mondo-Pirandello.webp" alt=""></div>
+  </dialog>
+
+  <dialog id="concept-dialog" aria-labelledby="concept-title">
+    <div class="dialog-head"><h2 id="concept-title" data-concept-title>Concetto</h2><button class="dialog-close" type="button" data-dialog-close aria-label="Chiudi concetto">×</button></div>
+    <div class="dialog-body"><p data-concept-definition></p><p><strong>Nelle opere:</strong> <span data-concept-example></span></p></div>
+  </dialog>
+
+  <dialog id="timeline-dialog" aria-labelledby="timeline-title">
+    <div class="dialog-head"><h2 id="timeline-title">Timeline essenziale</h2><button class="dialog-close" type="button" data-dialog-close aria-label="Chiudi timeline">×</button></div>
+    <div class="dialog-body" id="timeline">
+      <ol class="work-sequence">
+        <li><span>1867</span><div><strong>Nascita ad Agrigento.</strong> Dentro l’Italia postunitaria e la fiducia positivista.</div></li>
+        <li><span>1904</span><div><strong>Il fu Mattia Pascal.</strong> Identità, falsa morte e libertà impossibile.</div></li>
+        <li><span>1908</span><div><strong>L’umorismo.</strong> Formulazione della poetica del sentimento del contrario.</div></li>
+        <li><span>1917</span><div><strong>Così è (se vi pare).</strong> Le verità incompatibili diventano azione scenica.</div></li>
+        <li><span>1921</span><div><strong>Sei personaggi in cerca d’autore.</strong> Crisi della rappresentazione e metateatro.</div></li>
+        <li><span>1922</span><div><strong>Enrico IV.</strong> La follia come maschera scelta e forma definitiva.</div></li>
+        <li><span>1926</span><div><strong>Uno, nessuno e centomila.</strong> Dissoluzione dell’identità sociale.</div></li>
+        <li><span>1934</span><div><strong>Premio Nobel.</strong> Riconoscimento internazionale dell’innovazione narrativa e teatrale.</div></li>
+        <li><span>1936</span><div><strong>Morte a Roma.</strong> Resta un’opera che ha modificato il personaggio e la scena novecentesca.</div></li>
+      </ol>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <p><strong>Contenuti chiari e affidabili · Pensato per studenti e docenti · Accessibile e installabile</strong></p>
+    <p>© 2026 gbprof e Libera — PWA didattica</p>
+    <p><small>I video esterni richiedono connessione; testi, mappe locali e attività restano disponibili offline dopo la prima visita.</small></p>
+  </footer>
+
+  <script src="assets/app.js" defer></script>
+</body>
+</html>
