@@ -10,9 +10,9 @@ const SHELL = [
   './assets/styles.css',
   './assets/app.js',
   './assets/images/copertina-pirandello.webp',
-  './assets/icons/icon-180.webp',
-  './assets/icons/icon-192.webp',
-  './assets/icons/icon-512.webp'
+  './assets/icons/icon-180.png',
+  './assets/icons/icon-192.png',
+  './assets/icons/icon-512.png'
 ];
 
 self.addEventListener('install', (event) => {
