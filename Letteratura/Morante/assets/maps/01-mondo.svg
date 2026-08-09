@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Il mondo precedente di Elsa Morante</title>
+  <desc id="desc">La mappa collega il mondo ricevuto da Elsa Morante a sei coordinate: fascismo e guerra, neorealismo, romanzo ottocentesco e mito, Roma diseguale, cultura autodidatta e crisi delle grandi narrazioni. Queste tensioni preparano la ricerca di una forma letteraria autonoma.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto-start-reverse"><path d="M1 1 11 6 1 11Z" fill="#8d1f2d"/></marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#171513" flood-opacity=".15"/></filter>
+    <style>
+      .bg{fill:#f6f0e3}.node{fill:#fffaf0;stroke:#171513;stroke-width:2}.central{fill:#8d1f2d;stroke:#171513;stroke-width:3}.accent{fill:#8d1f2d}.line{fill:none;stroke:#8d1f2d;stroke-width:4;marker-end:url(#arrow)}
+      .ct{font:700 31px Georgia,serif;fill:#fffaf0;text-anchor:middle}.nt{font:700 25px Georgia,serif;fill:#171513;text-anchor:middle}.sub{font:20px Arial,sans-serif;fill:#171513;text-anchor:middle}.rel{font:700 18px Arial,sans-serif;fill:#8d1f2d;text-anchor:middle}.tag{fill:#f6f0e3;stroke:#8d1f2d;stroke-width:1}.foot{font:17px Arial,sans-serif;fill:#4a433d;text-anchor:middle}
+    </style>
+  </defs>
+  <rect class="bg" width="1400" height="900"/>
+  <text x="70" y="55" font-family="Arial,sans-serif" font-size="19" font-weight="700" fill="#8d1f2d" letter-spacing="2">01 · IL MONDO PRECEDENTE</text>
+
+  <path class="line" d="M530 190 C500 245 255 245 230 300"/><path class="line" d="M700 190 L700 300"/><path class="line" d="M870 190 C900 245 1145 245 1170 300"/>
+  <path class="line" d="M230 440 L230 650"/><path class="line" d="M700 440 L700 650"/><path class="line" d="M1170 440 L1170 650"/>
+
+  <g><rect class="tag" x="335" y="217" width="174" height="34" rx="17"/><text class="rel" x="422" y="240">è segnato da</text></g>
+  <g><rect class="tag" x="625" y="225" width="150" height="34" rx="17"/><text class="rel" x="700" y="248">si confronta con</text></g>
+  <g><rect class="tag" x="895" y="217" width="195" height="34" rx="17"/><text class="rel" x="992" y="240">eredita e trasforma</text></g>
+  <g><rect class="tag" x="151" y="522" width="158" height="34" rx="17"/><text class="rel" x="230" y="545">rende visibili</text></g>
+  <g><rect class="tag" x="609" y="522" width="182" height="34" rx="17"/><text class="rel" x="700" y="545">favorisce una</text></g>
+  <g><rect class="tag" x="1076" y="522" width="188" height="34" rx="17"/><text class="rel" x="1170" y="545">mette in crisi</text></g>
+
+  <g filter="url(#shadow)"><rect class="central" x="500" y="50" width="400" height="140" rx="28"/><text class="ct" x="700" y="110">IL MONDO RICEVUTO</text><text x="700" y="148" font-family="Arial,sans-serif" font-size="21" fill="#fffaf0" text-anchor="middle">un Novecento tra violenza e bisogno di senso</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="40" y="300" width="380" height="140" rx="22"/><rect class="accent" x="40" y="300" width="12" height="140" rx="6"/><text class="nt" x="230" y="348">Fascismo e guerra</text><text class="sub" x="230" y="386">la storia collettiva entra</text><text class="sub" x="230" y="414">con violenza nelle vite comuni</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="510" y="300" width="380" height="140" rx="22"/><rect class="accent" x="510" y="300" width="12" height="140" rx="6"/><text class="nt" x="700" y="348">Neorealismo</text><text class="sub" x="700" y="386">impone il problema del reale,</text><text class="sub" x="700" y="414">ma non esaurisce la sua ricerca</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="980" y="300" width="380" height="140" rx="22"/><rect class="accent" x="980" y="300" width="12" height="140" rx="6"/><text class="nt" x="1170" y="348">Romanzo, fiaba, mito</text><text class="sub" x="1170" y="386">offrono forme lunghe, simboliche</text><text class="sub" x="1170" y="414">e capaci di meraviglia</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="40" y="650" width="380" height="140" rx="22"/><rect class="accent" x="40" y="650" width="12" height="140" rx="6"/><text class="nt" x="230" y="698">Roma diseguale</text><text class="sub" x="230" y="736">quartieri popolari e ambienti agiati</text><text class="sub" x="230" y="764">mostrano gerarchie e marginalità</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="510" y="650" width="380" height="140" rx="22"/><rect class="accent" x="510" y="650" width="12" height="140" rx="6"/><text class="nt" x="700" y="698">Formazione autodidatta</text><text class="sub" x="700" y="736">classici, musica e filosofia alimentano</text><text class="sub" x="700" y="764">una libertà non accademica</text></g>
+  <g filter="url(#shadow)"><rect class="node" x="980" y="650" width="380" height="140" rx="22"/><rect class="accent" x="980" y="650" width="12" height="140" rx="6"/><text class="nt" x="1170" y="698">Progresso e ideologie</text><text class="sub" x="1170" y="736">le promesse della modernità</text><text class="sub" x="1170" y="764">non proteggono gli innocenti</text></g>
+  <text class="foot" x="700" y="858">Tensione generatrice: come narrare la realtà senza ridurla a cronaca o propaganda?</text>
+</svg>

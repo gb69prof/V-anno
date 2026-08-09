@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Elsa Morante</title>
+  <desc id="desc">Monogramma EM color avorio su un sigillo rosso lacca e fondo nero.</desc>
+  <rect width="512" height="512" fill="#171414"/>
+  <circle cx="256" cy="256" r="170" fill="#9f1734" stroke="#f3ecdd" stroke-width="10"/>
+  <circle cx="256" cy="256" r="147" fill="none" stroke="#e6a6b4" stroke-width="4" stroke-dasharray="8 10"/>
+  <path d="M105 391c102-45 199-41 302 0" fill="none" stroke="#f3ecdd" stroke-width="5" opacity=".72"/>
+  <text x="256" y="303" fill="#fffaf0" font-family="Georgia,serif" font-size="165" font-weight="700" text-anchor="middle" letter-spacing="-17">EM</text>
+  <text x="256" y="398" fill="#f3ecdd" font-family="Arial,sans-serif" font-size="25" font-weight="700" text-anchor="middle" letter-spacing="7">ROMA</text>
+</svg>

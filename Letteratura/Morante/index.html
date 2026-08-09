@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#9f1734">
+  <meta name="description" content="Percorso didattico interattivo in sei movimenti su Elsa Morante: vita, visione, poetica e opere.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Elsa Morante">
+  <title>Elsa Morante — Il reale e l’incanto</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingBar"></span></div>
+
+  <header class="topbar">
+    <button class="brand" id="homeButton" type="button" aria-label="Torna alla copertina">
+      <span class="brand-seal" aria-hidden="true">EM</span>
+      <span class="brand-copy"><strong>Il reale e l’incanto</strong><small>Elsa Morante in sei movimenti</small></span>
+    </button>
+    <div class="top-actions">
+      <span class="course-progress" id="courseProgress" aria-live="polite">0 di 6</span>
+      <button class="soft-button" id="resumeButton" type="button">Riprendi</button>
+      <button class="icon-button" id="menuButton" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Apri l’indice">☰</button>
+    </div>
+  </header>
+
+  <aside class="drawer" id="drawer" aria-label="Indice della lezione" aria-hidden="true">
+    <div class="drawer-head">
+      <div><p class="kicker">Fascicolo didattico</p><h2>Sei movimenti</h2></div>
+      <button class="icon-button" id="closeMenu" type="button" aria-label="Chiudi l’indice">×</button>
+    </div>
+    <div class="drawer-progress" aria-label="Progresso nel percorso">
+      <span><strong id="drawerProgressText">0%</strong> del percorso visitato</span>
+      <div aria-hidden="true"><i id="drawerProgressBar"></i></div>
+    </div>
+    <nav id="drawerNav" aria-label="Sezioni"></nav>
+    <div class="drawer-tools">
+      <button class="primary-button wide" id="finalQuizButton" type="button">Apri la verifica finale</button>
+      <button class="text-button danger" id="resetButton" type="button">Azzera progressi, note e test</button>
+    </div>
+  </aside>
+  <button class="drawer-scrim" id="scrim" type="button" aria-label="Chiudi l’indice" hidden></button>
+
+  <main id="main" tabindex="-1">
+    <section class="cover view active" id="coverView" aria-labelledby="coverTitle">
+      <div class="cover-grid" aria-hidden="true"></div>
+      <div class="cover-copy">
+        <p class="kicker">Letteratura italiana · quinto anno</p>
+        <h1 id="coverTitle" tabindex="-1"><span>Elsa</span><br>Morante</h1>
+        <p class="cover-thesis">Quando la Storia schiaccia gli esseri umani, la scrittura non fugge dal reale: lo attraversa con la forza scandalosa dell’irrealtà.</p>
+        <div class="cover-actions">
+          <button class="primary-button" id="startButton" type="button">Entra nel percorso</button>
+          <button class="soft-button" id="coverResume" type="button">Riprendi dall’ultima sezione</button>
+        </div>
+      </div>
+
+      <div class="cover-collage" aria-label="Composizione grafica originale: mappa di Roma, carte d’archivio e sigillo rosso">
+        <div class="rome-sheet">
+          <span class="sheet-label">ROMA · CARTA NARRATIVA</span>
+          <svg viewBox="0 0 500 380" role="img" aria-label="Tracciato astratto ispirato a una mappa urbana di Roma">
+            <path d="M42 272C95 238 124 267 170 218S225 111 278 125s62 85 106 74 43-55 77-77"/>
+            <path d="M64 80c61 42 85 1 131 25s38 63 82 84 91-1 153 49"/>
+            <path d="M120 335c30-73 81-59 111-101s23-89 80-112 96-3 127-58"/>
+            <circle cx="275" cy="190" r="34"/><circle cx="275" cy="190" r="9"/>
+          </svg>
+          <b>REALTÀ</b>
+        </div>
+        <div class="archive-slip slip-one"><small>fascicolo</small><strong>Storia</strong><span>corpi · fame · potere</span></div>
+        <div class="archive-slip slip-two"><small>controcanto</small><strong>Irrealtà</strong><span>infanzia · mito · sogno</span></div>
+        <div class="lacquer-seal">E<span>M</span></div>
+        <p class="collage-note">La fiaba non cancella il documento.<br>Lo rende più difficile da ignorare.</p>
+      </div>
+
+      <nav class="cover-route" id="coverRoute" aria-label="Le sei tappe del percorso"></nav>
+    </section>
+
+    <section class="lesson-shell view" id="lessonView" aria-live="polite">
+      <header class="lesson-hero" id="lessonHero">
+        <button class="back-link" id="backToCover" type="button">← Copertina</button>
+        <p class="section-number" id="sectionNumber"></p>
+        <h1 id="sectionTitle"></h1>
+        <p class="section-subtitle" id="sectionSubtitle"></p>
+        <p class="generative-question" id="generativeQuestion"></p>
+      </header>
+
+      <div class="section-tabs" id="sectionTabs" role="tablist" aria-label="Materiali della sezione"></div>
+      <div class="lesson-layout">
+        <article class="content-card" id="panelContent"></article>
+        <aside class="note-card">
+          <label for="sectionNotes"><strong>Quaderno di margine</strong><small>Le note restano soltanto su questo dispositivo</small></label>
+          <textarea id="sectionNotes" rows="10" placeholder="Annota una domanda, un collegamento, una frase da discutere…"></textarea>
+          <p class="save-status" id="saveStatus" aria-live="polite"></p>
+        </aside>
+      </div>
+
+      <nav class="lesson-pager" aria-label="Navigazione fra le sezioni">
+        <button class="soft-button" id="prevSection" type="button">← Precedente</button>
+        <span id="sectionCounter"></span>
+        <button class="primary-button" id="nextSection" type="button">Successiva →</button>
+      </nav>
+    </section>
+
+    <section class="final-shell view" id="finalView" aria-labelledby="finalTitle">
+      <button class="back-link dark" id="finalBack" type="button">← Torna al percorso</button>
+      <p class="kicker">Verifica finale facoltativa</p>
+      <h1 id="finalTitle" tabindex="-1">La traiettoria completa</h1>
+      <p class="final-intro">Sei nessi, uno per movimento. Gli eventuali errori aprono mini-lezioni mirate e possono essere ritentati senza cancellare i risultati precedenti.</p>
+      <div class="content-card" id="finalQuiz"></div>
+    </section>
+
+    <section class="fatal-error view" id="errorView" role="alert" aria-labelledby="errorTitle">
+      <p class="kicker">Errore di caricamento</p>
+      <h1 id="errorTitle" tabindex="-1">Il fascicolo non è disponibile.</h1>
+      <p id="errorMessage">Manca il file locale dei contenuti. Ricarica la pagina oppure verifica che <code>content.js</code> sia presente.</p>
+    </section>
+  </main>
+
+  <template id="quizTemplate">
+    <div class="quiz" data-quiz>
+      <div class="quiz-intro">
+        <div><p class="kicker">Autoverifica</p><h2>Controlla i nessi</h2></div>
+        <p>Tre alternative, una sola risposta corretta. Il feedback compare appena scegli.</p>
+      </div>
+      <div class="quiz-questions"></div>
+      <div class="quiz-actions">
+        <button class="primary-button submit-quiz" type="button">Consegna il test</button>
+        <p class="quiz-warning" role="alert"></p>
+      </div>
+      <section class="quiz-results" aria-live="polite" hidden></section>
+    </div>
+  </template>
+
+  <footer>
+    <p>Progetto didattico gbprof · Dopo il primo accesso, lezioni, mappe e test sono disponibili anche senza rete.</p>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
