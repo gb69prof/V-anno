@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#201b18">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pasolini">
+  <meta name="description" content="Pier Paolo Pasolini in sei movimenti: una PWA didattica del Metodo gbprof.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <link rel="stylesheet" href="styles.css">
+  <title>Pasolini · Lo scandalo di restare umani</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="topbar">
+    <button id="menuBtn" class="icon-btn" type="button" aria-controls="courseNav" aria-expanded="false" aria-label="Apri indice">☰</button>
+    <a class="brand" href="#home" aria-label="Torna all'inizio"><span>PPP</span><strong>Pasolini</strong></a>
+    <div class="top-actions">
+      <button id="resumeBtn" class="quiet-btn" type="button">Riprendi</button>
+      <button id="installBtn" class="quiet-btn" type="button">Installa</button>
+    </div>
+  </header>
+
+  <div class="progress-shell" aria-label="Progresso del percorso">
+    <div id="progressBar" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+    <span id="progressText">0 di 6 movimenti completati</span>
+  </div>
+
+  <div class="app-shell">
+    <nav id="courseNav" class="course-nav" aria-label="Indice della lezione">
+      <div class="nav-heading">Sei movimenti</div>
+      <ol id="sectionNav"></ol>
+      <div class="nav-tools">
+        <button id="exportBtn" type="button">Esporta appunti e progressi</button>
+        <button id="resetBtn" class="danger" type="button">Azzera dati locali</button>
+      </div>
+    </nav>
+
+    <main id="main" tabindex="-1">
+      <section id="homeView" class="home-view" aria-labelledby="heroTitle">
+        <div class="hero">
+          <div class="eyebrow">Metodo gbprof · Letteratura italiana</div>
+          <h1 id="heroTitle">Lo scandalo<br>di restare umani</h1>
+          <p class="hero-deck">Pier Paolo Pasolini non come icona da commemorare, ma come problema vivo: che cosa accade all’uomo quando il potere non gli ordina soltanto di obbedire, ma gli insegna che cosa desiderare?</p>
+          <div class="hero-actions">
+            <button id="startBtn" class="primary-btn" type="button">Inizia dal mondo precedente</button>
+            <button id="homeResumeBtn" class="secondary-btn" type="button">Riprendi il percorso</button>
+          </div>
+          <div class="hero-mark" aria-hidden="true">P</div>
+        </div>
+
+        <section class="thesis-card" aria-labelledby="thesisTitle">
+          <span class="card-number">Tesi guida</span>
+          <h2 id="thesisTitle">Dal popolo al consumatore</h2>
+          <p>Pasolini eredita un’Italia divisa in culture locali, incontra Friuli e borgate come mondi ancora autonomi, vede il boom economico trasformarli e cerca, cambiando continuamente linguaggio, una forma capace di rendere visibile quella perdita. La sua nostalgia non è un programma politico: è lo strumento polemico con cui misura la violenza del presente.</p>
+        </section>
+
+        <section class="route-preview" aria-labelledby="routeTitle">
+          <div>
+            <span class="eyebrow">La catena interpretativa</span>
+            <h2 id="routeTitle">Un autore, sei passaggi necessari</h2>
+          </div>
+          <ol id="routeCards"></ol>
+        </section>
+
+        <section class="source-note">
+          <h2>Come leggere questa PWA</h2>
+          <p>La fonte principale è la dispensa fornita dal docente. I dati biografici sono separati dalle interpretazioni; le controversie non risolte sono dichiarate come tali. Ogni movimento comprende lezione, sintesi, saperi irrinunciabili, vocabolario, mappa, test e recupero mirato.</p>
+        </section>
+      </section>
+
+      <article id="lessonView" class="lesson-view" hidden aria-live="polite"></article>
+    </main>
+  </div>
+
+  <dialog id="installDialog" aria-labelledby="installTitle">
+    <form method="dialog" class="dialog-card">
+      <button class="dialog-close" value="cancel" aria-label="Chiudi">×</button>
+      <h2 id="installTitle">Installa su iPad</h2>
+      <ol>
+        <li>Apri questa pagina in Safari.</li>
+        <li>Tocca il pulsante Condividi.</li>
+        <li>Scegli “Aggiungi alla schermata Home”.</li>
+        <li>Conferma con “Aggiungi”.</li>
+      </ol>
+      <p>Dopo il primo caricamento, lezioni, mappe e test restano disponibili anche senza rete.</p>
+    </form>
+  </dialog>
+
+  <dialog id="confirmDialog" aria-labelledby="confirmTitle">
+    <form method="dialog" class="dialog-card">
+      <h2 id="confirmTitle">Azzerare tutti i dati?</h2>
+      <p>Verranno eliminati progressi, appunti e tentativi dei test salvati su questo dispositivo.</p>
+      <div class="dialog-actions">
+        <button value="cancel">Annulla</button>
+        <button id="confirmReset" class="danger" value="default">Azzera</button>
+      </div>
+    </form>
+  </dialog>
+
+  <noscript>Questa PWA richiede JavaScript per navigazione, test e salvataggio locale.</noscript>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
