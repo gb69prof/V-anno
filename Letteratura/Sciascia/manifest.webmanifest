@@ -1,0 +1,16 @@
+{
+  "name": "Leonardo Sciascia · La verità sotto interrogatorio",
+  "short_name": "Sciascia",
+  "description": "Percorso didattico interattivo su Leonardo Sciascia in sei movimenti.",
+  "lang": "it",
+  "start_url": "./index.html#home",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ece8dc",
+  "theme_color": "#171916",
+  "icons": [
+    {"src":"assets/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"assets/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

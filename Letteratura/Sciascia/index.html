@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171916">
+  <meta name="description" content="PWA didattica su Leonardo Sciascia: verità, potere e responsabilità in sei movimenti.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Sciascia">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="icon" href="assets/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Sciascia · La verità sotto interrogatorio</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="topbar">
+    <button class="icon-button" id="menuButton" aria-label="Apri indice" aria-expanded="false">☰</button>
+    <a class="brand" href="#home" aria-label="Torna alla copertina"><span>LEONARDO</span> SCIASCIA</a>
+    <button class="icon-button" id="notesButton" aria-label="Apri taccuino">✎</button>
+  </header>
+
+  <div class="progress-track" aria-hidden="true"><div id="progressBar"></div></div>
+
+  <nav id="sideNav" class="side-nav" aria-label="Indice della lezione" aria-hidden="true">
+    <div class="side-nav-head">
+      <div><small>PERCORSO</small><strong>Sei movimenti</strong></div>
+      <button class="icon-button" id="closeMenu" aria-label="Chiudi indice">×</button>
+    </div>
+    <ol id="navList"></ol>
+    <div class="nav-tools">
+      <button class="secondary" id="resumeButton">Riprendi la lettura</button>
+      <button class="secondary" data-route="finale">Verifica finale</button>
+      <button class="secondary" data-route="fonti">Fonti universitarie</button>
+      <button class="danger-text" id="resetButton">Azzera dati e progressi</button>
+    </div>
+  </nav>
+  <div id="scrim" class="scrim" hidden></div>
+
+  <main id="main" tabindex="-1">
+    <section id="homeView" class="home-view view">
+      <div class="hero-grain" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">LETTERATURA · STORIA · EDUCAZIONE CIVICA</p>
+        <h1>La verità<br><em>sotto interrogatorio</em></h1>
+        <p class="lead">Sciascia non è soltanto lo scrittore della mafia. È lo scrittore che mette alla prova la ragione quando il potere conosce l’arte di rendere innocua la verità.</p>
+        <blockquote>Che valore ha comprendere i fatti quando la verità non riesce a diventare giustizia?</blockquote>
+        <div class="hero-actions">
+          <button class="primary" data-route="mondo">Inizia il percorso <span>→</span></button>
+          <button class="ghost" id="homeResume">Riprendi</button>
+        </div>
+      </div>
+      <div class="hero-symbol" aria-hidden="true">
+        <svg viewBox="0 0 420 560" role="presentation">
+          <path d="M92 82h225l32 54-38 308-98 55-102-51-40-310z" fill="none" stroke="currentColor" stroke-width="2"/>
+          <path d="M103 138h235M109 180h219M117 222h203M123 264h191M131 306h175M138 348h159M146 390h143" opacity=".25"/>
+          <circle cx="211" cy="271" r="84" fill="#d4a640" opacity=".88"/>
+          <circle cx="211" cy="271" r="41" fill="#171916"/>
+          <path d="M203 230h16v82h-16zM170 263h82v16h-82z" fill="#ece8dc" opacity=".8"/>
+          <path d="M317 84 210 271 93 83" fill="none" stroke="#d4a640" stroke-width="2"/>
+        </svg>
+      </div>
+      <div class="home-index" id="homeIndex" aria-label="Indice rapido"></div>
+    </section>
+
+    <section id="sectionView" class="section-view view" hidden></section>
+    <section id="finalView" class="utility-view view" hidden></section>
+    <section id="sourcesView" class="utility-view view" hidden></section>
+  </main>
+
+  <aside id="notesPanel" class="notes-panel" aria-hidden="true">
+    <div class="notes-head"><div><small>TACCUINO LOCALE</small><h2>Le tue note</h2></div><button class="icon-button" id="closeNotes" aria-label="Chiudi taccuino">×</button></div>
+    <p>Le note restano su questo dispositivo e sono disponibili anche offline.</p>
+    <label for="notesArea">Appunti sul percorso</label>
+    <textarea id="notesArea" rows="16" placeholder="Scrivi qui un dubbio, un nesso, una domanda…"></textarea>
+    <div class="notes-actions"><button class="primary" id="saveNotes">Salva note</button><button class="secondary" id="exportNotes">Esporta .txt</button></div>
+    <p id="notesStatus" class="status" role="status"></p>
+  </aside>
+
+  <footer>
+    <span>Sciascia · PWA didattica gbprof</span>
+    <button class="text-button" data-route="fonti">Metodo e fonti</button>
+  </footer>
+
+  <noscript>Questa PWA richiede JavaScript per navigazione, test e salvataggio locale.</noscript>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
