@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#171a18">
+  <meta name="description" content="PWA didattica sul Neorealismo italiano in sei movimenti: storia, sguardo, poetica, opere ed eredità.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Neorealismo">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Neorealismo · L’Italia entra nell’inquadratura</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <div class="reading-line" aria-hidden="true"><span id="readingLine"></span></div>
+
+  <header class="topbar">
+    <button id="menuButton" class="icon-button" type="button" aria-controls="drawer" aria-expanded="false" aria-label="Apri indice">☰</button>
+    <button id="brandButton" class="brand" type="button" aria-label="Torna alla copertina">
+      <span class="brand-stamp">NR</span>
+      <span><strong>Neorealismo</strong><small>L’Italia entra nell’inquadratura</small></span>
+    </button>
+    <div class="top-actions">
+      <button id="resumeButton" class="quiet-button" type="button">Riprendi</button>
+      <button id="installButton" class="quiet-button" type="button">Installa</button>
+    </div>
+  </header>
+
+  <div class="course-progress" aria-label="Progresso del percorso">
+    <span id="courseBar"></span><output id="courseText">0 di 6 movimenti visitati</output>
+  </div>
+
+  <aside id="drawer" class="drawer" aria-hidden="true" aria-label="Indice della lezione">
+    <div class="drawer-head">
+      <div><p class="eyebrow">Indice</p><h2>Sei movimenti</h2></div>
+      <button id="closeMenu" class="icon-button" type="button" aria-label="Chiudi indice">×</button>
+    </div>
+    <nav id="drawerNav"></nav>
+    <div class="drawer-tools">
+      <button id="finalQuizButton" class="primary-button wide" type="button">Verifica finale</button>
+      <button id="exportButton" class="quiet-button wide" type="button">Esporta appunti</button>
+      <button id="resetButton" class="text-button danger" type="button">Azzera dati locali</button>
+    </div>
+  </aside>
+  <button id="scrim" class="scrim" type="button" aria-label="Chiudi indice" hidden></button>
+
+  <main id="main" tabindex="-1">
+    <section id="coverView" class="cover view active" aria-labelledby="coverTitle">
+      <div class="cover-grid">
+        <div class="cover-copy">
+          <p class="eyebrow">Letteratura italiana · quinto anno</p>
+          <h1 id="coverTitle">L’Italia entra<br><em>nell’inquadratura</em></h1>
+          <p class="cover-thesis">Il Neorealismo non copia la realtà: decide da dove guardarla, a chi dare voce e quale responsabilità affidare al racconto.</p>
+          <div class="cover-actions">
+            <button id="startButton" class="primary-button" type="button">Inizia dalle macerie</button>
+            <button id="coverResume" class="quiet-button" type="button">Riprendi il percorso</button>
+          </div>
+        </div>
+        <div class="cover-art" role="img" aria-label="Composizione originale: un muro lacerato, una striscia cinematografica e caratteri tipografici rappresentano l’Italia del dopoguerra che entra nel racconto">
+          <div class="wall wall-a"></div><div class="wall wall-b"></div>
+          <div class="film-strip"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="type-block"><span>1943</span><strong>VEDERE</strong><span>1956</span></div>
+          <div class="human-mark">la realtà<br>non parla<br>da sola</div>
+        </div>
+      </div>
+      <ol id="coverRoute" class="route" aria-label="Le sei tappe del percorso"></ol>
+      <section class="method-card">
+        <p class="eyebrow">Tesi guida</p>
+        <h2>Non una scuola compatta, ma una costellazione di risposte</h2>
+        <p>Guerra, Resistenza e dopoguerra rendono insufficiente l’arte separata dalla vita. Scrittori e registi cercano una nuova comunicazione con il pubblico; ma Calvino, Pavese, Vittorini, Fenoglio, Levi, Rossellini, De Sica e Visconti non usano una formula comune. Li unisce una tensione morale; li distingue la forma con cui trasformano i fatti in conoscenza.</p>
+      </section>
+      <details class="source-note">
+        <summary>Fonti e criterio critico</summary>
+        <p>La fonte principale è la dispensa fornita dal docente, integrata e verificata con voci Treccani sul Neorealismo, sulla lingua del cinema e su Roberto Rossellini, con la prefazione del 1964 di Italo Calvino al <em>Sentiero dei nidi di ragno</em> e con studi critici indicati nella bibliografia finale.</p>
+        <p>Una precisazione necessaria: autenticità non significa assenza di artificio. Luoghi reali e attori non professionisti convivono con sceneggiatura, montaggio e frequente postsincronizzazione del suono. La PWA distingue perciò il documento dalla forma che lo rende leggibile.</p>
+      </details>
+    </section>
+
+    <section id="lessonView" class="lesson-shell view" aria-live="polite">
+      <header id="lessonHero" class="lesson-hero">
+        <button id="backToCover" class="back-link" type="button">← Copertina</button>
+        <p id="sectionNumber" class="section-number"></p>
+        <h1 id="sectionTitle"></h1>
+        <p id="sectionSubtitle" class="section-subtitle"></p>
+        <p id="generativeQuestion" class="generative-question"></p>
+      </header>
+      <div id="sectionTabs" class="section-tabs" role="tablist" aria-label="Materiali della sezione"></div>
+      <div class="lesson-layout">
+        <article id="panelContent" class="content-card"></article>
+        <aside class="notes-card">
+          <label for="sectionNotes"><strong>Il mio taccuino</strong><small>Salvataggio automatico sul dispositivo</small></label>
+          <textarea id="sectionNotes" rows="10" placeholder="Annota un nesso, un dubbio, una frase da discutere…"></textarea>
+          <p id="saveStatus" class="save-status" aria-live="polite"></p>
+        </aside>
+      </div>
+      <nav class="lesson-pager" aria-label="Navigazione tra le sezioni">
+        <button id="prevSection" class="quiet-button" type="button">← Precedente</button>
+        <span id="sectionCounter"></span>
+        <button id="nextSection" class="primary-button" type="button">Successiva →</button>
+      </nav>
+    </section>
+
+    <section id="finalView" class="final-shell view" aria-labelledby="finalTitle">
+      <button id="finalBack" class="back-link dark" type="button">← Torna al percorso</button>
+      <p class="eyebrow">Verifica facoltativa</p>
+      <h1 id="finalTitle">I sei nessi essenziali</h1>
+      <p class="final-intro">Una domanda per movimento. Non premia la memoria di date isolate: controlla se sai ricostruire la traiettoria.</p>
+      <figure class="map-figure final-map"><img src="assets/maps/07-sintesi.svg" alt="Mappa di sintesi: il mondo precedente diventa insufficiente; le fratture producono una nuova immagine del reale; la poetica costruisce lo sguardo; le opere superano la formula; la conclusione rinnova la domanda critica." width="1200" height="760"><figcaption>La catena completa: ogni movimento modifica il precedente.</figcaption></figure>
+      <div id="finalQuiz" class="content-card"></div>
+    </section>
+  </main>
+
+  <dialog id="installDialog" aria-labelledby="installTitle">
+    <form method="dialog" class="dialog-card">
+      <button class="dialog-close" value="cancel" aria-label="Chiudi">×</button>
+      <p class="eyebrow">Installazione</p><h2 id="installTitle">Portala sull’iPad</h2>
+      <ol><li>Apri la pagina in Safari.</li><li>Tocca Condividi.</li><li>Scegli “Aggiungi alla schermata Home”.</li><li>Conferma con “Aggiungi”.</li></ol>
+      <p>Dopo il primo caricamento, lezioni, mappe e test funzionano anche senza rete.</p>
+    </form>
+  </dialog>
+
+  <dialog id="resetDialog" aria-labelledby="resetTitle">
+    <form method="dialog" class="dialog-card">
+      <button class="dialog-close" value="cancel" aria-label="Annulla">×</button>
+      <h2 id="resetTitle">Azzerare tutti i dati?</h2>
+      <p>Saranno eliminati progressi, appunti e tentativi salvati su questo dispositivo.</p>
+      <div class="dialog-actions"><button value="cancel" class="quiet-button">Annulla</button><button id="confirmReset" value="default" class="danger-button">Azzera</button></div>
+    </form>
+  </dialog>
+
+  <footer><p>Progetto didattico gbprof · PWA standalone · Contenuti disponibili offline dopo il primo accesso.</p></footer>
+  <noscript>Questa PWA richiede JavaScript per navigazione, test e salvataggio locale.</noscript>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
