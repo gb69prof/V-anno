@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#163a46">
+  <meta name="description" content="Umberto Saba in sei movimenti: dalla Trieste di frontiera alla poesia onesta.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Saba">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon.svg">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Umberto Saba · La verità difficile</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="topbar">
+    <button class="icon-button" id="menuButton" aria-expanded="false" aria-controls="sideNav" aria-label="Apri l’indice">☰</button>
+    <a class="brand" href="#home" aria-label="Torna alla copertina"><span>S</span><strong>Saba</strong></a>
+    <div class="top-actions"><button class="ghost-button" id="resumeButton">Riprendi</button><button class="icon-button" id="toolsButton" aria-label="Apri strumenti">Aa</button></div>
+  </header>
+  <div class="progress-track" aria-label="Progresso"><span id="progressBar"></span><output id="progressText">0%</output></div>
+  <aside class="drawer" id="sideNav" aria-label="Indice del percorso" aria-hidden="true">
+    <div class="drawer-head"><p class="eyebrow">Sei movimenti</p><button class="icon-button" id="closeMenu" aria-label="Chiudi indice">×</button></div>
+    <nav id="sectionNav"></nav><button class="ghost-button full" data-go="home">Copertina</button>
+  </aside>
+  <aside class="drawer tools" id="toolsPanel" aria-label="Strumenti" aria-hidden="true">
+    <div class="drawer-head"><p class="eyebrow">Strumenti</p><button class="icon-button" id="closeTools" aria-label="Chiudi strumenti">×</button></div>
+    <fieldset><legend>Dimensione testo</legend><div class="segmented"><button data-font="small">A−</button><button data-font="normal" class="active">A</button><button data-font="large">A+</button></div></fieldset>
+    <button class="primary-button full" id="installButton">Come installare</button><button class="danger-button full" id="resetButton">Azzera dati locali</button>
+    <p class="small">Appunti, progresso e risultati restano soltanto su questo dispositivo.</p>
+  </aside>
+  <button class="backdrop" id="backdrop" aria-label="Chiudi pannello"></button>
+  <main id="main" tabindex="-1">
+    <section id="home" class="view active hero" data-view="home">
+      <div class="hero-grid"><div>
+        <p class="kicker">Metodo gbprof · Letteratura italiana · V anno</p>
+        <h1>La verità<br><em>difficile</em></h1>
+        <p class="hero-question">Come può una poesia apparentemente semplice dire ciò che nell’uomo è più diviso?</p>
+        <p class="hero-lead">Umberto Saba non torna alla tradizione per rifugiarsi nel passato: usa una forma limpida per scendere dove l’io non è limpido affatto.</p>
+        <button class="primary-button" id="startButton">Inizia il percorso →</button>
+      </div><div class="hero-art" aria-hidden="true"><div class="portrait-mark"><span>UM</span><i></i><span>BERTO</span><b>SABA</b></div></div></div>
+      <div class="route" id="routeCards"></div>
+      <section class="thesis-card"><p class="eyebrow">Tesi guida</p><h2>La chiarezza non cancella l’abisso: gli dà una forma</h2><p>Saba riceve un mondo che separa alto e basso, identità e appartenenze. Le fratture della sua esperienza rendono questa divisione personale e storica. La poesia onesta non promette una guarigione miracolosa: costruisce parole condivise con cui riconoscere il dolore senza abbellirlo.</p></section>
+      <details class="source-note"><summary>Fonti e controllo critico</summary><p>Il percorso rielabora la dispensa universitaria fornita dal docente, verificata con il Dizionario Biografico Treccani, il Museo LETS di Trieste e la mostra digitale di Internet Culturale. Sono corretti alcuni microdati e attenuati i nessi biografia-opera non dimostrabili.</p></details>
+    </section>
+    <div id="lessonViews"></div>
+  </main>
+  <dialog id="installDialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button><p class="eyebrow">Installazione su iPad</p><h2>Portala sulla schermata Home</h2><ol><li>Apri la pagina in Safari.</li><li>Tocca Condividi.</li><li>Scegli “Aggiungi alla schermata Home”.</li><li>Conferma con “Aggiungi”.</li></ol><p>Dopo il primo caricamento, la lezione resta disponibile anche senza rete.</p></form></dialog>
+  <dialog id="resetDialog"><form method="dialog"><button class="dialog-close" value="cancel" aria-label="Chiudi">×</button><h2>Azzerare tutto?</h2><p>Progresso, note e tentativi saranno eliminati da questo dispositivo.</p><div class="dialog-actions"><button value="cancel">Annulla</button><button class="danger-button" id="confirmReset" value="default">Azzera</button></div></form></dialog>
+  <template id="lessonTemplate"><article class="view lesson"><header class="lesson-header"><div><p class="section-number"></p><h1 class="section-title"></h1><p class="generative-question"></p></div><span class="chapter-mark" aria-hidden="true"></span></header>
+    <div class="tabs" role="tablist" aria-label="Materiali della sezione"><button role="tab" data-panel="lesson" aria-selected="true">Lezione</button><button role="tab" data-panel="summary">Sintesi</button><button role="tab" data-panel="essentials">Irrinunciabili</button><button role="tab" data-panel="glossary">Vocabolario</button><button role="tab" data-panel="map">Mappa</button><button role="tab" data-panel="quiz">Verifica</button><button role="tab" data-panel="notes">Appunti</button></div>
+    <section class="panel" data-panel="lesson"></section><section class="panel" data-panel="summary" hidden></section><section class="panel" data-panel="essentials" hidden></section><section class="panel" data-panel="glossary" hidden></section><section class="panel map-panel" data-panel="map" hidden></section><section class="panel quiz-panel" data-panel="quiz" hidden></section><section class="panel" data-panel="notes" hidden></section>
+    <footer class="lesson-footer"><button class="ghost-button prev-button">← Precedente</button><button class="complete-button">Segna come completata</button><button class="primary-button next-button">Successiva →</button></footer></article></template>
+  <noscript><p class="noscript">JavaScript è necessario per navigazione, appunti e verifiche.</p></noscript><script src="./content.js"></script><script src="./app.js"></script>
+</body></html>
