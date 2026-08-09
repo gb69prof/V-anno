@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">Le fratture</title><desc id="d">Traumi storici e traiettorie individuali convergono nella crisi della comunicazione ordinaria.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3 0 6z" fill="#9b8449"/></marker><style>.b{fill:#fbfaf6;stroke:#9b8449;stroke-width:3}.c{fill:#172423}.h{font:700 26px Georgia;fill:#172423}.w{font:700 25px Georgia;fill:#f2efe7}.s{font:19px system-ui;fill:#394a47}.l{stroke:#9b8449;stroke-width:3;fill:none;marker-end:url(#a)}.r{font:700 16px system-ui;fill:#7d493a}</style></defs>
+<rect width="1200" height="760" rx="34" fill="#f2efe7"/>
+<rect class="c" x="340" y="295" width="520" height="165" rx="28"/><text class="w" x="600" y="350" text-anchor="middle">ESPERIENZA INTERIORE</text><text class="w" x="600" y="387" text-anchor="middle">E LINGUA NON COINCIDONO</text><text x="600" y="425" text-anchor="middle" style="font:18px system-ui;fill:#d8d2c1">la poesia diventa ricerca</text>
+<rect class="b" x="55" y="65" width="280" height="110" rx="22"/><text class="h" x="195" y="112" text-anchor="middle">Guerra</text><text class="s" x="195" y="145" text-anchor="middle">crolla la retorica eroica</text>
+<rect class="b" x="460" y="55" width="280" height="120" rx="22"/><text class="h" x="600" y="105" text-anchor="middle">Dittatura</text><text class="s" x="600" y="139" text-anchor="middle">consenso e censura</text>
+<rect class="b" x="865" y="65" width="280" height="110" rx="22"/><text class="h" x="1005" y="112" text-anchor="middle">Crisi spirituale</text><text class="s" x="1005" y="145" text-anchor="middle">perdita di orizzonte</text>
+<rect class="b" x="40" y="565" width="250" height="115" rx="22"/><text class="h" x="165" y="609" text-anchor="middle">Ungaretti</text><text class="s" x="165" y="644" text-anchor="middle">trincea e sacro</text>
+<rect class="b" x="330" y="565" width="250" height="115" rx="22"/><text class="h" x="455" y="609" text-anchor="middle">Quasimodo</text><text class="s" x="455" y="644" text-anchor="middle">esilio e memoria</text>
+<rect class="b" x="620" y="565" width="250" height="115" rx="22"/><text class="h" x="745" y="609" text-anchor="middle">Luzi</text><text class="s" x="745" y="644" text-anchor="middle">attesa spirituale</text>
+<rect class="b" x="910" y="565" width="250" height="115" rx="22"/><text class="h" x="1035" y="609" text-anchor="middle">Gatto</text><text class="s" x="1035" y="644" text-anchor="middle">canto e impegno</text>
+<path class="l" d="M195 175C220 245 350 270 430 305"/><text class="r" x="238" y="238">spezza</text>
+<path class="l" d="M600 175V288"/><text class="r" x="616" y="235">logora</text>
+<path class="l" d="M1005 175C980 245 850 270 770 305"/><text class="r" x="914" y="238">approfondisce</text>
+<path class="l" d="M165 565C220 510 350 488 430 460"/><path class="l" d="M455 565L525 467"/><path class="l" d="M745 565L675 467"/><path class="l" d="M1035 565C980 510 850 488 770 460"/><text class="r" x="420" y="525">rendono concreta, in modi diversi</text>
+</svg>

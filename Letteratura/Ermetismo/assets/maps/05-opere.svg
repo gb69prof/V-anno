@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">Le opere</title><desc id="d">Le raccolte di Ungaretti, Quasimodo, Luzi, Gatto e Montale formano una costellazione di soluzioni diverse alla crisi della parola.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0L10 3 0 6z" fill="#9b8449"/></marker><style>.b{fill:#fbfaf6;stroke:#9b8449;stroke-width:3}.c{fill:#172423}.h{font:700 23px Georgia;fill:#172423}.w{font:700 30px Georgia;fill:#f2efe7}.s{font:18px system-ui;fill:#394a47}.l{stroke:#9b8449;stroke-width:3;fill:none;marker-end:url(#a)}</style></defs>
+<rect width="1200" height="760" rx="34" fill="#f2efe7"/>
+<rect class="c" x="420" y="300" width="360" height="140" rx="70"/><text class="w" x="600" y="358" text-anchor="middle">COSTELLAZIONE</text><text x="600" y="396" text-anchor="middle" style="font:19px system-ui;fill:#d8d2c1">non un modello unico</text>
+<rect class="b" x="40" y="55" width="300" height="120" rx="22"/><text class="h" x="190" y="103" text-anchor="middle">L’Allegria</text><text class="s" x="190" y="137" text-anchor="middle">parola scarnificata</text>
+<rect class="b" x="405" y="45" width="390" height="120" rx="22"/><text class="h" x="600" y="93" text-anchor="middle">Sentimento del Tempo</text><text class="s" x="600" y="127" text-anchor="middle">tradizione e assoluto</text>
+<rect class="b" x="860" y="55" width="300" height="120" rx="22"/><text class="h" x="1010" y="103" text-anchor="middle">Oboe sommerso</text><text class="s" x="1010" y="137" text-anchor="middle">esilio e voce</text>
+<rect class="b" x="30" y="570" width="270" height="120" rx="22"/><text class="h" x="165" y="618" text-anchor="middle">Avvento notturno</text><text class="s" x="165" y="652" text-anchor="middle">attesa nell’oscurità</text>
+<rect class="b" x="330" y="585" width="270" height="120" rx="22"/><text class="h" x="465" y="633" text-anchor="middle">Isola</text><text class="s" x="465" y="667" text-anchor="middle">infanzia e perdita</text>
+<rect class="b" x="630" y="585" width="270" height="120" rx="22"/><text class="h" x="765" y="633" text-anchor="middle">Ed è subito sera</text><text class="s" x="765" y="667" text-anchor="middle">brevità e destino</text>
+<rect class="b" x="930" y="570" width="240" height="120" rx="22"/><text class="h" x="1050" y="618" text-anchor="middle">Le occasioni</text><text class="s" x="1050" y="652" text-anchor="middle">frontiera autonoma</text>
+<path class="l" d="M340 115C420 150 445 244 492 300"/><path class="l" d="M600 165V293"/><path class="l" d="M860 115C780 150 755 244 708 300"/><path class="l" d="M165 570C250 510 390 472 482 440"/><path class="l" d="M465 585L548 447"/><path class="l" d="M765 585L652 447"/><path class="l" d="M1050 570C965 510 820 472 718 440"/>
+</svg>

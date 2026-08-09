@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#172423">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Ermetismo">
+  <meta name="description" content="Percorso didattico interattivo sull'Ermetismo italiano: contesto, fratture, visione, poetica, opere ed eredità.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Ermetismo · La parola e il silenzio</title>
+</head>
+<body>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+  <header class="topbar">
+    <button class="icon-button" id="menuButton" aria-label="Apri indice" aria-controls="drawer" aria-expanded="false">☰</button>
+    <div class="brand"><span class="brand-mark">E</span><span>Ermetismo</span></div>
+    <div class="header-actions">
+      <button class="icon-button" id="notesButton" aria-label="Apri appunti">✎</button>
+      <button class="icon-button" id="themeButton" aria-label="Cambia tema">◐</button>
+    </div>
+  </header>
+
+  <div class="progress-track" aria-label="Progresso di studio"><span id="progressBar"></span></div>
+
+  <aside class="drawer" id="drawer" aria-label="Indice del percorso" aria-hidden="true">
+    <div class="drawer-head">
+      <strong>I sei movimenti</strong>
+      <button class="icon-button" id="closeMenu" aria-label="Chiudi indice">×</button>
+    </div>
+    <nav id="sectionNav"></nav>
+    <div class="drawer-tools">
+      <button id="resumeButton" class="button secondary">Riprendi lo studio</button>
+      <button id="resetButton" class="text-button">Azzera dati e progressi</button>
+    </div>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main id="contenuto">
+    <section class="hero" id="home" aria-labelledby="heroTitle">
+      <div class="hero-content">
+        <p class="eyebrow">Letteratura italiana · 1920–1945</p>
+        <h1 id="heroTitle">La parola<br><em>e il silenzio</em></h1>
+        <p class="hero-lead">L’Ermetismo non è soltanto poesia difficile. È il tentativo di salvare il peso della parola quando la lingua pubblica è occupata dalla propaganda.</p>
+        <div class="hero-actions">
+          <button class="button primary" data-open-section="0">Inizia il percorso</button>
+          <button class="button ghost" id="openOverview">Vedi la traiettoria</button>
+        </div>
+        <p class="hero-question">Domanda generatrice: <strong>il silenzio può essere una forma di resistenza?</strong></p>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="word word-a">parola</div>
+        <div class="word word-b">assenza</div>
+        <div class="word word-c">tempo</div>
+        <div class="silence-line"></div>
+      </div>
+    </section>
+
+    <section class="route" aria-labelledby="routeTitle">
+      <div class="section-heading compact">
+        <p class="eyebrow">La catena interpretativa</p>
+        <h2 id="routeTitle">Sei passaggi, un solo problema</h2>
+      </div>
+      <div class="route-grid" id="routeGrid"></div>
+    </section>
+
+    <section class="workspace" id="studyArea" hidden>
+      <div id="sectionContent"></div>
+    </section>
+
+    <section class="source-note" aria-labelledby="sourceTitle">
+      <div>
+        <p class="eyebrow">Fonte e criterio</p>
+        <h2 id="sourceTitle">Una base, non una gabbia</h2>
+      </div>
+      <p>Il percorso rielabora il documento <a href="https://docs.google.com/document/d/1m0PKJnbuUhhWHNneo0OLFMuA4RsSa9Cz6rieKeRYBME" target="_blank" rel="noopener">Ermetismo: analisi e contesto storico</a>. Dove la fonte propone interpretazioni controverse — soprattutto l’idea dell’oscurità come resistenza — la lezione distingue i fatti dalla lettura critica.</p>
+    </section>
+  </main>
+
+  <aside class="notes-panel" id="notesPanel" aria-label="Taccuino" aria-hidden="true">
+    <div class="notes-head">
+      <div><p class="eyebrow">Taccuino</p><h2>I tuoi appunti</h2></div>
+      <button class="icon-button" id="closeNotes" aria-label="Chiudi appunti">×</button>
+    </div>
+    <label for="notesArea">Annotazioni personali salvate su questo dispositivo</label>
+    <textarea id="notesArea" rows="16" placeholder="Scrivi qui collegamenti, dubbi, esempi…"></textarea>
+    <div class="notes-actions">
+      <button class="button primary" id="saveNotes">Salva</button>
+      <button class="button secondary" id="exportNotes">Esporta .txt</button>
+    </div>
+    <p class="save-status" id="saveStatus" role="status"></p>
+  </aside>
+
+  <dialog id="overviewDialog" class="map-dialog">
+    <button class="dialog-close icon-button" aria-label="Chiudi">×</button>
+    <h2>La traiettoria dell’Ermetismo</h2>
+    <img src="assets/maps/mappa-sintesi.svg" alt="La crisi della parola pubblica produce il ritiro nell'interiorità; la realtà opaca richiede una parola essenziale; analogia e silenzio confluiscono nelle opere e lasciano una nuova responsabilità della parola.">
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript>Questa PWA richiede JavaScript per test, progresso e navigazione interattiva. I contenuti didattici sono disponibili attivando JavaScript.</noscript>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
