@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="t d">
+<title id="t">Il mondo precedente</title><desc id="d">L’Italia incompleta, il fascismo e l’autarchia producono chiusura; Sicilia, Solaria, autodidattismo e America aprono alternative e preparano la frattura.</desc>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0l9 4.5L0 9z" fill="#9f2f2f"/></marker><style>.b{fill:#fffdf7;stroke:#191817;stroke-width:3}.c{fill:#9f2f2f;stroke:#742121;stroke-width:3}.h{font:700 27px system-ui,sans-serif;fill:#191817}.w{font:800 28px system-ui,sans-serif;fill:#fff}.w2{font:800 23px system-ui,sans-serif;fill:#fff}.r{font:700 17px system-ui,sans-serif;fill:#742121}.l{stroke:#9f2f2f;stroke-width:4;fill:none;marker-end:url(#a)}</style></defs>
+<rect width="1200" height="800" fill="#f2ecdf"/>
+<rect class="c" x="395" y="325" width="410" height="150" rx="26"/><text class="w" x="600" y="387" text-anchor="middle">MONDO RICEVUTO</text><text class="w2" x="600" y="428" text-anchor="middle">modernità contraddetta</text>
+<rect class="b" x="55" y="70" width="300" height="95" rx="20"/><text class="h" x="205" y="127" text-anchor="middle">Italia incompleta</text>
+<rect class="b" x="450" y="55" width="300" height="95" rx="20"/><text class="h" x="600" y="112" text-anchor="middle">Fascismo</text>
+<rect class="b" x="845" y="70" width="300" height="95" rx="20"/><text class="h" x="995" y="127" text-anchor="middle">Autarchia</text>
+<path class="l" d="M255 165L490 325"/><text class="r" x="315" y="240">rende fragile</text>
+<path class="l" d="M600 150V318"/><text class="r" x="615" y="275">impone obbedienza</text>
+<path class="l" d="M945 165L710 325"/><text class="r" x="830" y="215">produce chiusura</text>
+<rect class="b" x="55" y="635" width="250" height="95" rx="20"/><text class="h" x="180" y="692" text-anchor="middle">Sicilia</text>
+<rect class="b" x="350" y="635" width="250" height="95" rx="20"/><text class="h" x="475" y="692" text-anchor="middle">Solaria</text>
+<rect class="b" x="645" y="635" width="250" height="95" rx="20"/><text class="h" x="770" y="692" text-anchor="middle">America</text>
+<rect class="b" x="940" y="635" width="205" height="95" rx="20"/><text class="h" x="1042" y="677" text-anchor="middle">Frattura</text><text class="h" x="1042" y="708" text-anchor="middle">necessaria</text>
+<path class="l" d="M440 475L235 630"/><text class="r" x="250" y="555">si osserva da</text>
+<path class="l" d="M535 475L485 630"/><text class="r" x="420" y="585">trova un varco in</text>
+<path class="l" d="M665 475L750 630"/><text class="r" x="715" y="545">si apre verso</text>
+<path class="l" d="M895 682H933"/><text class="r" x="905" y="625">prepara</text>
+</svg>

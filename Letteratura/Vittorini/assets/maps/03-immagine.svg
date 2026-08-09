@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="t d">
+<title id="t">L’immagine del mondo</title><desc id="d">Dagli astratti furori l’incontro rivela il genere umano offeso; simbolo e memoria universalizzano; la possibilità del male chiede responsabilità e una comunità senza garanzie.</desc>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0l9 4.5L0 9z" fill="#9f2f2f"/></marker><style>.b{fill:#fffdf7;stroke:#191817;stroke-width:3}.c{fill:#9f2f2f;stroke:#742121;stroke-width:3}.h{font:700 24px system-ui,sans-serif;fill:#191817}.h2{font:700 19px system-ui,sans-serif;fill:#191817}.w{font:800 27px system-ui,sans-serif;fill:#fff}.w2{font:800 22px system-ui,sans-serif;fill:#fff}.r{font:700 17px system-ui,sans-serif;fill:#742121}.l{stroke:#9f2f2f;stroke-width:4;fill:none;marker-end:url(#a)}</style></defs>
+<rect width="1200" height="800" fill="#f2ecdf"/>
+<rect class="b" x="70" y="90" width="270" height="100" rx="18"/><text class="h" x="205" y="135" text-anchor="middle">Astratti furori</text><text class="h2" x="205" y="168" text-anchor="middle">disagio senza oggetto</text>
+<rect class="b" x="465" y="80" width="270" height="110" rx="18"/><text class="h" x="600" y="145" text-anchor="middle">Incontro concreto</text>
+<rect class="b" x="860" y="90" width="270" height="100" rx="18"/><text class="h" x="995" y="150" text-anchor="middle">Memoria e simbolo</text>
+<path class="l" d="M340 140H457"/><text class="r" x="365" y="120">si trasforma in</text>
+<path class="l" d="M735 140H852"/><text class="r" x="755" y="120">si universalizza con</text>
+<rect class="c" x="390" y="325" width="420" height="150" rx="26"/><text class="w" x="600" y="386" text-anchor="middle">GENERE UMANO OFFESO</text><text class="w2" x="600" y="426" text-anchor="middle">dignità storicamente ferita</text>
+<path class="l" d="M530 190L550 317"/><text class="r" x="430" y="260">rende visibile</text>
+<path class="l" d="M925 190L750 320"/><text class="r" x="790" y="260">dà profondità a</text>
+<rect class="b" x="70" y="635" width="300" height="105" rx="18"/><text class="h" x="220" y="678" text-anchor="middle">Possibilità umana</text><text class="h" x="220" y="712" text-anchor="middle">del male</text>
+<rect class="b" x="450" y="635" width="300" height="105" rx="18"/><text class="h" x="600" y="698" text-anchor="middle">Scelta responsabile</text>
+<rect class="b" x="830" y="620" width="300" height="135" rx="18"/><text class="h" x="980" y="672" text-anchor="middle">Comunità fragile</text><text class="h" x="980" y="706" text-anchor="middle">speranza senza</text><text class="h" x="980" y="735" text-anchor="middle">garanzia</text>
+<path class="l" d="M470 475L280 628"/><text class="r" x="290" y="555">si complica nella</text>
+<path class="l" d="M370 688H442"/><text class="r" x="380" y="665">esige</text>
+<path class="l" d="M750 688H822"/><text class="r" x="760" y="665">costruisce</text>
+</svg>

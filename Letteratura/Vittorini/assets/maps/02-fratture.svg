@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="t d">
+<title id="t">Le fratture della vita</title><desc id="d">Autodidattismo, guerra di Spagna, censura, Resistenza e polemica col PCI mettono in crisi le appartenenze e confluiscono nell’autonomia responsabile.</desc>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0l9 4.5L0 9z" fill="#9f2f2f"/></marker><style>.b{fill:#fffdf7;stroke:#191817;stroke-width:3}.c{fill:#191817;stroke:#191817;stroke-width:3}.h{font:700 25px system-ui,sans-serif;fill:#191817}.w{font:800 29px system-ui,sans-serif;fill:#fff}.w2{font:800 22px system-ui,sans-serif;fill:#fff}.r{font:700 18px system-ui,sans-serif;fill:#742121}.l{stroke:#9f2f2f;stroke-width:4;fill:none;marker-end:url(#a)}</style></defs>
+<rect width="1200" height="800" fill="#f2ecdf"/>
+<rect class="c" x="415" y="315" width="370" height="160" rx="26"/><text class="w" x="600" y="380" text-anchor="middle">FRATTURE</text><text class="w2" x="600" y="420" text-anchor="middle">la storia obbliga a scegliere</text>
+<rect class="b" x="60" y="55" width="285" height="95" rx="18"/><text class="h" x="202" y="112" text-anchor="middle">Autodidattismo</text>
+<rect class="b" x="458" y="50" width="285" height="100" rx="18"/><text class="h" x="600" y="92" text-anchor="middle">Guerra di Spagna</text><text class="h" x="600" y="122" text-anchor="middle">1936–1939</text>
+<rect class="b" x="855" y="55" width="285" height="95" rx="18"/><text class="h" x="997" y="112" text-anchor="middle">Censura</text>
+<path class="l" d="M245 150L475 315"/><text class="r" x="300" y="230">forma fuori da</text>
+<path class="l" d="M600 150V307"/><text class="r" x="615" y="235">mette in crisi</text>
+<path class="l" d="M955 150L725 315"/><text class="r" x="800" y="225">rende visibile</text>
+<rect class="b" x="70" y="640" width="300" height="100" rx="18"/><text class="h" x="220" y="682" text-anchor="middle">Carcere e</text><text class="h" x="220" y="715" text-anchor="middle">Resistenza</text>
+<rect class="b" x="450" y="640" width="300" height="100" rx="18"/><text class="h" x="600" y="682" text-anchor="middle">Il Politecnico</text><text class="h" x="600" y="715" text-anchor="middle">e il PCI</text>
+<rect class="b" x="830" y="625" width="310" height="130" rx="18"/><text class="h" x="985" y="678" text-anchor="middle">AUTONOMIA</text><text class="h" x="985" y="712" text-anchor="middle">responsabile</text>
+<path class="l" d="M480 475L280 633"/><text class="r" x="300" y="555">diventa rischio in</text>
+<path class="l" d="M600 475V633"/><text class="r" x="615" y="555">continua nella polemica</text>
+<path class="l" d="M750 690H822"/><text class="r" x="760" y="667">confluisce in</text>
+</svg>

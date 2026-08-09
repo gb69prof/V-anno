@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="t d">
+<title id="t">Mappa finale del percorso</title><desc id="d">Una catena collega mondo ricevuto, fratture, immagine del mondo, poetica, opere, autonomia responsabile e domanda affidata al lettore.</desc>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0l9 4.5L0 9z" fill="#9f2f2f"/></marker><style>.b{fill:#fffdf7;stroke:#191817;stroke-width:3}.c{fill:#9f2f2f;stroke:#742121;stroke-width:3}.h{font:700 23px system-ui,sans-serif;fill:#191817}.h2{font:700 20px system-ui,sans-serif;fill:#191817}.w{font:800 25px system-ui,sans-serif;fill:#fff}.r{font:700 16px system-ui,sans-serif;fill:#742121}.l{stroke:#9f2f2f;stroke-width:4;fill:none;marker-end:url(#a)}</style></defs>
+<rect width="1200" height="800" fill="#f2ecdf"/>
+<rect class="b" x="55" y="75" width="300" height="105" rx="18"/><text class="h" x="205" y="120" text-anchor="middle">1 · Mondo ricevuto</text><text class="h2" x="205" y="151" text-anchor="middle">modernità contraddetta</text>
+<rect class="b" x="450" y="75" width="300" height="105" rx="18"/><text class="h" x="600" y="120" text-anchor="middle">2 · Fratture</text><text class="h" x="600" y="151" text-anchor="middle">la storia obbliga</text>
+<rect class="b" x="845" y="75" width="300" height="105" rx="18"/><text class="h" x="995" y="120" text-anchor="middle">3 · Immagine</text><text class="h" x="995" y="151" text-anchor="middle">umanità offesa</text>
+<path class="l" d="M355 127H442"/><text class="r" x="370" y="106">mette in crisi</text>
+<path class="l" d="M750 127H837"/><text class="r" x="770" y="106">modifica</text>
+<rect class="b" x="845" y="345" width="300" height="105" rx="18"/><text class="h" x="995" y="390" text-anchor="middle">4 · Poetica</text><text class="h" x="995" y="421" text-anchor="middle">forma in tensione</text>
+<path class="l" d="M995 180V337"/><text class="r" x="1010" y="265">rende necessaria</text>
+<rect class="b" x="450" y="345" width="300" height="105" rx="18"/><text class="h" x="600" y="390" text-anchor="middle">5 · Opere</text><text class="h" x="600" y="421" text-anchor="middle">prove differenti</text>
+<path class="l" d="M845 397H758"/><text class="r" x="770" y="375">si verifica in</text>
+<rect class="b" x="55" y="345" width="300" height="105" rx="18"/><text class="h" x="205" y="390" text-anchor="middle">6 · Eredità</text><text class="h2" x="205" y="421" text-anchor="middle">autonomia responsabile</text>
+<path class="l" d="M450 397H363"/><text class="r" x="370" y="375">lascia</text>
+<rect class="c" x="330" y="625" width="540" height="120" rx="25"/><text class="w" x="600" y="674" text-anchor="middle">DOMANDA AL LETTORE</text><text class="w" x="600" y="708" text-anchor="middle">complessità o propaganda?</text>
+<path class="l" d="M205 450L495 620"/><text class="r" x="305" y="555">si affida come problema</text>
+</svg>

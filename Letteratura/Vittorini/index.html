@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#9f2f2f">
+  <meta name="description" content="Percorso didattico interattivo su Elio Vittorini: sei movimenti dalla storia alla responsabilità della forma.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Vittorini">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./assets/icon-192.png">
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Elio Vittorini · Il mondo offeso e la forma</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="topbar">
+    <button class="icon-button" id="menuButton" aria-expanded="false" aria-controls="sideNav" aria-label="Apri l’indice">☰</button>
+    <a class="brand" href="#home" aria-label="Torna alla copertina"><span>V</span><strong>Vittorini</strong></a>
+    <div class="top-actions">
+      <button class="ghost-button" id="resumeButton">Riprendi</button>
+      <button class="icon-button" id="settingsButton" aria-label="Apri strumenti e impostazioni">Aa</button>
+    </div>
+  </header>
+
+  <div class="progress-track" aria-label="Progresso del percorso">
+    <span id="progressBar"></span><output id="progressText">0%</output>
+  </div>
+
+  <aside class="side-nav" id="sideNav" aria-label="Indice del percorso">
+    <div class="side-head">
+      <p class="eyebrow">Indice</p>
+      <button class="icon-button" id="closeMenu" aria-label="Chiudi l’indice">×</button>
+    </div>
+    <nav id="sectionNav"></nav>
+    <button class="ghost-button full" id="homeButton">Copertina</button>
+  </aside>
+  <button class="backdrop" id="backdrop" aria-label="Chiudi il pannello"></button>
+
+  <aside class="tools-panel" id="toolsPanel" aria-label="Strumenti">
+    <div class="side-head">
+      <p class="eyebrow">Strumenti</p>
+      <button class="icon-button" id="closeTools" aria-label="Chiudi strumenti">×</button>
+    </div>
+    <fieldset>
+      <legend>Dimensione testo</legend>
+      <div class="segmented">
+        <button data-font="small">A−</button>
+        <button data-font="normal" class="active">A</button>
+        <button data-font="large">A+</button>
+      </div>
+    </fieldset>
+    <label class="switch-row"><input type="checkbox" id="focusToggle"><span>Modalità concentrazione</span></label>
+    <button class="primary-button full" id="installButton">Come installare</button>
+    <button class="danger-button full" id="resetButton">Azzera dati locali</button>
+    <p class="small-note">Progresso, note e risultati restano soltanto su questo dispositivo.</p>
+  </aside>
+
+  <main id="main" tabindex="-1">
+    <section class="hero view active" id="home" data-view="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Letteratura italiana · V anno</p>
+          <h1>Elio<br><em>Vittorini</em></h1>
+          <p class="hero-thesis">Come può la letteratura entrare nella storia senza diventare propaganda?</p>
+          <p class="hero-intro">Sei movimenti per seguire una traiettoria: dal mondo ricevuto al «genere umano offeso», fino alla responsabilità della forma.</p>
+          <button class="primary-button" id="startButton">Inizia il percorso <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="poster">
+            <span class="poster-line">SCRITTURA</span>
+            <span class="poster-line red">STORIA</span>
+            <span class="poster-line outline">CULTURA</span>
+            <div class="rail"></div>
+            <small>Siracusa · Firenze · Milano</small>
+          </div>
+        </div>
+      </div>
+      <div class="route" id="routeCards" aria-label="Le sei tappe"></div>
+      <section class="method-card">
+        <p class="eyebrow">La chiave di lettura</p>
+        <h2>Non una biografia in sei scatole, ma un unico nesso</h2>
+        <p>Ogni tappa modifica la precedente. La crisi politica non produce automaticamente un’opera; rende però intelligibile una domanda. La poetica è la risposta formale a quella domanda, e le opere ne sono la verifica.</p>
+      </section>
+      <details class="source-note">
+        <summary>Fonti e criterio critico</summary>
+        <p>La ricostruzione usa come fonte vincolante il paper fornito dal docente, fondato soprattutto sul Dizionario Biografico Treccani e su studi universitari relativi a <em>Conversazione in Sicilia</em>, <em>Uomini e no</em>, <em>Americana</em> e alla filologia delle varianti. Le connessioni fra i sei movimenti sono una sintesi didattica dichiaratamente interpretativa: gli eventi biografici rendono intelligibili le domande delle opere, ma non ne sono presentati come cause automatiche.</p>
+        <p class="small-note">Le fonti autorevoli divergono su alcuni microdati, come giorno di nascita e morte e data dell’edizione integrale del <em>Garofano rosso</em>. La PWA conserva il dato stabile e trasforma la discrepanza in un principio di prudenza filologica.</p>
+      </details>
+    </section>
+
+    <div id="lessonViews"></div>
+  </main>
+
+  <dialog id="installDialog">
+    <form method="dialog">
+      <button class="dialog-close" aria-label="Chiudi">×</button>
+      <p class="eyebrow">Installazione su iPad</p>
+      <h2>Portala sulla schermata Home</h2>
+      <ol>
+        <li>Apri questa pagina in Safari.</li>
+        <li>Tocca il pulsante Condividi.</li>
+        <li>Scegli «Aggiungi alla schermata Home».</li>
+        <li>Conferma con «Aggiungi».</li>
+      </ol>
+      <p class="small-note">Dopo il primo caricamento, i contenuti restano disponibili anche senza rete.</p>
+    </form>
+  </dialog>
+
+  <dialog id="confirmDialog">
+    <form method="dialog">
+      <button class="dialog-close" value="cancel" aria-label="Annulla">×</button>
+      <p class="eyebrow">Conferma</p>
+      <h2>Azzerare tutto?</h2>
+      <p>Verranno cancellati progresso, note, risultati e tentativi di recupero salvati su questo dispositivo.</p>
+      <div class="dialog-actions">
+        <button class="ghost-button" value="cancel">Annulla</button>
+        <button class="danger-button" id="confirmReset" value="default">Azzera</button>
+      </div>
+    </form>
+  </dialog>
+
+  <template id="lessonTemplate">
+    <article class="lesson view">
+      <header class="lesson-header">
+        <div>
+          <p class="section-number"></p>
+          <h1 class="section-title"></h1>
+          <p class="generative-question"></p>
+        </div>
+        <div class="chapter-mark" aria-hidden="true"></div>
+      </header>
+      <div class="lesson-tabs" role="tablist" aria-label="Materiali della sezione">
+        <button role="tab" data-panel="lesson" aria-selected="true">Lezione</button>
+        <button role="tab" data-panel="summary">Sintesi</button>
+        <button role="tab" data-panel="essentials">Irrinunciabili</button>
+        <button role="tab" data-panel="glossary">Vocabolario</button>
+        <button role="tab" data-panel="map">Mappa</button>
+        <button role="tab" data-panel="quiz">Verifica</button>
+        <button role="tab" data-panel="notes">Appunti</button>
+      </div>
+      <section class="panel lesson-panel" data-panel="lesson"></section>
+      <section class="panel" data-panel="summary" hidden></section>
+      <section class="panel" data-panel="essentials" hidden></section>
+      <section class="panel" data-panel="glossary" hidden></section>
+      <section class="panel map-panel" data-panel="map" hidden></section>
+      <section class="panel quiz-panel" data-panel="quiz" hidden></section>
+      <section class="panel notes-panel" data-panel="notes" hidden></section>
+      <footer class="lesson-footer">
+        <button class="ghost-button prev-button">← Precedente</button>
+        <button class="complete-button">Segna come completata</button>
+        <button class="primary-button next-button">Successiva →</button>
+      </footer>
+    </article>
+  </template>
+
+  <noscript><p class="noscript">Per usare test, appunti e navigazione interattiva occorre attivare JavaScript. Tutti i contenuti sono comunque inclusi localmente nell’app.</p></noscript>
+  <script src="./content.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
