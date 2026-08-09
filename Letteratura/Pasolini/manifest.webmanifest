@@ -1,0 +1,15 @@
+{
+  "name": "Pasolini · Lo scandalo di restare umani",
+  "short_name": "Pasolini",
+  "description": "PWA didattica su Pier Paolo Pasolini secondo il Metodo gbprof.",
+  "lang": "it",
+  "start_url": "./index.html#home",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f2eadc",
+  "theme_color": "#201b18",
+  "icons": [
+    {"src":"icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
