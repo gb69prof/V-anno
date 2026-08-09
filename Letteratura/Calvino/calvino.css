@@ -1,0 +1,5 @@
+.source-note a { color: var(--sea2); text-underline-offset: 3px; }
+.source-note li + li { margin-top: .45rem; }
+.portrait-mark::before { content: ""; position: absolute; inset: 9% 12%; border: 2px solid rgba(255,255,255,.24); background: linear-gradient(90deg,transparent 48%,rgba(255,255,255,.16) 49% 51%,transparent 52%),linear-gradient(transparent 48%,rgba(255,255,255,.16) 49% 51%,transparent 52%); pointer-events: none; }
+#finale .quiz-panel { margin-top: 2rem; }
+@media (prefers-color-scheme: dark) { body { color-scheme: light; } }

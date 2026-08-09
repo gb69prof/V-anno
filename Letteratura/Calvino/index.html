@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#14213d">
+  <meta name="description" content="Italo Calvino in sei movimenti: dalla storia al labirinto, dalla realtà ai modelli dell'immaginazione.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Calvino">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon.svg">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./calvino.css">
+  <title>Italo Calvino · La forma del labirinto</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="topbar">
+    <button class="icon-button" id="menuButton" aria-expanded="false" aria-controls="sideNav" aria-label="Apri l’indice">☰</button>
+    <a class="brand" href="#home" aria-label="Torna alla copertina"><span>C</span><strong>Calvino</strong></a>
+    <div class="top-actions"><button class="ghost-button" id="resumeButton">Riprendi</button><button class="icon-button" id="toolsButton" aria-label="Apri strumenti">Aa</button></div>
+  </header>
+  <div class="progress-track" aria-label="Progresso"><span id="progressBar"></span><output id="progressText">0%</output></div>
+  <aside class="drawer" id="sideNav" aria-label="Indice del percorso" aria-hidden="true">
+    <div class="drawer-head"><p class="eyebrow">Sei movimenti</p><button class="icon-button" id="closeMenu" aria-label="Chiudi indice">×</button></div>
+    <nav id="sectionNav"></nav><button class="primary-button full" data-go="finale">Verifica finale</button><button class="ghost-button full" data-go="home">Copertina</button>
+  </aside>
+  <aside class="drawer tools" id="toolsPanel" aria-label="Strumenti" aria-hidden="true">
+    <div class="drawer-head"><p class="eyebrow">Strumenti</p><button class="icon-button" id="closeTools" aria-label="Chiudi strumenti">×</button></div>
+    <fieldset><legend>Dimensione testo</legend><div class="segmented"><button data-font="small">A−</button><button data-font="normal" class="active">A</button><button data-font="large">A+</button></div></fieldset>
+    <button class="primary-button full" id="installButton">Come installare</button><button class="danger-button full" id="resetButton">Azzera dati locali</button>
+    <p class="small">Appunti, progresso e risultati restano soltanto su questo dispositivo.</p>
+  </aside>
+  <button class="backdrop" id="backdrop" aria-label="Chiudi pannello"></button>
+  <main id="main" tabindex="-1">
+    <section id="home" class="view active hero" data-view="home">
+      <div class="hero-grid"><div>
+        <p class="kicker">Metodo gbprof · Letteratura italiana · V anno</p>
+        <h1>La forma<br><em>del labirinto</em></h1>
+        <p class="hero-question">Come si può conoscere un mondo complesso senza semplificarlo fino a tradirlo?</p>
+        <p class="hero-lead">Calvino non fugge dalla realtà quando ricorre alla fiaba, alla scienza o al gioco combinatorio: cambia distanza per renderne visibili strutture, possibilità e contraddizioni.</p>
+        <button class="primary-button" id="startButton">Inizia il percorso →</button>
+      </div><div class="hero-art" aria-hidden="true"><div class="portrait-mark"><span>ITA</span><i></i><span>LO</span><b>CALVINO</b></div></div></div>
+      <div class="route" id="routeCards"></div>
+      <section class="thesis-card"><p class="eyebrow">Tesi guida</p><h2>La leggerezza non elimina il peso: trova il punto da cui guardarlo</h2><p>Calvino riceve la guerra, il neorealismo e la fiducia nell’impegno. Le fratture storiche e intellettuali rendono insufficiente un’unica spiegazione del reale. La sua scrittura risponde costruendo modelli parziali e rigorosi: fiaba, allegoria, scienza, combinatoria e metaletteratura diventano modi diversi di abitare il labirinto.</p></section>
+      <details class="source-note">
+        <summary>Fonti universitarie e controllo critico</summary>
+        <p>Il percorso assume come base la lezione fornita dal docente, ma ne corregge la scansione troppo rigida in “fasi”, evita automatismi biografia-opera e distingue dati documentati da interpretazioni.</p>
+        <ul>
+          <li><a href="https://senior.unige.it/sites/senior.unige.it/files/2024-06/Scritti%20e%20Parole%20-%20introduzione%20ai%20brani.pdf" target="_blank" rel="noopener">Università di Genova · Calvino nella Resistenza ligure</a></li>
+          <li><a href="https://complit.fas.harvard.edu/course/complit-166x-calvino-and-computation/" target="_blank" rel="noopener">Harvard University · Calvino, cibernetica e combinatoria</a></li>
+          <li><a href="https://shc.stanford.edu/arcade/interventions/invisible-policy" target="_blank" rel="noopener">Stanford University · <em>Le città invisibili</em>, Oulipo e scienza</a></li>
+          <li><a href="https://site.unibo.it/griseldaonline/it/didattica/michele-abbati-sognare-scientificamente/michele-abbati-sognare-scientificamente-un-sogno.pdf/@@download/file/Michele%20Abbati%20-%20Sognare%20scientificamente%20-%20Un%20sogno.pdf" target="_blank" rel="noopener">Università di Bologna · Sognare scientificamente</a></li>
+          <li><a href="https://griseldaonline.unibo.it/article/download/9842/10232/34106" target="_blank" rel="noopener">Università di Bologna · La frattura politico-poetica del 1956-57</a></li>
+          <li><a href="https://discovery.ucl.ac.uk/1476294/1/FROM%20THE%20EXPERIMENTAL%20TO%20EXPERIMENTALISM.pdf" target="_blank" rel="noopener">University College London · Calvino e la letteratura sperimentale</a></li>
+        </ul>
+      </details>
+    </section>
+    <div id="lessonViews"></div><section id="finale" class="view lesson" data-view="finale"><header class="lesson-header"><div><p class="section-number">Verifica conclusiva</p><h1 class="section-title">I sei nessi</h1><p class="generative-question">Riesci a ricostruire l’intero percorso senza trasformarlo in un catalogo di opere?</p></div><span class="chapter-mark" aria-hidden="true"></span></header><section class="panel quiz-panel" id="finalQuiz"></section><footer class="lesson-footer"><button class="ghost-button" data-go="home">← Copertina</button><button class="primary-button" data-go="mondo-precedente">Rivedi il percorso</button></footer></section>
+  </main>
+  <dialog id="installDialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button><p class="eyebrow">Installazione su iPad</p><h2>Portala sulla schermata Home</h2><ol><li>Apri la pagina in Safari.</li><li>Tocca Condividi.</li><li>Scegli “Aggiungi alla schermata Home”.</li><li>Conferma con “Aggiungi”.</li></ol><p>Dopo il primo caricamento, la lezione resta disponibile anche senza rete.</p></form></dialog>
+  <dialog id="resetDialog"><form method="dialog"><button class="dialog-close" value="cancel" aria-label="Chiudi">×</button><h2>Azzerare tutto?</h2><p>Progresso, note e tentativi saranno eliminati da questo dispositivo.</p><div class="dialog-actions"><button value="cancel">Annulla</button><button class="danger-button" id="confirmReset" value="default">Azzera</button></div></form></dialog>
+  <template id="lessonTemplate"><article class="view lesson"><header class="lesson-header"><div><p class="section-number"></p><h1 class="section-title"></h1><p class="generative-question"></p></div><span class="chapter-mark" aria-hidden="true"></span></header>
+    <div class="tabs" role="tablist" aria-label="Materiali della sezione"><button role="tab" data-panel="lesson" aria-selected="true">Lezione</button><button role="tab" data-panel="summary">Sintesi</button><button role="tab" data-panel="essentials">Irrinunciabili</button><button role="tab" data-panel="glossary">Vocabolario</button><button role="tab" data-panel="map">Mappa</button><button role="tab" data-panel="quiz">Verifica</button><button role="tab" data-panel="notes">Appunti</button></div>
+    <section class="panel" data-panel="lesson"></section><section class="panel" data-panel="summary" hidden></section><section class="panel" data-panel="essentials" hidden></section><section class="panel" data-panel="glossary" hidden></section><section class="panel map-panel" data-panel="map" hidden></section><section class="panel quiz-panel" data-panel="quiz" hidden></section><section class="panel" data-panel="notes" hidden></section>
+    <footer class="lesson-footer"><button class="ghost-button prev-button">← Precedente</button><button class="complete-button">Segna come completata</button><button class="primary-button next-button">Successiva →</button></footer></article></template>
+  <noscript><p class="noscript">JavaScript è necessario per navigazione, appunti e verifiche.</p></noscript><script src="./data-part1.js"></script><script src="./data-part2.js"></script><script src="./content.js"></script><script src="./app.js"></script>
+</body></html>
