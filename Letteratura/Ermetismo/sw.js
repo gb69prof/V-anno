@@ -1,4 +1,4 @@
-const CACHE = 'ermetismo-v1';
+const CACHE = 'ermetismo-v2';
 const ASSETS = [
   './', './index.html', './styles.css', './content.js', './app.js', './manifest.webmanifest',
   './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png',

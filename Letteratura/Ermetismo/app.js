@@ -72,7 +72,7 @@
       <div class="panel ${tab==='vocab'?'active':''}" data-panel="vocab">${vocabPanel(s)}</div>
       <div class="panel ${tab==='map'?'active':''}" data-panel="map">${mapPanel(s)}</div>
       <div class="panel ${tab==='quiz'?'active':''}" data-panel="quiz">${quizPanel(s)}</div>
-      <div class="section-actions"><button class="button secondary" data-prev ${state.current===0?'disabled':''}>← Precedente</button><button class="button secondary" data-next>${state.current===data.sections.length-1?'Torna all’inizio':'Successiva →'}</button></div>`;
+      <div class="section-actions"><button class="button secondary" data-prev ${state.current===0?'disabled':''}>← Precedente</button><button class="button secondary" data-next>${state.current===data.sections.length-1?'Verifica finale →':'Successiva →'}</button></div>`;
     studyArea.hidden=false;
     bindSection();
   }
@@ -86,15 +86,35 @@
   function bindSection() {
     $$('.tabbar button',content).forEach(b=>b.addEventListener('click',()=>setTab(b.dataset.tab)));
     $('[data-prev]',content).addEventListener('click',()=>{renderSection(state.current-1);scrollToStudy()});
-    $('[data-next]',content).addEventListener('click',()=>{if(state.current===data.sections.length-1){window.scrollTo({top:0,behavior:'smooth'})}else{renderSection(state.current+1);scrollToStudy()}});
+    $('[data-next]',content).addEventListener('click',()=>{if(state.current===data.sections.length-1){renderFinalQuiz()}else{renderSection(state.current+1);scrollToStudy()}});
     bindQuiz();
   }
 
-  function bindQuiz() {
+  function buildFinalQuiz() {
+    return {
+      id:'finale',
+      quiz:data.sections.map((section,index)=>({
+        ...section.quiz[0],
+        q:`Movimento ${index+1} · ${section.quiz[0].q}`
+      }))
+    };
+  }
+
+  function renderFinalQuiz() {
+    const final=buildFinalQuiz(); retestOnly=null;
+    content.innerHTML=`
+      <header class="lesson-head" data-num="✓"><p class="eyebrow">Verifica facoltativa</p><h2>I sei nessi essenziali</h2><p class="generative">Una domanda per movimento: non controlla date isolate, ma la traiettoria completa.</p></header>
+      <div class="panel active" data-panel="quiz">${quizPanel(final)}</div>
+      <div class="section-actions"><button class="button secondary" id="backFromFinal">← Torna alla conclusione</button></div>`;
+    $('#backFromFinal',content).addEventListener('click',()=>renderSection(data.sections.length-1,'lesson'));
+    bindQuiz(final,renderFinalQuiz); scrollToStudy();
+  }
+
+  function bindQuiz(quizSource = null, retryAll = null) {
     const form=$('#quizForm',content); if(!form)return;
     form.addEventListener('submit',e=>{
       e.preventDefault();
-      const s=data.sections[state.current];
+      const s=quizSource || data.sections[state.current];
       const fields=$$('.question',form);
       const missing=fields.filter(f=>!$(`input:checked`,f));
       if(missing.length){missing[0].scrollIntoView({behavior:'smooth',block:'center'});toast(`Completa ancora ${missing.length} ${missing.length===1?'risposta':'risposte'}`);return;}
@@ -103,14 +123,13 @@
       const correct=fields.length-wrong.length; const percentage=Math.round(correct/fields.length*100); const grade=Math.max(1,Math.round(percentage/10));
       const attempt={date:new Date().toISOString(),mode:retestOnly?'recupero':'completo',correct,total:fields.length,percentage,grade,answers};
       state.attempts[s.id]=[...(state.attempts[s.id]||[]),attempt];
-      if(!retestOnly && wrong.length===0 && !state.completed.includes(state.current))state.completed.push(state.current);
-      if(retestOnly && wrong.length===0 && !state.completed.includes(state.current))state.completed.push(state.current);
+      if(s.id!=='finale' && wrong.length===0 && !state.completed.includes(state.current))state.completed.push(state.current);
       persist(); makeRoute();
-      showFeedback(s,wrong,correct,fields.length,percentage,grade);
+      showFeedback(s,wrong,correct,fields.length,percentage,grade,retryAll);
     });
   }
 
-  function showFeedback(s,wrong,correct,total,percentage,grade){
+  function showFeedback(s,wrong,correct,total,percentage,grade,retryAll){
     const fb=$('#quizFeedback',content);
     let html=`<div class="result-box"><div class="result-score">${correct}/${total} · ${percentage}% · voto ${grade}/10</div><p class="formula">Formula: percentuale = risposte corrette ÷ domande × 100; voto = max(1, arrotonda(percentuale ÷ 10)).</p></div>`;
     if(!wrong.length){html+=`<div class="mistake correct-note"><h4>Nesso ricostruito</h4><p>Tutte le risposte sono corrette. La sezione è segnata come completata.</p></div>`;}
@@ -120,8 +139,8 @@
       html+=`<div class="quiz-actions"><button class="button primary" id="retryWrong">Rifai solo le ${wrong.length} ${wrong.length===1?'domanda sbagliata':'domande sbagliate'}</button><button class="button secondary" id="retryAll">Rifai tutto il test</button></div>`;
     }
     fb.innerHTML=html; fb.scrollIntoView({behavior:'smooth',block:'start'});
-    const rw=$('#retryWrong',fb); if(rw)rw.addEventListener('click',()=>{retestOnly=[...wrong];const panel=$('[data-panel="quiz"]',content);panel.innerHTML=quizPanel(s,retestOnly);bindQuiz();panel.scrollIntoView({behavior:'smooth',block:'start'})});
-    const ra=$('#retryAll',fb); if(ra)ra.addEventListener('click',()=>renderSection(state.current,'quiz'));
+    const rw=$('#retryWrong',fb); if(rw)rw.addEventListener('click',()=>{retestOnly=[...wrong];const panel=$('[data-panel="quiz"]',content);panel.innerHTML=quizPanel(s,retestOnly);bindQuiz(s,retryAll);panel.scrollIntoView({behavior:'smooth',block:'start'})});
+    const ra=$('#retryAll',fb); if(ra)ra.addEventListener('click',()=>retryAll?retryAll():renderSection(state.current,'quiz'));
   }
 
   function scrollToStudy(){studyArea.scrollIntoView({behavior:'smooth',block:'start'});}
