@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#173f46">
+  <meta name="description" content="Percorso didattico interattivo in sei movimenti su Eugenio Montale.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Montale">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-192.svg">
+  <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Montale · Il varco e il limite</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="topbar">
+    <button class="icon-button" id="menuButton" type="button" aria-label="Apri l'indice" aria-expanded="false">☰</button>
+    <div class="brand"><span>MONTALE</span><small>Il varco e il limite</small></div>
+    <button class="icon-button" id="settingsButton" type="button" aria-label="Apri strumenti">Aa</button>
+  </header>
+
+  <aside class="drawer" id="drawer" aria-label="Indice del percorso" aria-hidden="true">
+    <div class="drawer-head">
+      <h2>Sei movimenti</h2>
+      <button class="icon-button" id="closeMenu" type="button" aria-label="Chiudi l'indice">×</button>
+    </div>
+    <nav id="sectionNav"></nav>
+    <div class="drawer-progress">
+      <span id="progressText">0 di 6 completate</span>
+      <div class="progress-track" aria-hidden="true"><span id="progressBar"></span></div>
+    </div>
+    <button class="secondary full" id="resumeButton" type="button">Riprendi la lettura</button>
+  </aside>
+  <div class="scrim" id="scrim" hidden></div>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="home">
+      <div class="hero-art" aria-hidden="true"><span class="sun"></span><span class="wall"></span><span class="sea"></span></div>
+      <div class="hero-copy">
+        <p class="eyebrow">Letteratura italiana · quinto anno</p>
+        <h1>Il varco e il limite</h1>
+        <p class="lead">Montale attraversa il Novecento senza fabbricare consolazioni: trasforma oggetti, paesaggi e incontri in strumenti per interrogare una realtà che non si lascia chiudere in una formula.</p>
+        <div class="hero-actions">
+          <button class="primary" id="startButton" type="button">Inizia il percorso</button>
+          <button class="secondary" id="sourceButton" type="button">Criterio e fonti</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="route" aria-labelledby="routeTitle">
+      <div class="section-heading">
+        <p class="eyebrow">La domanda generatrice</p>
+        <h2 id="routeTitle">Che cosa può dire la poesia quando non possiede più verità da consegnare?</h2>
+      </div>
+      <ol class="route-list" id="routeList"></ol>
+    </section>
+
+    <section class="workspace" id="workspace" hidden>
+      <header class="section-hero" id="sectionHero"></header>
+      <div class="tabs" role="tablist" aria-label="Materiali della sezione">
+        <button role="tab" aria-selected="true" aria-controls="panel-lesson" id="tab-lesson" data-tab="lesson">Lezione</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-summary" id="tab-summary" data-tab="summary">Sintesi</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-essentials" id="tab-essentials" data-tab="essentials">Saperi</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-map" id="tab-map" data-tab="map">Mappa</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-test" id="tab-test" data-tab="test">Test</button>
+        <button role="tab" aria-selected="false" aria-controls="panel-notes" id="tab-notes" data-tab="notes">Note</button>
+      </div>
+      <div class="panel reading" role="tabpanel" id="panel-lesson" aria-labelledby="tab-lesson"></div>
+      <div class="panel" role="tabpanel" id="panel-summary" aria-labelledby="tab-summary" hidden></div>
+      <div class="panel" role="tabpanel" id="panel-essentials" aria-labelledby="tab-essentials" hidden></div>
+      <div class="panel" role="tabpanel" id="panel-map" aria-labelledby="tab-map" hidden></div>
+      <div class="panel" role="tabpanel" id="panel-test" aria-labelledby="tab-test" hidden></div>
+      <div class="panel" role="tabpanel" id="panel-notes" aria-labelledby="tab-notes" hidden></div>
+      <footer class="section-footer">
+        <button class="secondary" id="prevButton" type="button">← Precedente</button>
+        <button class="primary" id="completeButton" type="button">Segna come completata</button>
+        <button class="secondary" id="nextButton" type="button">Successiva →</button>
+      </footer>
+    </section>
+
+    <section class="sources" id="sources" hidden aria-labelledby="sourcesTitle">
+      <div class="section-heading"><p class="eyebrow">Metodo</p><h2 id="sourcesTitle">Fonti vagliate, interpretazioni dichiarate</h2></div>
+      <p>Il documento fornito è stato usato come repertorio iniziale. Le informazioni sono state controllate su fonti universitarie e istituzionali; gli errori o le semplificazioni non sono stati trasferiti nella lezione.</p>
+      <div id="sourceCards" class="source-grid"></div>
+      <button class="secondary" id="closeSources" type="button">Torna al percorso</button>
+    </section>
+  </main>
+
+  <dialog id="settingsDialog">
+    <form method="dialog">
+      <header><h2>Strumenti di lettura</h2><button class="icon-button" value="cancel" aria-label="Chiudi">×</button></header>
+      <label for="fontSize">Dimensione del testo</label>
+      <input id="fontSize" type="range" min="95" max="135" step="5" value="100">
+      <label class="switch"><input id="focusMode" type="checkbox"><span>Modalità concentrazione</span></label>
+      <button class="danger" id="resetData" type="button">Azzera progressi, test e note</button>
+    </form>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
