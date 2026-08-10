@@ -128,5 +128,14 @@
   window.addEventListener('beforeunload',save);
 
   buildNavigation();buildSources();applyPreferences();
-  if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+  if('serviceWorker' in navigator) window.addEventListener('load',()=>{
+    navigator.serviceWorker.register('./service-worker.js')
+      .then(()=>navigator.serviceWorker.ready)
+      .then(async()=>{
+        const cached=await caches.open('montale-v1.0.0').then(cache=>cache.keys());
+        document.documentElement.dataset.pwaReady='true';
+        document.documentElement.dataset.cachedAssets=String(cached.length);
+      })
+      .catch(()=>{document.documentElement.dataset.pwaReady='false';});
+  });
 })();
