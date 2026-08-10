@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">La poetica futurista</title><desc id="d">Il manifesto mobilita, la sintassi viene spezzata, analogia e onomatopea materializzano la lingua, la tipografia crea parole in libertà e i principi migrano fra arti.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 10 3 0 6Z" fill="#171714"/></marker><style>.n{fill:#fffdf7;stroke:#171714;stroke-width:3}.r{fill:#d62f22;stroke:#171714;stroke-width:3}.y{fill:#f4c447;stroke:#171714;stroke-width:3}.h{font:800 24px Arial;fill:#171714}.w{font:800 24px Arial;fill:#fff}.s{font:18px Arial;fill:#393631}.l{stroke:#171714;stroke-width:3;fill:none;marker-end:url(#a)}.v{font:700 16px Arial;fill:#8f1d16}</style></defs>
+<rect width="1200" height="760" fill="#f3efe4"/><text x="60" y="62" class="h">04 · LA POETICA</text>
+<rect class="r" x="70" y="125" width="265" height="105"/><text x="100" y="167" class="w">Manifesto</text><text x="100" y="198" class="w">mobilita</text>
+<path class="l" d="M335 177h128"/><text x="350" y="160" class="v">proclama</text>
+<rect class="y" x="465" y="105" width="330" height="145"/><text x="505" y="158" class="h">LINGUA = AZIONE</text><text x="505" y="193" class="s">deve produrre velocità</text>
+<path class="l" d="M550 250 330 360"/><path class="l" d="M630 250v110"/><path class="l" d="M710 250 930 360"/><text x="390" y="306" class="v">spezza</text><text x="645" y="310" class="v">collega</text><text x="815" y="306" class="v">materializza</text>
+<rect class="n" x="90" y="360" width="300" height="115"/><text x="125" y="404" class="h">Sintassi</text><text x="125" y="437" class="s">infinito + paratassi</text>
+<rect class="n" x="450" y="360" width="300" height="115"/><text x="485" y="404" class="h">Analogia</text><text x="485" y="437" class="s">immaginazione senza fili</text>
+<rect class="n" x="810" y="360" width="300" height="115"/><text x="845" y="404" class="h">Onomatopea</text><text x="845" y="437" class="s">il rumore diventa segno</text>
+<path class="l" d="M240 475 465 580"/><path class="l" d="M600 475v105"/><path class="l" d="M960 475 735 580"/><text x="326" y="535" class="v">confluisce in</text><text x="615" y="535" class="v">organizza</text><text x="814" y="535" class="v">entra in</text>
+<rect class="r" x="430" y="580" width="340" height="105"/><text x="472" y="623" class="w">PAROLE IN LIBERTÀ</text><text x="472" y="655" class="w">tipografia = significato</text>
+<path class="l" d="M770 632h230"/><text x="810" y="612" class="v">migra fra</text><rect class="n" x="1000" y="572" width="165" height="120"/><text x="1020" y="614" class="h">Arti</text><text x="1020" y="647" class="s">scrittura</text><text x="1020" y="672" class="s">suono / scena</text>
+</svg>
