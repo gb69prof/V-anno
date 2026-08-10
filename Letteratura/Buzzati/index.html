@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#17201f">
+  <meta name="description" content="Dino Buzzati in sei movimenti: tempo, attesa e mistero nella realtà quotidiana.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Buzzati">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icons/icon.svg">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Dino Buzzati · La vita che aspetta</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="topbar">
+    <button class="icon-button" id="menuButton" type="button" aria-expanded="false" aria-controls="sideNav" aria-label="Apri l’indice">☰</button>
+    <a class="brand" href="#home" aria-label="Torna alla copertina"><span>DB</span><strong>Buzzati</strong></a>
+    <div class="top-actions">
+      <button class="ghost-button" id="resumeButton" type="button">Riprendi</button>
+      <button class="icon-button" id="toolsButton" type="button" aria-label="Apri strumenti di lettura">Aa</button>
+    </div>
+  </header>
+  <div class="progress-track" aria-label="Progresso nel percorso"><span id="progressBar"></span><output id="progressText">0%</output></div>
+
+  <aside class="drawer" id="sideNav" aria-label="Indice del percorso" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">Percorso</p><h2>Sei movimenti</h2></div><button class="icon-button" id="closeMenu" type="button" aria-label="Chiudi indice">×</button></div>
+    <nav id="sectionNav"></nav>
+    <button class="primary-button full" data-go="finale" type="button">Verifica finale</button>
+    <button class="ghost-button full" data-go="fonti" type="button">Fonti e metodo</button>
+    <button class="ghost-button full" data-go="home" type="button">Copertina</button>
+  </aside>
+
+  <aside class="drawer tools" id="toolsPanel" aria-label="Strumenti di lettura" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">Strumenti</p><h2>Leggere meglio</h2></div><button class="icon-button" id="closeTools" type="button" aria-label="Chiudi strumenti">×</button></div>
+    <fieldset><legend>Dimensione del testo</legend><div class="segmented"><button data-font="small" type="button">A−</button><button data-font="normal" class="active" type="button">A</button><button data-font="large" type="button">A+</button></div></fieldset>
+    <label class="switch"><input id="focusMode" type="checkbox"><span>Modalità concentrazione</span></label>
+    <button class="primary-button full" id="installButton" type="button">Come installare su iPad</button>
+    <button class="danger-button full" id="resetButton" type="button">Azzera dati locali</button>
+    <p class="small">Appunti, progresso e tentativi restano soltanto su questo dispositivo.</p>
+  </aside>
+  <button class="backdrop" id="backdrop" type="button" aria-label="Chiudi pannello" hidden></button>
+
+  <main id="main" tabindex="-1">
+    <section id="home" class="view active hero" data-view="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">Metodo gbprof · Letteratura italiana · V anno</p>
+          <h1>La vita<br><em>che aspetta</em></h1>
+          <p class="hero-question">Che cosa accade quando rimandiamo la vita in attesa dell’evento che dovrebbe darle senso?</p>
+          <p class="hero-lead">Buzzati introduce l’impossibile nel linguaggio sobrio della cronaca. Così una fortezza, un corridoio d’ospedale, un treno o una creatura marina mostrano ciò che il quotidiano nasconde: il tempo passa mentre crediamo di essere ancora all’inizio.</p>
+          <div class="hero-actions"><button class="primary-button" id="startButton" type="button">Inizia il percorso →</button><button class="ghost-button" data-go="fonti" type="button">Criterio e fonti</button></div>
+        </div>
+        <div class="hero-art" aria-label="Composizione grafica originale: una fortezza, una montagna e una lunga ombra proiettata da un orologio">
+          <div class="moon"></div><div class="mountains"></div><div class="fortress"><i></i><i></i><i></i></div><div class="clock-hand"></div><span class="signal">?</span>
+        </div>
+      </div>
+      <div class="route" id="routeCards" aria-label="Le sei tappe"></div>
+      <section class="thesis-card">
+        <p class="eyebrow">Tesi guida</p>
+        <h2>Il fantastico non evade dal reale: ne fa scattare l’allarme</h2>
+        <p>Il mondo di Buzzati nasce fra borghesia moderna, giornale, città, guerra e fiducia nell’ordine. Le fratture dell’esperienza rendono quell’ordine vulnerabile. La realtà appare allora come una superficie normale sotto cui agiscono tempo, paura, desiderio e morte. Per mostrarli, Buzzati usa una prosa limpida, costruisce attese e introduce l’assurdo senza cambiare tono.</p>
+      </section>
+    </section>
+
+    <div id="lessonViews"></div>
+
+    <section id="finale" class="view utility-view" data-view="finale" aria-labelledby="finalTitle">
+      <button class="back-link" data-go="home" type="button">← Copertina</button>
+      <p class="eyebrow">Verifica facoltativa</p><h1 id="finalTitle">I sei nessi essenziali</h1>
+      <p>Una domanda per ogni movimento. Il recupero si apre soltanto sugli errori e consente di riprovare quei quesiti.</p>
+      <div class="content-card quiz-panel" id="finalQuiz"></div>
+    </section>
+
+    <section id="fonti" class="view utility-view" data-view="fonti" aria-labelledby="sourcesTitle">
+      <button class="back-link" data-go="home" type="button">← Copertina</button>
+      <p class="eyebrow">Trasparenza</p><h1 id="sourcesTitle">Fonti certificate e criterio critico</h1>
+      <p class="lead-narrow">Sono state usate esclusivamente fonti universitarie e istituzionali. Le tesi universitarie orientano problemi e bibliografie, ma non sono trattate come autorità definitive. Dove la critica diverge, la PWA dichiara l’interpretazione invece di mascherarla da fatto.</p>
+      <div id="sourceCards" class="source-grid"></div>
+      <section class="source-matrix"><h2>Fonte → affermazione → sezione</h2><div class="table-wrap"><table><thead><tr><th>Fonte</th><th>Uso controllato</th><th>Sezioni</th></tr></thead><tbody id="sourceMatrix"></tbody></table></div></section>
+    </section>
+  </main>
+
+  <dialog id="installDialog"><form method="dialog"><button class="dialog-close" value="cancel" aria-label="Chiudi">×</button><p class="eyebrow">Installazione su iPad</p><h2>Portala sulla schermata Home</h2><ol><li>Apri questa pagina in Safari.</li><li>Tocca il pulsante Condividi.</li><li>Scegli “Aggiungi alla schermata Home”.</li><li>Conferma con “Aggiungi”.</li></ol><p>Dopo il primo caricamento completo, contenuti, mappe e test restano disponibili anche senza rete.</p></form></dialog>
+  <dialog id="resetDialog"><form method="dialog"><button class="dialog-close" value="cancel" aria-label="Chiudi">×</button><h2>Azzerare tutto?</h2><p>Progresso, note e tentativi saranno eliminati da questo dispositivo. L’azione non si può annullare.</p><div class="dialog-actions"><button value="cancel">Annulla</button><button class="danger-button" id="confirmReset" value="default">Azzera</button></div></form></dialog>
+
+  <template id="lessonTemplate">
+    <article class="view lesson">
+      <header class="lesson-header"><div><p class="section-number"></p><h1 class="section-title"></h1><p class="generative-question"></p></div><span class="chapter-mark" aria-hidden="true"></span></header>
+      <div class="tabs" role="tablist" aria-label="Materiali della sezione">
+        <button role="tab" data-panel="lesson" aria-selected="true" type="button">Lezione</button><button role="tab" data-panel="summary" aria-selected="false" type="button">Sintesi</button><button role="tab" data-panel="essentials" aria-selected="false" type="button">Irrinunciabili</button><button role="tab" data-panel="glossary" aria-selected="false" type="button">Vocabolario</button><button role="tab" data-panel="map" aria-selected="false" type="button">Mappa</button><button role="tab" data-panel="quiz" aria-selected="false" type="button">Verifica</button><button role="tab" data-panel="notes" aria-selected="false" type="button">Appunti</button>
+      </div>
+      <section class="panel reading" data-panel="lesson"></section><section class="panel" data-panel="summary" hidden></section><section class="panel" data-panel="essentials" hidden></section><section class="panel" data-panel="glossary" hidden></section><section class="panel map-panel" data-panel="map" hidden></section><section class="panel quiz-panel" data-panel="quiz" hidden></section><section class="panel notes-panel" data-panel="notes" hidden></section>
+      <footer class="lesson-footer"><button class="ghost-button prev-button" type="button">← Precedente</button><button class="complete-button" type="button">Segna come completata</button><button class="primary-button next-button" type="button">Successiva →</button></footer>
+    </article>
+  </template>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">JavaScript è necessario per navigazione, appunti e verifiche.</p></noscript>
+  <script src="./content.js"></script><script src="./app.js"></script>
+</body>
+</html>
