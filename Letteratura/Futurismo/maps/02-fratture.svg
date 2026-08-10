@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">Le fratture del Futurismo</title><desc id="d">Il manifesto crea il gruppo; serate e guerra ne cambiano la pratica; politica, dissensi e conflitto di genere producono più futurismi.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 10 3 0 6Z" fill="#171714"/></marker><style>.n{fill:#fffdf7;stroke:#171714;stroke-width:3}.r{fill:#d62f22;stroke:#171714;stroke-width:3}.y{fill:#f4c447;stroke:#171714;stroke-width:3}.h{font:800 24px Arial;fill:#171714}.w{font:800 24px Arial;fill:#fff}.s{font:18px Arial;fill:#393631}.l{stroke:#171714;stroke-width:3;fill:none;marker-end:url(#a)}.v{font:700 16px Arial;fill:#8f1d16}</style></defs>
+<rect width="1200" height="760" fill="#f3efe4"/><text x="60" y="62" class="h">02 · LE FRATTURE</text>
+<rect class="r" x="405" y="105" width="390" height="105"/><text x="458" y="150" class="w">MANIFESTO 1909</text><text x="458" y="181" class="w">crea nome, mito e programma</text>
+<path class="l" d="M500 210 300 330"/><path class="l" d="M600 210v120"/><path class="l" d="M700 210 900 330"/><text x="354" y="265" class="v">organizza</text><text x="614" y="276" class="v">si espone nelle</text><text x="786" y="265" class="v">incontra</text>
+<rect class="n" x="95" y="330" width="300" height="115"/><text x="130" y="375" class="h">Rete artistica</text><text x="130" y="407" class="s">adesioni e abbandoni</text>
+<rect class="y" x="450" y="330" width="300" height="115"/><text x="485" y="375" class="h">Serate</text><text x="485" y="407" class="s">pubblico dentro l'opera</text>
+<rect class="n" x="805" y="330" width="300" height="115"/><text x="840" y="375" class="h">Guerra reale</text><text x="840" y="407" class="s">morti e dispersione</text>
+<path class="l" d="M245 445v112"/><path class="l" d="M600 445v112"/><path class="l" d="M955 445v112"/><text x="260" y="510" class="v">moltiplica</text><text x="615" y="510" class="v">radicalizza</text><text x="970" y="510" class="v">conduce a</text>
+<rect class="n" x="95" y="560" width="300" height="105"/><text x="127" y="600" class="h">Conflitto di genere</text><text x="127" y="632" class="s">misoginia e risposte</text>
+<rect class="n" x="450" y="560" width="300" height="105"/><text x="492" y="600" class="h">Più Futurismi</text><text x="492" y="632" class="s">non un blocco uniforme</text>
+<rect class="r" x="805" y="560" width="300" height="105"/><text x="843" y="600" class="w">Politica</text><text x="843" y="632" class="w">affinità + divergenze</text>
+</svg>
