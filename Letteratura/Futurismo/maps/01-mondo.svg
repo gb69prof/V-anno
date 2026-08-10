@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">Il mondo precedente</title><desc id="d">La modernizzazione diseguale, il patrimonio e i nuovi media confluiscono nella crisi delle forme, che prepara il Futurismo.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 10 3 0 6Z" fill="#171714"/></marker><style>.n{fill:#fffdf7;stroke:#171714;stroke-width:3}.r{fill:#d62f22;stroke:#171714;stroke-width:3}.y{fill:#f4c447;stroke:#171714;stroke-width:3}.h{font:800 25px Arial;fill:#171714}.w{font:800 25px Arial;fill:#fff}.s{font:18px Arial;fill:#393631}.l{stroke:#171714;stroke-width:3;fill:none;marker-end:url(#a)}.v{font:700 16px Arial;fill:#8f1d16}</style></defs>
+<rect width="1200" height="760" fill="#f3efe4"/><text x="60" y="62" class="h">01 · IL MONDO PRECEDENTE</text>
+<rect class="n" x="70" y="120" width="300" height="115"/><text x="95" y="163" class="h">Modernizzazione</text><text x="95" y="195" class="s">rapida ma diseguale</text>
+<rect class="n" x="450" y="120" width="300" height="115"/><text x="475" y="163" class="h">Patrimonio</text><text x="475" y="195" class="s">primato che diventa peso</text>
+<rect class="n" x="830" y="120" width="300" height="115"/><text x="855" y="163" class="h">Nuovi media</text><text x="855" y="195" class="s">folla, stampa, cinema</text>
+<path class="l" d="M220 235v93h265"/><path class="l" d="M600 235v93"/><path class="l" d="M980 235v93H715"/><text x="260" y="312" class="v">accelera</text><text x="615" y="294" class="v">entra in conflitto con</text><text x="865" y="312" class="v">moltiplica</text>
+<rect class="y" x="405" y="330" width="390" height="120"/><text x="450" y="377" class="h">Esperienza moderna</text><text x="450" y="411" class="s">nuovi ritmi e percezioni</text>
+<path class="l" d="M600 450v95"/><text x="618" y="510" class="v">rende insufficiente</text>
+<rect class="n" x="400" y="548" width="400" height="90"/><text x="437" y="587" class="h">Forma statica e lineare</text><text x="437" y="615" class="s">non basta più</text>
+<path class="l" d="M800 593h210"/><text x="826" y="574" class="v">prepara</text>
+<rect class="r" x="1010" y="535" width="150" height="115"/><text x="1036" y="580" class="w">FRATTURA</text><text x="1036" y="614" class="w">FUTURISTA</text>
+</svg>
