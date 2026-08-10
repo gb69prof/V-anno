@@ -1,5 +1,5 @@
 "use strict";
-const CACHE="futurismo-gbprof-v1.0.0";
+const CACHE="futurismo-gbprof-v1.0.1";
 const ASSETS=[
   "./","./index.html","./style.css","./app.js","./manifest.webmanifest","./icon.svg",
   "./maps/01-mondo.svg","./maps/02-fratture.svg","./maps/03-immagine.svg",
