@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="104" fill="#17201f"/>
+  <circle cx="358" cy="142" r="54" fill="#d8a657"/>
+  <path d="M60 360 178 168l67 101 55-79 152 170Z" fill="#334943"/>
+  <path d="M103 376V264h54v-49h55v49h45v-31h58v143Z" fill="#e8e1d2"/>
+  <path d="M147 330h43m51 0h43" stroke="#17201f" stroke-width="15"/>
+  <path d="M65 402h382" stroke="#d8a657" stroke-width="18" stroke-linecap="round"/>
+  <text x="256" y="475" text-anchor="middle" font-family="Georgia,serif" font-size="58" font-weight="700" fill="#e8e1d2">DB</text>
+</svg>
