@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#e9e4da">
+  <meta name="description" content="Percorso interattivo in sei movimenti su Carlo Emilio Gadda: groviglio del reale, conoscenza, lingua e opere.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Gadda">
+  <title>Carlo Emilio Gadda — L'ingegnere del groviglio</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-180.png">
+  <link rel="icon" href="assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <div class="reading-progress" aria-hidden="true"><span id="readingBar"></span></div>
+
+  <header class="topbar">
+    <button class="brand" id="homeButton" type="button" aria-label="Torna alla copertina">
+      <span class="brand-mark">CEG</span>
+      <span><strong>L’ingegnere del groviglio</strong><small>Carlo Emilio Gadda in sei movimenti</small></span>
+    </button>
+    <div class="top-actions">
+      <button class="soft-button" id="resumeButton" type="button">Riprendi</button>
+      <button class="icon-button" id="menuButton" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Apri indice">☰</button>
+    </div>
+  </header>
+
+  <aside class="drawer" id="drawer" aria-label="Indice della lezione" aria-hidden="true">
+    <div class="drawer-head">
+      <div><small>Indice</small><h2>Sei movimenti</h2></div>
+      <button class="icon-button" id="closeMenu" type="button" aria-label="Chiudi indice">×</button>
+    </div>
+    <nav id="drawerNav"></nav>
+    <div class="drawer-tools">
+      <button class="soft-button wide" id="finalQuizButton" type="button">Verifica finale</button>
+      <button class="text-button danger" id="resetButton" type="button">Azzera progressi e note</button>
+    </div>
+  </aside>
+  <button class="drawer-scrim" id="scrim" aria-label="Chiudi indice" hidden></button>
+
+  <main id="main" tabindex="-1">
+    <section class="cover view active" id="coverView" aria-labelledby="coverTitle">
+      <div class="cover-copy">
+        <p class="eyebrow">Letteratura italiana · quinto anno</p>
+        <h1 id="coverTitle">Carlo Emilio<br><em>Gadda</em></h1>
+        <p class="cover-thesis">La realtà non è una linea: è un sistema di cause, voci e colpe. Gadda costruisce una lingua abbastanza complessa da non falsificarla.</p>
+        <div class="cover-actions">
+          <button class="primary-button" id="startButton" type="button">Inizia il percorso</button>
+          <button class="soft-button" id="coverResume" type="button">Riprendi dall’ultima sezione</button>
+        </div>
+      </div>
+      <div class="cover-art" aria-label="Composizione grafica originale: schede tecniche collegate da un groviglio di linee">
+        <div class="archive-card card-a"><span>cause</span><small>mai una soltanto</small></div>
+        <div class="archive-card card-b"><span>lingue</span><small>dialetti · tecnicismi</small></div>
+        <div class="archive-card card-c"><span>errore</span><small>conoscere è deformare</small></div>
+        <div class="red-thread knot" aria-hidden="true"></div>
+        <blockquote>Ogni fatto è un nodo.<cite>chiave di lettura</cite></blockquote>
+      </div>
+      <div class="cover-route" id="coverRoute" aria-label="Le sei tappe del percorso"></div>
+    </section>
+
+    <section class="lesson-shell view" id="lessonView" aria-live="polite">
+      <div class="lesson-hero" id="lessonHero">
+        <button class="back-link" id="backToCover" type="button">← Copertina</button>
+        <p class="section-number" id="sectionNumber"></p>
+        <h1 id="sectionTitle"></h1>
+        <p class="section-subtitle" id="sectionSubtitle"></p>
+        <p class="generative-question" id="generativeQuestion"></p>
+      </div>
+
+      <div class="section-tabs" id="sectionTabs" role="tablist" aria-label="Materiali della sezione"></div>
+      <div class="lesson-layout">
+        <article class="content-card" id="panelContent"></article>
+        <aside class="note-card">
+          <label for="sectionNotes"><span>Il mio taccuino</span><small>Salvataggio automatico sul dispositivo</small></label>
+          <textarea id="sectionNotes" rows="9" placeholder="Scrivi un dubbio, un nesso, una frase da ricordare…"></textarea>
+          <p class="save-status" id="saveStatus" aria-live="polite"></p>
+        </aside>
+      </div>
+
+      <nav class="lesson-pager" aria-label="Navigazione fra le sezioni">
+        <button class="soft-button" id="prevSection" type="button">← Precedente</button>
+        <span id="sectionCounter"></span>
+        <button class="primary-button" id="nextSection" type="button">Successiva →</button>
+      </nav>
+    </section>
+
+    <section class="final-shell view" id="finalView" aria-labelledby="finalTitle">
+      <button class="back-link" id="finalBack" type="button">← Torna al percorso</button>
+      <p class="eyebrow">Verifica facoltativa</p>
+      <h1 id="finalTitle">I sei nessi essenziali</h1>
+      <p>Una domanda per ogni movimento. Il recupero si apre soltanto sugli errori.</p>
+      <div class="content-card" id="finalQuiz"></div>
+    </section>
+  </main>
+
+  <template id="quizTemplate">
+    <div class="quiz" data-quiz>
+      <div class="quiz-intro">
+        <div><p class="eyebrow">Autoverifica</p><h2>Controlla i nessi</h2></div>
+        <p>Ogni quesito ha tre alternative e una sola risposta corretta.</p>
+      </div>
+      <div class="quiz-questions"></div>
+      <div class="quiz-actions">
+        <button class="primary-button submit-quiz" type="button">Consegna</button>
+        <p class="quiz-warning" role="alert"></p>
+      </div>
+      <section class="quiz-results" aria-live="polite" hidden></section>
+    </div>
+  </template>
+
+  <footer>
+    <p>Progetto didattico gbprof · Ricerca accademica documentata · Contenuti disponibili offline dopo il primo accesso.</p>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
