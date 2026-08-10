@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">L'immagine futurista del mondo</title><desc id="d">La metropoli è letta come energia; dinamismo, simultaneità e macchina ridefiniscono il soggetto, ma il culto della forza genera un'ombra politica.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 10 3 0 6Z" fill="#171714"/></marker><style>.n{fill:#fffdf7;stroke:#171714;stroke-width:3}.r{fill:#d62f22;stroke:#171714;stroke-width:3}.y{fill:#f4c447;stroke:#171714;stroke-width:3}.h{font:800 24px Arial;fill:#171714}.w{font:800 24px Arial;fill:#fff}.s{font:18px Arial;fill:#393631}.l{stroke:#171714;stroke-width:3;fill:none;marker-end:url(#a)}.v{font:700 16px Arial;fill:#8f1d16}</style></defs>
+<rect width="1200" height="760" fill="#f3efe4"/><text x="60" y="62" class="h">03 · L'IMMAGINE DEL MONDO</text>
+<rect class="y" x="405" y="105" width="390" height="105"/><text x="468" y="150" class="h">REALTÀ = ENERGIA</text><text x="468" y="181" class="s">non cose ferme, ma processi</text>
+<path class="l" d="M480 210 270 325"/><path class="l" d="M600 210v115"/><path class="l" d="M720 210 930 325"/><text x="340" y="264" class="v">si vede come</text><text x="615" y="270" class="v">si percepisce con</text><text x="790" y="264" class="v">assume il mito di</text>
+<rect class="n" x="95" y="325" width="300" height="115"/><text x="135" y="370" class="h">Dinamismo</text><text x="135" y="402" class="s">linee-forza e continuità</text>
+<rect class="n" x="450" y="325" width="300" height="115"/><text x="490" y="370" class="h">Simultaneità</text><text x="490" y="402" class="s">più tempi nello stesso campo</text>
+<rect class="n" x="805" y="325" width="300" height="115"/><text x="845" y="370" class="h">Macchina</text><text x="845" y="402" class="s">modello più che analisi</text>
+<path class="l" d="M245 440 455 560"/><path class="l" d="M600 440v120"/><path class="l" d="M955 440 745 560"/><text x="310" y="505" class="v">dissolve</text><text x="615" y="505" class="v">attraversa</text><text x="820" y="505" class="v">potenzia</text>
+<rect class="r" x="405" y="560" width="390" height="105"/><text x="452" y="602" class="w">SOGGETTO SENZA CONFINI</text><text x="452" y="634" class="w">ma volontà autoriale fortissima</text>
+<path class="l" d="M795 612h245"/><text x="830" y="592" class="v">può produrre</text><rect class="n" x="1040" y="552" width="130" height="120"/><text x="1062" y="595" class="h">Ombra</text><text x="1062" y="628" class="s">forza =</text><text x="1062" y="651" class="s">valore</text>
+</svg>
