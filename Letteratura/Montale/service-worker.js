@@ -1,4 +1,4 @@
-const CACHE='montale-v1.0.0';
+const CACHE='montale-v1.0.1';
 const ASSETS=['./','./index.html','./styles.css','./content.js','./app.js','./manifest.webmanifest','./icons/icon-192.svg','./icons/icon-512.svg','./maps/01-mondo.svg','./maps/02-fratture.svg','./maps/03-visione.svg','./maps/04-poetica.svg','./maps/05-opere.svg','./maps/06-conclusione.svg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
