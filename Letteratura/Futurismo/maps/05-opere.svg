@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="t d">
+<title id="t">Le opere futuriste</title><desc id="d">Manifesto, Zang Tumb Tumb, Boccioni, Russolo, Palazzeschi e Govoni verificano in modi differenti la distanza fra programma e forma.</desc>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 10 3 0 6Z" fill="#171714"/></marker><style>.n{fill:#fffdf7;stroke:#171714;stroke-width:3}.r{fill:#d62f22;stroke:#171714;stroke-width:3}.y{fill:#f4c447;stroke:#171714;stroke-width:3}.h{font:800 22px Arial;fill:#171714}.w{font:800 22px Arial;fill:#fff}.s{font:17px Arial;fill:#393631}.l{stroke:#171714;stroke-width:3;fill:none;marker-end:url(#a)}.v{font:700 15px Arial;fill:#8f1d16}</style></defs>
+<rect width="1200" height="760" fill="#f3efe4"/><text x="60" y="62" class="h">05 · LE OPERE</text>
+<rect class="y" x="420" y="100" width="360" height="105"/><text x="465" y="142" class="h">PROGRAMMA FUTURISTA</text><text x="465" y="174" class="s">promette una percezione nuova</text>
+<path class="l" d="M500 205 230 320"/><path class="l" d="M600 205v115"/><path class="l" d="M700 205 970 320"/><text x="338" y="262" class="v">si fa evento</text><text x="615" y="270" class="v">si fa pagina</text><text x="828" y="262" class="v">si fa spazio</text>
+<rect class="r" x="60" y="320" width="300" height="115"/><text x="90" y="362" class="w">Manifesto 1909</text><text x="90" y="394" class="w">racconto + media</text>
+<rect class="n" x="450" y="320" width="300" height="115"/><text x="480" y="362" class="h">Zang Tumb Tumb</text><text x="480" y="394" class="s">occhio + voce</text>
+<rect class="r" x="840" y="320" width="300" height="115"/><text x="870" y="362" class="w">Boccioni</text><text x="870" y="394" class="w">città + corpo</text>
+<path class="l" d="M210 435v115"/><path class="l" d="M600 435v115"/><path class="l" d="M990 435v115"/><text x="225" y="500" class="v">provoca</text><text x="615" y="500" class="v">apre a</text><text x="1005" y="500" class="v">si differenzia in</text>
+<rect class="n" x="60" y="550" width="300" height="110"/><text x="90" y="592" class="h">Problema etico</text><text x="90" y="624" class="s">energia / corpi rimossi</text>
+<rect class="n" x="450" y="550" width="300" height="110"/><text x="480" y="592" class="h">Russolo</text><text x="480" y="624" class="s">rumore componibile</text>
+<rect class="n" x="840" y="550" width="300" height="110"/><text x="870" y="592" class="h">Palazzeschi / Govoni</text><text x="870" y="624" class="s">gioco + poesia visiva</text>
+<path class="l" d="M360 605h90"/><path class="l" d="M750 605h90"/><text x="375" y="587" class="v">misura</text><text x="765" y="587" class="v">amplia</text>
+</svg>
