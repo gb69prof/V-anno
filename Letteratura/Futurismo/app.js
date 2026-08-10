@@ -65,6 +65,13 @@ function goTo(id){
 
 document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>goTo(b.dataset.go)));
 document.querySelector("#resumeBtn").addEventListener("click",()=>goTo(state.last||"s1"));
+document.addEventListener("click",ev=>{
+  const link=ev.target.closest(".recovery-card a[href^='#']"); if(!link)return;
+  ev.preventDefault();
+  const target=document.querySelector(link.getAttribute("href")), chapter=link.closest(".chapter");
+  chapter?.querySelector('.chapter-tabs [data-tab="lesson"]')?.click();
+  setTimeout(()=>target?.scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"center"}),0);
+});
 
 document.querySelectorAll(".chapter-tabs").forEach(nav=>{
   nav.addEventListener("click",ev=>{
