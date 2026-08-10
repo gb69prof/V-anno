@@ -132,7 +132,7 @@
     navigator.serviceWorker.register('./service-worker.js')
       .then(()=>navigator.serviceWorker.ready)
       .then(async()=>{
-        const cached=await caches.open('montale-v1.0.0').then(cache=>cache.keys());
+        const cached=await caches.open('montale-v1.0.1').then(cache=>cache.keys());
         document.documentElement.dataset.pwaReady='true';
         document.documentElement.dataset.cachedAssets=String(cached.length);
       })
