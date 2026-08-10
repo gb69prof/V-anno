@@ -1,0 +1,15 @@
+{
+  "name": "Futurismo — La velocità e la sua ombra",
+  "short_name": "Futurismo",
+  "description": "Percorso didattico interattivo sul Futurismo italiano.",
+  "lang": "it",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f3efe4",
+  "theme_color": "#d62f22",
+  "icons": [
+    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
