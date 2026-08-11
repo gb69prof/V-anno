@@ -1,6 +1,6 @@
 const CACHE = 'ungaretti-v1';
 const ASSETS = [
-  './','./index.html','./styles.css','./content.js','./app.js','./manifest.webmanifest','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png',
+  './','./index.html','./styles.css','./hero-photo.css','./content.js','./app.js','./manifest.webmanifest','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png','./assets/images/hero-ungaretti.png',
   './maps/01-mondo.svg','./maps/02-fratture.svg','./maps/03-immagine.svg','./maps/04-poetica.svg','./maps/05-opere.svg','./maps/06-conclusione.svg'
 ];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting())));

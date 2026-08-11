@@ -1,0 +1,23 @@
+.hero-art {
+  position: relative;
+  width: 100%;
+  height: min(620px, 68vw);
+  min-height: 420px;
+  overflow: hidden;
+  border-radius: 46% 46% 20px 20px;
+  box-shadow: var(--shadow);
+}
+
+.hero-art > .hero-photo {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 38%;
+}
+
+@media (max-width: 560px) {
+  .hero-art { height: 70vw; min-height: 340px; }
+}

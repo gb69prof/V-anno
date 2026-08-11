@@ -1,7 +1,7 @@
 const CACHE = "sciascia-v1.0.0";
 const ASSETS = [
-  "./", "./index.html", "./styles.css", "./data.js", "./app.js", "./manifest.webmanifest",
-  "./assets/icon-192.png", "./assets/icon-512.png",
+  "./", "./index.html", "./styles.css", "./hero-photo.css", "./data.js", "./app.js", "./manifest.webmanifest",
+  "./assets/icon-192.png", "./assets/icon-512.png", "./assets/images/hero-sciascia.png",
   "./assets/maps/01-mondo.svg", "./assets/maps/02-fratture.svg", "./assets/maps/03-immagine.svg",
   "./assets/maps/04-poetica.svg", "./assets/maps/05-opere.svg", "./assets/maps/06-conclusione.svg"
 ];

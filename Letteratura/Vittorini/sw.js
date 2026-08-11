@@ -1,8 +1,8 @@
 const CACHE = "vittorini-v1";
 const ASSETS = [
-  "./", "./index.html", "./styles.css", "./content.js", "./app.js",
+  "./", "./index.html", "./styles.css", "./hero-photo.css", "./content.js", "./app.js",
   "./manifest.webmanifest", "./assets/icon.svg", "./assets/icon-192.png",
-  "./assets/icon-512.png", "./assets/maps/01-mondo.svg",
+  "./assets/icon-512.png", "./assets/images/hero-vittorini.png", "./assets/maps/01-mondo.svg",
   "./assets/maps/02-fratture.svg", "./assets/maps/03-immagine.svg",
   "./assets/maps/04-poetica.svg", "./assets/maps/05-opere.svg",
   "./assets/maps/06-conclusione.svg"

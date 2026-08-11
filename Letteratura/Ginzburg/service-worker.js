@@ -1,7 +1,7 @@
 const CACHE = "ginzburg-v1.0.0";
 const CORE = [
-  "./", "./index.html", "./styles.css", "./content.js", "./app.js", "./offline.html",
-  "./manifest.webmanifest", "./assets/icons/icon.svg", "./assets/icons/icon-192.png", "./assets/icons/icon-512.png",
+  "./", "./index.html", "./styles.css", "./hero-photo.css", "./content.js", "./app.js", "./offline.html",
+  "./manifest.webmanifest", "./assets/icons/icon.svg", "./assets/icons/icon-192.png", "./assets/icons/icon-512.png", "./assets/images/hero-ginzburg.png",
   "./assets/maps/01-mondo.svg", "./assets/maps/02-fratture.svg", "./assets/maps/03-immagine.svg",
   "./assets/maps/04-poetica.svg", "./assets/maps/05-opere.svg", "./assets/maps/06-conclusione.svg"
 ];
