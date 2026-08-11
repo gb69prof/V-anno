@@ -1,0 +1,13 @@
+{
+  "name":"Cesare Pavese · Il ritorno impossibile",
+  "short_name":"Pavese",
+  "description":"PWA didattica in sei movimenti su Cesare Pavese.",
+  "lang":"it",
+  "start_url":"./index.html#home",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"any",
+  "background_color":"#f3eee1",
+  "theme_color":"#25352d",
+  "icons":[{"src":"icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

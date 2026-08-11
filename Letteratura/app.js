@@ -17,7 +17,7 @@ const lessons = [
   { name: "Montale", path: "./Montale/index.html", available: true, type: "author", stage: 3, box: [32.8, 70.1, 9.6, 7.2] },
   { name: "Gadda", path: "./Gadda/index.html", available: true, type: "author", stage: 4, box: [42.8, 70.1, 9.6, 7.2] },
   { name: "Vittorini", path: "./Vittorini/index.html", available: true, type: "author", stage: 4, box: [52.8, 70.1, 9.6, 7.2] },
-  { name: "Pavese", path: "./Pavese/index.html", available: false, type: "author", stage: 4, box: [62.8, 70.1, 9.6, 7.2] },
+  { name: "Pavese", path: "./Pavese/index.html", available: true, type: "author", stage: 4, box: [62.8, 70.1, 9.6, 7.2] },
   { name: "Primo Levi", path: "./Primo-Levi/index.html", available: false, type: "author", stage: 4, box: [72.8, 70.1, 9.6, 7.2] },
   { name: "Morante", path: "./Morante/index.html", available: true, type: "author", stage: 4, box: [82.8, 70.1, 9.6, 7.2] },
 

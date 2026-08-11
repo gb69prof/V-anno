@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#25352d">
+  <meta name="description" content="Cesare Pavese in sei movimenti: origine, memoria, mito, responsabilità e ritorno impossibile.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Pavese">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Pavese · Il ritorno impossibile</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="topbar">
+    <button id="menuButton" class="icon-button" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Apri l'indice">☰</button>
+    <a class="brand" href="#home" aria-label="Torna alla copertina"><span>PAVESE</span><small>Il ritorno impossibile</small></a>
+    <div class="progress-wrap" aria-label="Progresso di studio"><output id="progressText">0%</output><progress id="progressBar" max="6" value="0">0 su 6</progress></div>
+    <button id="toolsButton" class="icon-button" type="button" aria-controls="toolsPanel" aria-expanded="false" aria-label="Apri gli strumenti">Aa</button>
+  </header>
+
+  <div class="shell">
+    <aside id="sidebar" class="sidebar" aria-label="Indice della lezione" aria-hidden="true">
+      <div class="drawer-head"><p class="eyebrow">Sei movimenti</p><button id="closeMenu" class="icon-button" type="button" aria-label="Chiudi l'indice">×</button></div>
+      <nav id="sectionNav"></nav>
+      <div class="side-actions">
+        <button id="continueButton" class="button primary" type="button">Riprendi</button>
+        <button id="openNotesButton" class="button" type="button">Taccuino</button>
+        <button id="resetButton" class="button danger" type="button">Azzera dati</button>
+      </div>
+    </aside>
+    <aside id="toolsPanel" class="tools-panel" aria-label="Strumenti di lettura" aria-hidden="true">
+      <div class="drawer-head"><p class="eyebrow">Lettura</p><button id="closeTools" class="icon-button" type="button" aria-label="Chiudi gli strumenti">×</button></div>
+      <fieldset><legend>Dimensione del testo</legend><div class="segmented"><button type="button" data-font="small">A−</button><button type="button" data-font="normal" class="active">A</button><button type="button" data-font="large">A+</button></div></fieldset>
+      <button id="installButton" class="button primary" type="button">Come installare</button>
+    </aside>
+    <button id="backdrop" class="backdrop" type="button" aria-label="Chiudi il pannello" hidden></button>
+
+    <main id="main" tabindex="-1">
+      <section id="home" class="home-view view active" aria-labelledby="homeTitle">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Metodo gbprof · Letteratura italiana · V anno</p>
+            <h1 id="homeTitle">Il ritorno<br><em>impossibile</em></h1>
+            <p class="lead">Pavese riceve un'Italia chiusa dal fascismo e una letteratura sospesa fra tradizione e modernità. Le Langhe, Torino, l'America tradotta, il confino e la guerra trasformano l'origine in domanda: dove si può appartenere, quando ogni ritorno rivela ciò che è perduto?</p>
+            <div class="hero-actions"><button class="button primary large" data-open-section="0" type="button">Inizia il percorso</button><button class="button large" id="homeContinue" type="button">Riprendi da dove eri</button></div>
+          </div>
+          <div class="hero-art" role="img" aria-label="Composizione grafica originale: una collina, una città e un sentiero circolare illuminati dalla luna e dai falò">
+            <svg viewBox="0 0 600 640" aria-hidden="true">
+              <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#1b2a25"/><stop offset="1" stop-color="#405348"/></linearGradient><linearGradient id="hill" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#6f7f55"/><stop offset="1" stop-color="#263a31"/></linearGradient></defs>
+              <rect x="18" y="18" width="564" height="604" rx="280" fill="url(#sky)"/>
+              <circle cx="440" cy="135" r="74" fill="#e7ca7a"/>
+              <path d="M18 430C122 300 235 310 330 415c74 82 165 75 252-17v224H18Z" fill="url(#hill)"/>
+              <path d="M82 493c142-32 218-7 277 71" fill="none" stroke="#d7c79a" stroke-width="13" stroke-linecap="round"/>
+              <path d="M73 396h35v-88h37v88h28V260h46v136h39v-73h51v73" fill="#17231f"/>
+              <g fill="#d06a3c"><path d="M414 457c-24-31 8-50 4-78 31 23 37 50 15 78Z"/><path d="M474 475c-18-25 6-40 3-62 24 18 28 40 11 62Z"/></g>
+              <path d="M314 140c-55 52-70 114-53 179 15 57 2 105-36 148" fill="none" stroke="#d6b45d" stroke-width="5" stroke-dasharray="9 13"/>
+              <text x="60" y="105">città</text><text x="368" y="251">origine</text><text x="70" y="560">ritorno</text>
+            </svg>
+          </div>
+        </div>
+        <div class="thesis-strip"><strong>Domanda generatrice</strong><p>Si può tornare alle proprie origini senza trasformarle in un rifugio o in una menzogna?</p></div>
+        <div id="journeyCards" class="journey-grid" aria-label="Le sei tappe del percorso"></div>
+        <details class="sources-panel"><summary>Fonti e controllo critico</summary><div id="sourceList"></div></details>
+      </section>
+      <article id="lessonView" class="lesson-view view" aria-live="polite"></article>
+    </main>
+  </div>
+
+  <dialog id="notesDialog"><form method="dialog" class="dialog-head"><h2>Taccuino personale</h2><button class="icon-button" aria-label="Chiudi">×</button></form><p>Le note restano soltanto su questo dispositivo.</p><textarea id="notesArea" rows="14" placeholder="Scrivi collegamenti, domande, intuizioni…"></textarea><div class="dialog-actions"><button id="downloadNotes" class="button" type="button">Esporta .txt</button><button id="saveNotes" class="button primary" type="button">Salva</button></div><p id="notesStatus" class="status" role="status"></p></dialog>
+  <dialog id="installDialog"><form method="dialog"><button class="dialog-close icon-button" aria-label="Chiudi">×</button><p class="eyebrow">Installazione su iPad</p><h2>Portala sulla schermata Home</h2><ol><li>Apri la pagina in Safari.</li><li>Tocca Condividi.</li><li>Scegli “Aggiungi alla schermata Home”.</li><li>Conferma con “Aggiungi”.</li></ol><p>Dopo il primo caricamento, la lezione funziona anche senza rete.</p></form></dialog>
+  <dialog id="resetDialog"><form method="dialog"><button class="dialog-close icon-button" value="cancel" aria-label="Chiudi">×</button><h2>Azzerare tutto?</h2><p>Progresso, note e tentativi saranno eliminati da questo dispositivo.</p><div class="dialog-actions"><button value="cancel" class="button">Annulla</button><button id="confirmReset" value="default" class="button danger">Azzera</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">JavaScript è necessario per la navigazione, gli appunti e le verifiche interattive.</p></noscript>
+  <script src="./content.js"></script><script src="./app.js"></script>
+</body>
+</html>
