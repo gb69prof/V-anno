@@ -63,6 +63,7 @@ h1 em { color: var(--rust); font-weight: 400; }
 .hero-visual { position: relative; aspect-ratio: 1; max-width: 540px; width: 100%; border: 1px solid var(--line); border-radius: 50%; }
 .hero-photo { margin: 0; overflow: hidden; border-radius: 2px; aspect-ratio: 3 / 4; box-shadow: var(--shadow); }
 .hero-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero-photo::before, .hero-photo::after { display: none; }
 .hero-visual::before, .hero-visual::after { content:""; position:absolute; border-radius:50%; border:1px solid var(--line); }
 .hero-visual::before { inset: 14%; }
 .hero-visual::after { inset: 31%; background: var(--ink); box-shadow: 0 0 70px rgba(23,36,35,.25); }
