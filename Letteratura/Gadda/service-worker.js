@@ -1,8 +1,8 @@
 const CACHE_PREFIX = "gbprof-gadda-";
-const CACHE = `${CACHE_PREFIX}v1.0.0`;
+const CACHE = `${CACHE_PREFIX}v1.0.1`;
 const CORE = [
   "./", "./index.html", "./styles.css", "./content.js", "./app.js", "./offline.html",
-  "./manifest.webmanifest", "./assets/icons/icon.svg", "./assets/icons/icon-180.png", "./assets/icons/icon-192.png", "./assets/icons/icon-512.png",
+  "./manifest.webmanifest", "./assets/icons/icon.svg", "./assets/icons/icon-180.png", "./assets/icons/icon-192.png", "./assets/icons/icon-512.png", "./assets/images/gadda.png",
   "./assets/maps/01-mondo.svg", "./assets/maps/02-fratture.svg", "./assets/maps/03-immagine.svg",
   "./assets/maps/04-poetica.svg", "./assets/maps/05-opere.svg", "./assets/maps/06-conclusione.svg"
 ];

@@ -1,7 +1,7 @@
-const CACHE = 'ermetismo-v2';
+const CACHE = 'ermetismo-v3';
 const ASSETS = [
   './', './index.html', './styles.css', './content.js', './app.js', './manifest.webmanifest',
-  './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png',
+  './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png', './assets/images/ermetismo.jpg',
   './assets/maps/mappa-sintesi.svg', './assets/maps/01-mondo.svg',
   './assets/maps/02-fratture.svg', './assets/maps/03-visione.svg',
   './assets/maps/04-poetica.svg', './assets/maps/05-opere.svg',

@@ -1,7 +1,7 @@
 "use strict";
-const CACHE="futurismo-gbprof-v1.0.2";
+const CACHE="futurismo-gbprof-v1.0.3";
 const ASSETS=[
-  "./","./index.html","./style.css","./app.js","./app.js?v=1.0.2","./manifest.webmanifest","./icon.svg",
+  "./","./index.html","./style.css","./app.js","./app.js?v=1.0.2","./manifest.webmanifest","./icon.svg","./assets/images/futurismo.jpg",
   "./maps/01-mondo.svg","./maps/02-fratture.svg","./maps/03-immagine.svg",
   "./maps/04-poetica.svg","./maps/05-opere.svg","./maps/06-conclusione.svg"
 ];

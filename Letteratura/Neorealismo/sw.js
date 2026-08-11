@@ -1,7 +1,7 @@
-const CACHE = "neorealismo-gbprof-v1";
+const CACHE = "neorealismo-gbprof-v2";
 const ASSETS = [
   "./", "./index.html", "./styles.css", "./content.js", "./app.js", "./manifest.webmanifest",
-  "./assets/icons/icon.svg", "./assets/icons/icon-192.png", "./assets/icons/icon-512.png",
+  "./assets/icons/icon.svg", "./assets/icons/icon-192.png", "./assets/icons/icon-512.png", "./assets/images/neorealismo.jpg",
   "./assets/maps/01-mondo.svg", "./assets/maps/02-fratture.svg", "./assets/maps/03-immagine.svg",
   "./assets/maps/04-poetica.svg", "./assets/maps/05-opere.svg", "./assets/maps/06-conclusione.svg",
   "./assets/maps/07-sintesi.svg"
