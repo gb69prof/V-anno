@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#182724">
+  <meta name="description" content="Salvatore Quasimodo in sei movimenti: dall'isola perduta alla responsabilità della parola nella storia.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Quasimodo">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon.svg">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Quasimodo · L'isola e la storia</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <header class="topbar">
+    <button id="menuButton" class="icon-button" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Apri l'indice">☰</button>
+    <a class="brand" href="#home" aria-label="Torna alla copertina"><span>QUASIMODO</span><small>L'isola e la storia</small></a>
+    <div class="progress-wrap" aria-label="Progresso di studio"><output id="progressText">0%</output><progress id="progressBar" max="6" value="0">0 su 6</progress></div>
+    <button id="toolsButton" class="icon-button" type="button" aria-controls="toolsPanel" aria-expanded="false" aria-label="Apri gli strumenti">Aa</button>
+  </header>
+
+  <div class="shell">
+    <aside id="sidebar" class="sidebar" aria-label="Indice della lezione" aria-hidden="true">
+      <div class="drawer-head"><p class="eyebrow">Sei movimenti</p><button id="closeMenu" class="icon-button" type="button" aria-label="Chiudi l'indice">×</button></div>
+      <nav id="sectionNav"></nav>
+      <div class="side-actions">
+        <button id="continueButton" class="button primary" type="button">Riprendi</button>
+        <button id="openNotesButton" class="button" type="button">Taccuino</button>
+        <button id="resetButton" class="button danger" type="button">Azzera dati</button>
+      </div>
+    </aside>
+    <aside id="toolsPanel" class="tools-panel" aria-label="Strumenti di lettura" aria-hidden="true">
+      <div class="drawer-head"><p class="eyebrow">Lettura</p><button id="closeTools" class="icon-button" type="button" aria-label="Chiudi gli strumenti">×</button></div>
+      <fieldset><legend>Dimensione del testo</legend><div class="segmented"><button type="button" data-font="small">A−</button><button type="button" data-font="normal" class="active">A</button><button type="button" data-font="large">A+</button></div></fieldset>
+      <button id="installButton" class="button primary" type="button">Come installare</button>
+    </aside>
+    <button id="backdrop" class="backdrop" type="button" aria-label="Chiudi il pannello" hidden></button>
+
+    <main id="main" tabindex="-1">
+      <section id="home" class="home-view view active" aria-labelledby="homeTitle">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Metodo gbprof · Letteratura italiana · V anno</p>
+            <h1 id="homeTitle">L'isola<br><em>e la storia</em></h1>
+            <p class="lead">Quasimodo parte da una Sicilia trasformata in memoria e mito; attraversa l'essenzialità ermetica, la lezione dei classici e la catastrofe della guerra; tenta infine una parola capace di parlare agli altri senza perdere la propria ombra.</p>
+            <div class="hero-actions"><button class="button primary large" data-open-section="0" type="button">Inizia il percorso</button><button class="button large" id="homeContinue" type="button">Riprendi da dove eri</button></div>
+          </div>
+          <div class="hero-art" role="img" aria-label="Composizione grafica: un profilo umano tra un'isola luminosa e una città segnata dalla guerra">
+            <svg viewBox="0 0 560 620" aria-hidden="true">
+              <defs><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#dfb55d"/><stop offset="1" stop-color="#b45b3f"/></linearGradient><linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#355952"/><stop offset="1" stop-color="#152320"/></linearGradient></defs>
+              <circle cx="405" cy="112" r="78" fill="#e7c46f" opacity=".9"/>
+              <path d="M0 420C105 361 178 472 272 420c91-50 160-13 288-64v264H0Z" fill="url(#sea)"/>
+              <path d="M25 397c105-48 165-54 261-19 89 33 156-9 249-56" fill="none" stroke="#f8e8bd" stroke-width="5" opacity=".65"/>
+              <path d="M282 75c93 0 144 66 133 157-8 66-43 92-43 135 0 37 25 61 54 79l-54 109-178-14 25-116c-28-34-39-73-36-125 7-129 37-225 99-225Z" fill="url(#night)"/>
+              <path d="M315 84c55 30 70 88 53 151-13 48-43 71-40 116 2 35 21 55 38 68l-42 103-72-23 18-130-39-31 36-24-17-35 42-15 18-82Z" fill="#7b9186" opacity=".48"/>
+              <g fill="#182724"><path d="M12 376h24v-87h42v87h28v-132h38v132h36v-65h42v65h26v31H12Z"/><path d="M420 359h27v-98h36v98h23v-151h31v151h23v50H420Z"/></g>
+              <path d="M116 270l17 29 23-49 17 53 32-75" fill="none" stroke="#d8a75b" stroke-width="4"/>
+              <text x="34" y="92">isola</text><text x="396" y="228">storia</text><text x="25" y="520">memoria</text>
+            </svg>
+          </div>
+        </div>
+        <div class="thesis-strip"><strong>Domanda generatrice</strong><p>Come può la poesia passare dalla solitudine dell'io alla tragedia collettiva senza trasformarsi in propaganda?</p></div>
+        <div id="journeyCards" class="journey-grid" aria-label="Le sei tappe del percorso"></div>
+        <details class="sources-panel"><summary>Fonti e controllo critico</summary><div id="sourceList"></div></details>
+      </section>
+      <article id="lessonView" class="lesson-view view" aria-live="polite"></article>
+    </main>
+  </div>
+
+  <dialog id="notesDialog"><form method="dialog" class="dialog-head"><h2>Taccuino personale</h2><button class="icon-button" aria-label="Chiudi">×</button></form><p>Le note restano soltanto su questo dispositivo.</p><textarea id="notesArea" rows="14" placeholder="Scrivi collegamenti, domande, intuizioni…"></textarea><div class="dialog-actions"><button id="downloadNotes" class="button" type="button">Esporta .txt</button><button id="saveNotes" class="button primary" type="button">Salva</button></div><p id="notesStatus" class="status" role="status"></p></dialog>
+  <dialog id="installDialog"><form method="dialog"><button class="dialog-close icon-button" aria-label="Chiudi">×</button><p class="eyebrow">Installazione su iPad</p><h2>Portala sulla schermata Home</h2><ol><li>Apri la pagina in Safari.</li><li>Tocca Condividi.</li><li>Scegli “Aggiungi alla schermata Home”.</li><li>Conferma con “Aggiungi”.</li></ol><p>Dopo il primo caricamento, la lezione funziona anche senza rete.</p></form></dialog>
+  <dialog id="resetDialog"><form method="dialog"><button class="dialog-close icon-button" value="cancel" aria-label="Chiudi">×</button><h2>Azzerare tutto?</h2><p>Progresso, note e tentativi saranno eliminati da questo dispositivo.</p><div class="dialog-actions"><button value="cancel" class="button">Annulla</button><button id="confirmReset" value="default" class="button danger">Azzera</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">JavaScript è necessario per la navigazione, gli appunti e le verifiche interattive.</p></noscript>
+  <script src="./content.js"></script><script src="./app.js"></script>
+</body>
+</html>
