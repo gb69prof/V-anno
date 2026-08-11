@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#001d2c">
+  <meta name="description" content="Indice generale interattivo delle lezioni di Letteratura italiana del quinto anno.">
+  <title>Letteratura del Novecento — gbprof e Libera</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#poster">Vai al percorso</a>
+
+  <main class="page" aria-labelledby="page-title">
+    <h1 id="page-title" class="sr-only">Letteratura del Novecento</h1>
+    <p class="sr-only">
+      Percorso digitale tra crisi, guerra, identità, memoria, ricostruzione e immaginazione.
+      Scegli una tappa, una corrente o un autore dalla copertina interattiva.
+    </p>
+
+    <section id="poster" class="poster-shell" aria-label="Copertina interattiva del percorso">
+      <picture class="poster-picture">
+        <source srcset="./assets/index/letteratura-novecento.webp" type="image/webp">
+        <img
+          class="poster-image"
+          src="./assets/index/letteratura-novecento.png"
+          width="951"
+          height="1654"
+          alt="Grande copertina illustrata di Letteratura del Novecento, in blu notte, oro, pergamena e seppia."
+        >
+      </picture>
+
+      <nav id="primary-hotspots" class="hotspot-layer" aria-label="Navigazione principale"></nav>
+      <div id="stage-hotspots" class="hotspot-layer" aria-label="Le quattro tappe del percorso"></div>
+      <nav id="lesson-hotspots" class="hotspot-layer" aria-label="Diramazioni: correnti e autori"></nav>
+      <nav id="index-hotspots" class="hotspot-layer" aria-label="Indici tematici"></nav>
+    </section>
+
+    <button id="mobile-index" class="mobile-index" type="button" aria-haspopup="dialog">
+      Apri l’indice accessibile
+    </button>
+  </main>
+
+  <dialog id="lesson-dialog" class="lesson-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-heading">
+      <div>
+        <p class="eyebrow">Letteratura del Novecento</p>
+        <h2 id="dialog-title">Indice del percorso</h2>
+      </div>
+      <button id="dialog-close" class="dialog-close" type="button" aria-label="Chiudi l’indice">×</button>
+    </div>
+    <p id="dialog-description" class="dialog-description"></p>
+    <div id="dialog-list" class="dialog-list"></div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <noscript>
+    <p class="noscript-note">Per usare gli hotspot interattivi è necessario attivare JavaScript.</p>
+  </noscript>
+
+  <script src="./app.js" defer></script>
+</body>
+</html>
