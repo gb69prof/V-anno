@@ -1,0 +1,13 @@
+{
+  "name":"Salvatore Quasimodo · L'isola e la storia",
+  "short_name":"Quasimodo",
+  "description":"PWA didattica in sei movimenti su Salvatore Quasimodo.",
+  "lang":"it",
+  "start_url":"./index.html#home",
+  "scope":"./",
+  "display":"standalone",
+  "orientation":"any",
+  "background_color":"#f5f0e5",
+  "theme_color":"#182724",
+  "icons":[{"src":"icons/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
