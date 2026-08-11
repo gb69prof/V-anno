@@ -75,8 +75,8 @@ main { min-height: calc(100dvh - 72px); }
 .cover-thesis { max-width: 630px; margin: 2rem 0; font: clamp(1.15rem, 2.5vw, 1.55rem)/1.45 Georgia, serif; }
 .cover-actions { display: flex; flex-wrap: wrap; gap: .7rem; }
 .cover-art { position: absolute; right: 4vw; top: 12%; width: min(40vw, 520px); height: 520px; }
-.cover-photo { margin: 0; overflow: hidden; border: 1px solid #9ba3a5; background: #d8d5ca url("assets/images/gadda.png") center / contain no-repeat; box-shadow: var(--shadow); transform: rotate(1.2deg); }
-.cover-photo img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; min-height: 100%; object-fit: contain; object-position: center; filter: saturate(.86) contrast(1.04); }
+.cover-photo { margin: 0; overflow: visible; border: 1px solid #9ba3a5; background: #d8d5ca; box-shadow: var(--shadow); transform: rotate(1.2deg); }
+.cover-photo img { position: static; display: block; width: 100%; height: auto; min-height: 0; filter: saturate(.86) contrast(1.04); }
 .archive-card { position: absolute; width: 220px; padding: 1.2rem; background: #fffdf7; border: 1px solid #cbc0ad; box-shadow: var(--shadow); transform: rotate(var(--rot)); }
 .archive-card::before { content: "TAVOLA · NODO"; display: block; color: #69747a; font: .63rem/1.2 ui-monospace, monospace; border-bottom: 1px solid #adb4b3; padding-bottom: .55rem; margin-bottom: 1rem; }
 .archive-card span { display: block; font: 2rem/1 Georgia, serif; }
@@ -207,3 +207,7 @@ footer { border-top: 1px solid var(--line); padding: 1.2rem clamp(1rem, 4vw, 3re
 @media (max-width: 620px) {
   .cover-photo { display: block; position: relative; right: auto; top: auto; width: 100%; height: 360px; margin-top: 2rem; transform: none; }
 }
+
+/* Il ritratto conserva sempre le proporzioni native: nessuna media query può ritagliarlo. */
+.cover-art.cover-photo { height: auto; aspect-ratio: 1198 / 1313; overflow: visible; }
+.cover-art.cover-photo img { width: 100%; height: auto; max-height: none; object-fit: fill; }
