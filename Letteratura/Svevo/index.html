@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="PWA didattica professionale su Italo Svevo e La coscienza di Zeno.">
+  <title>Svevo | La coscienza dell'uomo moderno</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <aside class="sidebar" aria-label="Navigazione principale">
+    <a class="brand" href="#/home" aria-label="Vai alla home">
+      <span class="brand-mark">S</span>
+      <span><strong>Svevo</strong><em>Libro vivo</em></span>
+    </a>
+    <nav class="main-nav">
+      <a href="#/home" data-link="home">Quadro generale</a>
+      <a href="#/percorso" data-link="percorso">Percorso autore</a>
+      <a href="#/lezioni" data-link="lezioni">Lezioni</a>
+      <a href="#/mappe" data-link="mappe">Mappe</a>
+      <a href="#/quiz" data-link="quiz">Verifica</a>
+      <a href="#/materiali" data-link="materiali">Materiali</a>
+    </nav>
+    <div class="sidebar-card">
+      <span class="eyebrow">Metodo</span>
+      <p>Dal mondo che preme sull'autore alla forma che diventa opera.</p>
+    </div>
+  </aside>
+
+  <header class="topbar">
+    <button id="menuButton" class="icon-button" aria-label="Apri menu">☰</button>
+    <div class="search-wrap">
+      <span>⌕</span>
+      <input id="searchInput" type="search" placeholder="Cerca: inetto, padre, verità, ironia..." autocomplete="off">
+    </div>
+    <button id="themeButton" class="pill-button" type="button">Tema</button>
+    <button id="installButton" class="pill-button primary" type="button" hidden>Installa</button>
+  </header>
+
+  <main id="app" class="app-shell" tabindex="-1"></main>
+
+  <footer class="mobile-tabs" aria-label="Navigazione mobile">
+    <a href="#/home">Home</a>
+    <a href="#/lezioni">Lezioni</a>
+    <a href="#/quiz">Verifica</a>
+    <a href="#/materiali">PDF</a>
+  </footer>
+
+  <template id="noteTemplate">
+    <section class="note-panel">
+      <div class="section-heading compact">
+        <span class="eyebrow">Taccuino</span>
+        <h3>Appunti della lezione</h3>
+      </div>
+      <textarea id="lessonNotes" placeholder="Scrivi qui appunti, domande, collegamenti per la classe..."></textarea>
+      <div class="button-row">
+        <button class="pill-button primary" id="saveNotes">Salva</button>
+        <button class="pill-button" id="downloadNotes">Scarica .txt</button>
+      </div>
+    </section>
+  </template>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

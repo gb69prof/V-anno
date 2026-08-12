@@ -8,7 +8,7 @@ const lessons = [
   { name: "Neorealismo", path: "./Neorealismo/index.html", available: true, type: "current", stage: 4, box: [42.8, 62.8, 9.6, 7.2] },
   { name: "D’Annunzio", path: "./D’Annunzio/index.html", available: false, type: "author", stage: 1, box: [52.8, 62.8, 9.6, 7.2] },
   { name: "Pascoli", path: "./Pascoli/index.html", available: false, type: "author", stage: 1, box: [62.8, 62.8, 9.6, 7.2] },
-  { name: "Svevo", path: "./Svevo/index.html", available: false, type: "author", stage: 3, box: [72.8, 62.8, 9.6, 7.2] },
+  { name: "Svevo", path: "./Svevo/index.html", available: true, type: "author", stage: 3, box: [72.8, 62.8, 9.6, 7.2] },
   { name: "Pirandello", path: "./Pirandello/index.html", available: true, type: "author", stage: 3, box: [82.8, 62.8, 9.6, 7.2] },
 
   { name: "Ungaretti", path: "./Ungaretti/index.html", available: true, type: "author", stage: 3, box: [2.8, 70.1, 9.6, 7.2] },
