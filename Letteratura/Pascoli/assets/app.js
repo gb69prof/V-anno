@@ -129,7 +129,7 @@
   lessons.forEach(s=>observer.observe(s));
   $("#resumeBtn").addEventListener("click",()=>document.getElementById(safeGet("last","mondo"))?.scrollIntoView());
   const updateScroll=()=>{const max=document.documentElement.scrollHeight-innerHeight;$("#readingBar").style.width=`${max?scrollY/max*100:0}%`;document.body.classList.toggle("cover-visible",scrollY<$("#home").offsetHeight-120);};
-  addEventListener("scroll",updateScroll,{passive:true});updateScroll();
+  addEventListener("scroll",updateScroll,{passive:true});addEventListener("pageshow",()=>setTimeout(updateScroll,100));updateScroll();
   addEventListener("keydown",e=>{if(/INPUT|TEXTAREA|SELECT/.test(e.target.tagName)||e.metaKey||e.ctrlKey||e.altKey)return;if(e.key!=="ArrowLeft"&&e.key!=="ArrowRight")return;const current=location.hash.slice(1),i=steps.indexOf(current);const next=e.key==="ArrowRight"?Math.min(steps.length-1,i<0?0:i+1):Math.max(0,i<0?0:i-1);location.hash=steps[next];});
   if("serviceWorker" in navigator)addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));
 })();

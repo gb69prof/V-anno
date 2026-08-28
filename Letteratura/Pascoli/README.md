@@ -34,7 +34,7 @@ Fonti esterne di controllo dichiarate nei materiali: Treccani, Dizionario Biogra
 - stampa pulita, layout mobile-first, prefers-reduced-motion;
 - manifest, icone e service worker con cache locale.
 
-Le chiavi localStorage iniziano tutte con pascoli-; la cache è pascoli-libro-vivo-v4.
+Le chiavi localStorage iniziano tutte con pascoli-; la cache è pascoli-libro-vivo-v5.
 
 ## Verifica locale
 
