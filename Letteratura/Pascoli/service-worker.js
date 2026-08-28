@@ -1,4 +1,4 @@
-const CACHE = "pascoli-libro-vivo-v2";
+const CACHE = "pascoli-libro-vivo-v3";
 const SHELL = [
   "./","./index.html","./offline.html","./manifest.webmanifest",
   "./assets/styles.css","./assets/cover-fix.css","./assets/app.js",

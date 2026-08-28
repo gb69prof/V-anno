@@ -78,7 +78,7 @@
       const wrong = []; let correct = 0;
       shown.forEach(([i,item]) => {
         const picked = form.elements[`q${i}`]?.value;
-        if (Number(picked) === item.answer) correct++; else wrong.push(i);
+        if (picked !== "" && Number(picked) === item.answer) correct++; else wrong.push(i);
       });
       const total = shown.length, percent = Math.round(correct/total*100), vote = Math.max(1, Math.round(percent/10));
       const record = {date:new Date().toISOString(),correct,total,percent,vote,wrong};
