@@ -1,7 +1,7 @@
-const CACHE = 'dannunzio-libro-vivo-v1';
+const CACHE = 'dannunzio-libro-vivo-v2';
 const CORE = [
   './', './index.html', './offline.html', './manifest.webmanifest',
-  './assets/styles.css', './assets/lessons-data.js', './assets/app.js',
+  './assets/styles.css?v=2', './assets/lessons-data.js?v=2', './assets/app.js?v=2',
   './assets/icons/favicon-32.png', './assets/icons/icon-180.png',
   './assets/icons/icon-192.png', './assets/icons/icon-512.png',
   './assets/images/copertina-dannunzio.png', './assets/images/copertina-dannunzio.webp',
