@@ -1,7 +1,7 @@
-const CACHE = 'dannunzio-ambiente-studio-v5';
+const CACHE = 'dannunzio-ambiente-studio-v6';
 const CORE = [
   './', './index.html', './offline.html', './manifest.webmanifest',
-  './assets/styles.css?v=5', './assets/lessons-data.js?v=5', './assets/quiz-data.js?v=5', './assets/app.js?v=5',
+  './assets/styles.css?v=6', './assets/lessons-data.js?v=6', './assets/quiz-data.js?v=6', './assets/app.js?v=6',
   './assets/icons/favicon-32.png', './assets/icons/icon-180.png',
   './assets/icons/icon-192.png', './assets/icons/icon-512.png',
   './assets/images/copertina-dannunzio.png', './assets/images/copertina-dannunzio.webp',

@@ -198,15 +198,16 @@ html[data-theme="dark"] .source-lesson > header h3 { color:var(--gold-2); }
 .visual-choices button.active { border-color:var(--red); }
 .visual-choices img { display:block;width:100%;height:48px;object-fit:cover;background:#071323; }
 .visual-choices span { display:block;padding:.2rem;font:600 .64rem/1.15 system-ui;color:var(--ink); }
-.notebook-panel { display:flex;flex-direction:column; }
-.notebook-panel textarea { width:100%;min-height:105px;flex:1 1 auto;resize:none;padding:.75rem;border:1px solid var(--line);border-radius:.5rem;background:var(--paper);color:var(--ink);line-height:1.5; }
-.citation-area { flex:0 1 auto;max-height:32%;overflow:auto;margin-top:.6rem;padding:.55rem;border:1px dashed var(--line);border-radius:.45rem;background:color-mix(in srgb,var(--paper) 70%,transparent); }
+.notebook-panel { display:block;overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;scrollbar-gutter:stable; }
+.notebook-panel textarea { display:block;width:100%;height:clamp(105px,16vh,150px);min-height:105px;resize:vertical;padding:.75rem;border:1px solid var(--line);border-radius:.5rem;background:var(--paper);color:var(--ink);line-height:1.5; }
+.citation-area { margin-top:.6rem;padding:.55rem;border:1px dashed var(--line);border-radius:.45rem;background:color-mix(in srgb,var(--paper) 70%,transparent); }
 .citation-area h3 { margin:0 0 .3rem;font-size:.82rem;color:var(--red); }
-.citation-area ol { margin:.2rem 0;padding-left:1.3rem; }
-.citation-area li { position:relative;margin:.35rem 0;padding-right:1.7rem;font-size:.8rem;line-height:1.35; }
+.citation-area ul { margin:.2rem 0;padding:0;list-style:none; }
+.citation-area li { position:relative;margin:0;padding:.48rem 1.7rem .48rem 0;border-bottom:1px solid color-mix(in srgb,var(--line) 55%,transparent);font-size:.8rem;line-height:1.4; }
+.citation-area li:last-child { border-bottom:0; }
 .citation-area li button { position:absolute;right:0;top:0;width:24px;height:24px;border:0;background:transparent;color:var(--red);cursor:pointer; }
 #emptyCitations { margin:.2rem;color:var(--muted);font-size:.78rem;line-height:1.3; }
-.notebook-actions { display:flex;gap:.5rem;margin-top:.65rem; }
+.notebook-actions { position:sticky;bottom:-1rem;z-index:2;display:flex;gap:.5rem;margin-top:.65rem;padding:.55rem 0 1rem;background:linear-gradient(0deg,var(--paper-2) 80%,transparent); }
 .notebook-actions button { min-height:40px;padding:.45rem .7rem;border:1px solid var(--gold);border-radius:.4rem;background:var(--navy);color:#fff;cursor:pointer; }
 .notebook-actions .danger { margin-left:auto;background:var(--red);border-color:var(--red); }
 .study-bottombar {
@@ -339,11 +340,10 @@ html[data-theme="dark"] .resource-view > header h3 { color:var(--gold-2); }
   .study-grid[data-mobile-panel="notes"] .study-sidebar { display:block;border-left:0; }
   .study-grid[data-mobile-panel="visual"] .notebook-panel { display:none; }
   .study-grid[data-mobile-panel="notes"] .visual-panel { display:none; }
-  .study-grid[data-mobile-panel="visual"] .visual-panel,
-  .study-grid[data-mobile-panel="notes"] .notebook-panel { display:flex;flex-direction:column;height:100%;border:0;padding:1rem; }
+  .study-grid[data-mobile-panel="visual"] .visual-panel { display:flex;flex-direction:column;height:100%;border:0;padding:1rem; }
+  .study-grid[data-mobile-panel="notes"] .notebook-panel { display:block;height:100%;overflow-y:auto;border:0;padding:1rem; }
   .study-grid[data-mobile-panel="visual"] .context-image img { height:min(46vh,420px); }
   .study-grid[data-mobile-panel="visual"] .visual-choices { margin-top:auto; }
-  .study-grid[data-mobile-panel="notes"] .citation-area { max-height:35%; }
   .study-app.resource-mode .reading-pane { display:block !important; }
   .study-app.resource-mode .study-sidebar { display:none !important; }
   .reading-hero { padding:2.2rem 1.1rem; }

@@ -37,3 +37,9 @@ Per la datazione al 1880 della falsa notizia della morte è stata verificata la 
 - Inserita nella colonna della lezione una barra stabile per evidenziare il passo selezionato, continuare la lettura e trasferire successivamente tutti i nuovi evidenziati nel taccuino.
 - Le evidenziature sono persistenti per lezione, vengono ripristinate alla riapertura e non sono duplicate quando vengono incollate nel taccuino.
 - La rimozione delle evidenziature non cancella le citazioni già conservate negli appunti.
+
+## Revisione del taccuino — versione 6
+
+- L’intero pannello del taccuino è ora scorrevole anche nell’orientamento orizzontale dell’iPad.
+- Le citazioni incollate non sono più numerate e scorrono come una raccolta continua di passi testuali.
+- I pulsanti di esportazione e cancellazione restano raggiungibili durante lo scorrimento.
