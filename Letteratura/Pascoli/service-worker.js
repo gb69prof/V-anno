@@ -1,7 +1,7 @@
-const CACHE = "pascoli-libro-vivo-v5";
+const CACHE = "pascoli-libro-vivo-v6";
 const SHELL = [
   "./","./index.html","./offline.html","./manifest.webmanifest",
-  "./assets/styles.css","./assets/cover-fix.css","./assets/app.js",
+  "./assets/styles.css","./assets/cover-fix.css?v=6","./assets/app.js?v=6",
   "./assets/icons/icon-180.png","./assets/icons/icon-192.png","./assets/icons/icon-512.png",
   "./assets/images/copertina-Pascoli.png","./assets/images/copertina-pascoli.webp",
   "./assets/images/01_mappa_generale_percorso.webp","./assets/images/02_mondo_precedente.webp",
