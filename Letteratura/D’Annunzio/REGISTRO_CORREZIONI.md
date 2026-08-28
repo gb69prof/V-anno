@@ -20,3 +20,13 @@ Le lezioni fornite restano riconoscibili e integrali. Gli interventi sotto elenc
 ## Criterio editoriale
 
 Le grafie d’autore presenti nei brani antologici — per esempio «studii», «imaginazioni», «conscienza» — non sono refusi moderni e sono state conservate. Le valutazioni critiche controverse contenute nelle lezioni sono state mantenute quando riconoscibili come interpretazioni, esplicitandone la natura dove necessario.
+
+## Revisione dell’ambiente di studio — versione 3
+
+- La copertina e i suoi collegamenti sono stati conservati; le lezioni sono ora aperte in sei ambienti di studio a scorrimento interno.
+- I 75 enunciati presenti nei campi `essentials` sono stati riscritti come conoscenze stabili, eliminando formulazioni operative come «spiegare», «riconoscere» o «analizzare».
+- Le 16 mappe sono associate a parole e nuclei concettuali precisi: l’apparato visivo cambia in relazione al blocco di testo letto.
+- Il taccuino è stato separato per lezione e distingue appunti personali e citazioni selezionate; entrambi vengono inclusi nell’esportazione TXT.
+- Il service worker aggiorna soltanto le cache appartenenti a questa PWA, senza cancellare quelle di altri percorsi ospitati sullo stesso dominio.
+
+Per la datazione al 1880 della falsa notizia della morte è stata verificata la cronologia ufficiale della [Fondazione Il Vittoriale degli Italiani](https://www.vittoriale.it/gabriele-dannunzio).

@@ -4,18 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#071c30">
-  <meta name="description" content="Gabriele D’Annunzio: quindici lezioni, estetismo e superomismo, opere, sedici schemi, verifiche e recupero.">
+  <meta name="description" content="Gabriele D’Annunzio: quindici lezioni in un ambiente di studio con apparato visivo sincronizzato, taccuino, verifiche e recupero.">
   <title>Gabriele D’Annunzio — Libro vivo</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icons/favicon-32.png">
   <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
-  <link rel="stylesheet" href="assets/styles.css?v=2">
-  <script src="assets/lessons-data.js?v=2" defer></script>
-  <script src="assets/app.js?v=2" defer></script>
+  <link rel="stylesheet" href="assets/styles.css?v=3">
+  <script src="assets/lessons-data.js?v=3" defer></script>
+  <script src="assets/quiz-data.js?v=3" defer></script>
+  <script src="assets/app.js?v=3" defer></script>
 </head>
 <body class="cover-visible">
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
   <div class="reading-progress" aria-hidden="true"><span id="readingBar"></span></div>
+
   <header class="site-header">
     <a class="brand" href="#home" aria-label="Copertina di Gabriele D’Annunzio"><span>GdA</span><b>Gabriele D’Annunzio</b></a>
     <nav class="top-nav" aria-label="Navigazione principale">
@@ -72,134 +74,104 @@
         <a href="#mondo"><b>1</b> Il mondo precedente</a>
         <a href="#fratture"><b>2</b> Le fratture</a>
         <a href="#immagine"><b>3</b> L’immagine del mondo</a>
-        <a href="#estetismo"><b>3A</b> Estetismo</a>
-        <a href="#superomismo"><b>3B</b> Superomismo</a>
+        <a href="#immagine" data-target-lesson="05"><b>3A</b> Estetismo</a>
+        <a href="#immagine" data-target-lesson="11"><b>3B</b> Superomismo</a>
         <a href="#poetica"><b>4</b> La poetica</a>
         <a href="#opere"><b>5</b> Le opere</a>
         <a href="#conclusione"><b>6</b> Conclusione</a>
         <a href="#mappe">Mappe</a><button type="button" data-open="timelineDialog">Timeline</button><a href="#quiz-finale">Quiz finale</a>
       </nav>
     </section>
-
-    <div class="lesson-stream">
-      <article id="mondo" class="lesson" data-step="1">
-        <header class="lesson-head"><p class="eyebrow">Movimento 1 · La realtà ricevuta</p><h2>Il mondo precedente</h2><p class="generative">Quale società, quale cultura e quale idea dell’artista riceve D’Annunzio dall’Italia di fine Ottocento?</p></header>
-        <div class="lesson-body">
-          <p class="lead">D’Annunzio entra nella scena quando la società borghese diventa società di massa. La bellezza non è più protetta da un pubblico aristocratico: deve misurarsi con stampa, folla, mercato e politica.</p>
-          <div class="lesson-mount" data-lesson-id="01"></div>
-          <figure class="map-card"><button class="image-open" data-image="assets/images/section-mondo.svg" data-alt="Mappa: la società di massa produce crisi dell’ordine e paura della folla; l’estetismo difende la bellezza per pochi e prepara il superuomo."><img src="assets/images/section-mondo.svg" width="1000" height="650" alt="Mappa concettuale sul mondo precedente." loading="lazy"></button><figcaption>Dalla società di massa alla necessità di una nuova figura di guida.</figcaption></figure>
-          <section class="section-quiz" data-quiz="mondo"><h3>Controllo formativo</h3><div class="quiz-mount"></div></section>
-          <p class="bridge"><b>Verso le fratture.</b> La crisi storica incontra un’ambizione personale: non soltanto scrivere, ma emergere e diventare personaggio.</p>
-        </div>
-        <nav class="lesson-nav"><a href="#home">← Copertina</a><a href="#home">Indice</a><a href="#fratture">Le fratture →</a></nav>
-      </article>
-
-      <article id="fratture" class="lesson" data-step="2">
-        <header class="lesson-head"><p class="eyebrow">Movimento 2 · Vita, immagine, azione</p><h2>Le fratture</h2><p class="generative">Quali esperienze e contraddizioni spingono D’Annunzio a trasformare la propria vita in un’opera?</p></header>
-        <div class="lesson-body">
-          <div class="lesson-mount" data-lesson-id="02"></div>
-          <div class="lesson-mount" data-lesson-id="03"></div>
-          <figure class="map-card"><button class="image-open" data-image="assets/images/section-fratture.svg" data-alt="Mappa: l’ambizione reagisce alla provincia, cerca notorietà, costruisce scandalo e vita come arte, trasforma l’impresa pubblica nel mito del Vate."><img src="assets/images/section-fratture.svg" width="1000" height="650" alt="Mappa concettuale sulle fratture biografiche e pubbliche." loading="lazy"></button><figcaption>L’ambizione privata diventa strategia pubblica.</figcaption></figure>
-          <section class="section-quiz" data-quiz="fratture"><h3>Controllo formativo</h3><div class="quiz-mount"></div></section>
-          <p class="bridge"><b>Verso l’immagine del mondo.</b> La notorietà non basta: occorre un modello di uomo capace prima di separarsi dalla massa, poi di guidarla.</p>
-        </div>
-        <nav class="lesson-nav"><a href="#mondo">← Mondo precedente</a><a href="#home">Copertina</a><a href="#immagine">Immagine del mondo →</a></nav>
-      </article>
-
-      <article id="immagine" class="lesson" data-step="3">
-        <header class="lesson-head"><p class="eyebrow">Movimento 3 · Due risposte alla modernità</p><h2>L’immagine del mondo</h2><p class="generative">Che cosa accade quando la bellezza diventa un valore assoluto e, successivamente, un diritto di comando?</p></header>
-        <div class="lesson-body">
-          <nav class="phase-switch" aria-label="Le due fasi dell’immagine del mondo"><a href="#estetismo">3A · Estetismo</a><a href="#superomismo">3B · Superomismo</a></nav>
-          <section id="estetismo" class="phase-panel">
-            <p class="eyebrow">Fase 3A</p><h3>Estetismo: la bellezza contro il mondo comune</h3>
-            <div class="lesson-mount" data-lesson-id="05"></div>
-            <aside class="source-crosslink"><h4>L’esteta diventa personaggio</h4><p>La formazione di Andrea Sperelli e il relativo commento sono conservati integralmente nei laboratori 7 e 8 della sezione Opere.</p><a href="#lezione-07">Vai alla nascita dell’esteta →</a></aside>
-            <section class="section-quiz" data-quiz="estetismo"><h3>Verifica dell’estetismo</h3><div class="quiz-mount"></div></section>
-          </section>
-          <section id="superomismo" class="phase-panel">
-            <p class="eyebrow">Fase 3B</p><h3>Superomismo: dall’isolamento al comando</h3>
-            <div class="lesson-mount" data-lesson-id="11"></div>
-            <section class="section-quiz" data-quiz="superomismo"><h3>Verifica del superomismo</h3><div class="quiz-mount"></div></section>
-          </section>
-          <figure class="map-card"><button class="image-open" data-image="assets/images/section-immagine.svg" data-alt="Mappa: l’individuo eccezionale si fonda sul culto della bellezza, incarna l’esteta, attraversa una crisi e si trasforma in superuomo che rivendica comando e fusione panica."><img src="assets/images/section-immagine.svg" width="1000" height="650" alt="Mappa delle due fasi dell’immagine del mondo." loading="lazy"></button><figcaption>Esteta e superuomo: continuità del privilegio, trasformazione della funzione.</figcaption></figure>
-          <p class="bridge"><b>Verso la poetica.</b> Un individuo eccezionale ha bisogno di una parola altrettanto eccezionale: capace di sedurre, trasformare e far parlare la natura.</p>
-        </div>
-        <nav class="lesson-nav"><a href="#fratture">← Fratture</a><a href="#home">Copertina</a><a href="#poetica">Poetica →</a></nav>
-      </article>
-
-      <article id="poetica" class="lesson" data-step="4">
-        <header class="lesson-head"><p class="eyebrow">Movimento 4 · La parola trasforma</p><h2>La poetica</h2><p class="generative">Quale lingua serve per trasformare il mondo in esperienza estetica, sensoriale e musicale?</p></header>
-        <div class="lesson-body">
-          <div class="lesson-mount" data-lesson-id="04"></div>
-          <figure class="map-card"><button class="image-open" data-image="assets/images/section-poetica.svg" data-alt="Mappa: la parola musicale valorizza il suono, organizza le figure retoriche, risveglia sensualità e corrispondenze, produce metamorfosi e conduce al panismo."><img src="assets/images/section-poetica.svg" width="1000" height="650" alt="Mappa concettuale della poetica dannunziana." loading="lazy"></button><figcaption>Il suono non decora il senso: lo produce.</figcaption></figure>
-          <section class="section-quiz" data-quiz="poetica"><h3>Controllo formativo</h3><div class="quiz-mount"></div></section>
-          <p class="bridge"><b>Verso le opere.</b> Il linguaggio musicale deve ora misurarsi con personaggi, desiderio, fallimento, paesaggio e metamorfosi.</p>
-        </div>
-        <nav class="lesson-nav"><a href="#immagine">← Immagine del mondo</a><a href="#home">Copertina</a><a href="#opere">Opere →</a></nav>
-      </article>
-
-      <article id="opere" class="lesson" data-step="5">
-        <header class="lesson-head"><p class="eyebrow">Movimento 5 · Laboratori testuali</p><h2>Le opere</h2><p class="generative">Dove estetismo, superomismo e panismo diventano personaggi, immagini, suono e conflitto?</p></header>
-        <div class="lesson-body">
-          <nav class="works-index" aria-label="Indice delle opere">
-            <a href="#lezione-06">Il piacere</a><a href="#lezione-07">Nascita dell’esteta</a><a href="#lezione-09">Andrea ed Elena</a>
-            <a href="#lezione-10">Andrea e Maria</a><a href="#lezione-12">Le Laudi</a><a href="#lezione-13">Alcyone</a>
-            <a href="#lezione-14">La sera fiesolana</a><a href="#lezione-15">La pioggia nel pineto</a>
-          </nav>
-          <div class="lesson-mount" data-lesson-id="06"></div>
-          <div class="lesson-mount" data-lesson-id="07"></div>
-          <div class="lesson-mount" data-lesson-id="08"></div>
-          <div class="lesson-mount" data-lesson-id="09"></div>
-          <div class="lesson-mount" data-lesson-id="10"></div>
-          <div class="lesson-mount" data-lesson-id="12"></div>
-          <div class="lesson-mount" data-lesson-id="13"></div>
-          <div class="lesson-mount" data-lesson-id="14"></div>
-          <div class="lesson-mount" data-lesson-id="15"></div>
-          <figure class="map-card"><button class="image-open" data-image="assets/images/section-opere.svg" data-alt="Mappa: Il piacere mostra il fallimento dell’esteta; le Laudi ampliano il progetto; Alcyone, La sera fiesolana e La pioggia nel pineto realizzano musica e metamorfosi."><img src="assets/images/section-opere.svg" width="1000" height="650" alt="Mappa concettuale delle opere affrontate." loading="lazy"></button><figcaption>Le opere trasformano le formule in conflitti e forme.</figcaption></figure>
-          <section class="section-quiz" data-quiz="opere"><h3>Controllo formativo</h3><div class="quiz-mount"></div></section>
-          <p class="bridge"><b>Verso la conclusione.</b> Dopo la seduzione delle forme resta una domanda: quale eredità sopravvive e quali limiti non vanno nascosti?</p>
-        </div>
-        <nav class="lesson-nav"><a href="#poetica">← Poetica</a><a href="#home">Copertina</a><a href="#conclusione">Conclusione →</a></nav>
-      </article>
-
-      <article id="conclusione" class="lesson" data-step="6">
-        <header class="lesson-head"><p class="eyebrow">Movimento 6 · Ricomporre senza assolvere</p><h2>Conclusione</h2><p class="generative">Che cosa resta di D’Annunzio quando smettiamo di ridurlo all’esteta, al superuomo o al poeta-vate?</p></header>
-        <div class="lesson-body">
-          <p class="lead">D’Annunzio non è una sola formula. È il luogo in cui arte, mercato, vita privata, propaganda e politica imparano a usare la stessa macchina: la costruzione dell’immagine.</p>
-          <h3>La grandezza</h3>
-          <p>La sua lingua rinnova il repertorio poetico italiano attraverso musicalità, analogia, varietà metrica e precisione sensoriale. In <cite>Alcyone</cite> l’artificio raggiunge una naturalezza apparente: la parola si fa pioggia, fruscio, attesa, metamorfosi. Il poeta comprende inoltre con anticipo che l’autore moderno non vive soltanto nei libri, ma nella stampa, nella fotografia, nell’evento e nel racconto pubblico di sé.</p>
-          <h3>Il limite</h3>
-          <p>La centralità dell’individuo eccezionale può trasformare l’altro in materia: accade nelle relazioni di Andrea Sperelli e, sul piano collettivo, nell’idea di una massa destinata a essere guidata. Nazionalismo, culto dell’azione e linguaggio del comando non sono incidenti separabili a piacere dall’opera; appartengono alle contraddizioni storiche del personaggio.</p>
-          <h3>La modernità controversa</h3>
-          <p>D’Annunzio anticipa la società dello spettacolo senza esserne un semplice profeta positivo. Mostra insieme la potenza e il costo dell’auto-rappresentazione: la vita trasformata in opera acquista un’enorme efficacia pubblica, ma rischia di perdere verità, reciprocità e limite. Per questo continua a essere utile: non offre un modello da imitare, ma un caso straordinariamente lucido da comprendere.</p>
-          <details><summary>Sintesi</summary><p>Dal mondo di massa alla costruzione dell’esteta, dalla sua crisi al superuomo, dalla parola musicale alle opere: il percorso mostra una continuità nella ricerca di eccezionalità. La grandezza formale convive con limiti ideologici e relazionali che una lettura storica non deve cancellare.</p></details>
-          <div class="study-grid"><section><h3>Saperi irrinunciabili</h3><ul><li>Ricomporre i sei movimenti in una catena.</li><li>Distinguere innovazione artistica e ideologia.</li><li>Spiegare la modernità della costruzione pubblica dell’autore.</li><li>Valutare il rapporto fra bellezza, dominio e alterità.</li><li>Motivare l’eredità controversa di D’Annunzio.</li></ul></section><section><h3>Vocabolario</h3><dl><dt>Auto-rappresentazione</dt><dd>Costruzione pubblica della propria identità.</dd><dt>Società dello spettacolo</dt><dd>Spazio nel quale l’immagine diventa parte centrale della vita collettiva.</dd><dt>Eredità</dt><dd>Effetti duraturi su lingua, cultura e modelli pubblici.</dd><dt>Contraddizione</dt><dd>Coesistenza non pacificata di grandezza e limite.</dd></dl></section></div>
-          <figure class="map-card"><button class="image-open" data-image="assets/images/section-conclusione.svg" data-alt="Mappa finale: D’Annunzio lascia innovazione linguistica, costruisce mito personale, anticipa comunicazione di massa; grandezza artistica e limiti ideologici confluiscono in un’eredità controversa."><img src="assets/images/section-conclusione.svg" width="1000" height="650" alt="Mappa conclusiva sulla modernità controversa di D’Annunzio." loading="lazy"></button><figcaption>Grandezza e limite non si annullano: devono essere pensati insieme.</figcaption></figure>
-          <section class="section-quiz" data-quiz="conclusione"><h3>Controllo formativo</h3><div class="quiz-mount"></div></section>
-        </div>
-        <nav class="lesson-nav"><a href="#opere">← Opere</a><a href="#home">Copertina</a><a href="#quiz-finale">Quiz finale →</a></nav>
-      </article>
-    </div>
-
-    <section id="mappe" class="resource-section">
-      <header><p class="eyebrow">Sedici schemi originali ad alta risoluzione</p><h2>Mappe e schemi</h2><p>Le anteprime sono leggere; il pulsante apre sempre il PNG originale con zoom.</p></header>
-      <div class="map-gallery" id="mapGallery"></div>
-    </section>
-
-    <section id="quiz-finale" class="resource-section final-quiz">
-      <header><p class="eyebrow">Verifica trasversale</p><h2>Quiz finale</h2><p>Diciotto domande sui sei movimenti. Dopo la correzione puoi recuperare e rifare soltanto gli errori.</p></header>
-      <div class="quiz-mount" data-final-quiz></div>
-    </section>
   </main>
 
-  <footer><p>Gabriele D’Annunzio · Libro vivo per il quinto anno · gbprof e Libera</p><a href="../">Torna a Letteratura</a><a href="REGISTRO_CORREZIONI.md">Registro delle correzioni</a></footer>
+  <footer class="site-footer"><p>Gabriele D’Annunzio · Libro vivo per il quinto anno · gbprof e Libera</p><a href="../">Torna a Letteratura</a><a href="REGISTRO_CORREZIONI.md">Registro delle correzioni</a></footer>
+
+  <section id="studyApp" class="study-app" hidden aria-label="Ambiente di studio">
+    <header class="study-topbar">
+      <a class="study-home" href="#home"><span aria-hidden="true">←</span> Home</a>
+      <div class="study-heading"><span id="studySectionLabel"></span><h1 id="studyTitle">Lezione</h1></div>
+      <div class="study-actions">
+        <button type="button" id="studyThemeBtn" aria-label="Cambia tema">◐</button>
+        <button type="button" id="studyFontBtn" aria-label="Cambia dimensione del testo">A</button>
+        <button type="button" id="indexBtn" data-open="indexDialog">Indice</button>
+      </div>
+      <nav class="mobile-study-tabs" aria-label="Pannelli dell’ambiente di studio">
+        <button type="button" class="active" data-mobile-view="read">Lezione</button>
+        <button type="button" data-mobile-view="visual">Apparato</button>
+        <button type="button" data-mobile-view="notes">Taccuino</button>
+      </nav>
+    </header>
+
+    <div id="studyGrid" class="study-grid" data-mobile-panel="read">
+      <article id="readingPane" class="reading-pane" tabindex="0" aria-labelledby="studyTitle">
+        <header class="reading-hero">
+          <p id="readingEyebrow" class="eyebrow"></p>
+          <h2 id="readingMovementTitle"></h2>
+          <p id="readingQuestion" class="generative"></p>
+        </header>
+        <nav id="lessonJump" class="lesson-jump" aria-label="Lezioni del movimento"></nav>
+        <div id="lessonContent" class="lesson-content"></div>
+        <nav class="sequence-nav" aria-label="Movimenti precedente e successivo">
+          <a id="previousMovement" href="#home">← Copertina</a>
+          <a id="nextMovement" href="#conclusione">Conclusione →</a>
+        </nav>
+      </article>
+
+      <aside class="study-sidebar" aria-label="Apparato visivo e taccuino">
+        <section class="visual-panel" aria-labelledby="visualTitle">
+          <header><p class="panel-kicker">Osserva mentre leggi</p><h2 id="visualTitle">Apparato visivo</h2></header>
+          <button type="button" id="contextImageButton" class="context-image image-open">
+            <img id="contextImage" src="assets/images/section-mondo.svg" alt="" width="1000" height="650">
+            <span aria-hidden="true">Ingrandisci</span>
+          </button>
+          <p id="contextCaption" class="context-caption" aria-live="polite"></p>
+          <div id="visualChoices" class="visual-choices" aria-label="Materiali visivi collegati"></div>
+        </section>
+
+        <section class="notebook-panel" aria-labelledby="notebookTitle">
+          <header><p class="panel-kicker">Elabora</p><h2 id="notebookTitle">Taccuino</h2><span id="autosaveState" role="status">Salvataggio automatico</span></header>
+          <label class="sr-only" for="notebookText">Appunti personali</label>
+          <textarea id="notebookText" rows="7" placeholder="Scrivi osservazioni, domande e collegamenti personali…"></textarea>
+          <div id="citationArea" class="citation-area"><h3>Citazioni dalla lezione</h3><ol id="citationList"></ol><p id="emptyCitations">Seleziona un passo nel testo e scegli “Aggiungi al taccuino”.</p></div>
+          <div class="notebook-actions">
+            <button type="button" id="downloadNotes">Scarica TXT</button>
+            <button type="button" id="clearNotebook" class="danger">Cancella</button>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <nav id="studyBottomBar" class="study-bottombar" aria-label="Strumenti per sedimentare">
+      <button type="button" data-learning-panel="essentials">Saperi irrinunciabili</button>
+      <button type="button" data-learning-panel="vocab">Vocabolario</button>
+      <button type="button" data-learning-panel="test">Test</button>
+    </nav>
+  </section>
+
+  <div id="selectionTools" class="selection-tools" hidden role="toolbar" aria-label="Azioni sul testo selezionato">
+    <button type="button" id="addSelection">Aggiungi al taccuino</button>
+    <button type="button" id="highlightSelection">Evidenzia</button>
+  </div>
+  <div id="toast" class="toast" hidden role="status" aria-live="polite"></div>
+
+  <dialog id="indexDialog" class="index-dialog">
+    <form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form>
+    <header><p class="panel-kicker">Quindici lezioni, sei movimenti</p><h2>Indice</h2></header>
+    <nav id="fullIndex" class="full-index" aria-label="Indice completo delle lezioni"></nav>
+  </dialog>
+
+  <dialog id="learningDialog" class="learning-dialog">
+    <form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form>
+    <header><p id="learningKicker" class="panel-kicker"></p><h2 id="learningTitle">Saperi irrinunciabili</h2></header>
+    <div id="learningContent"></div>
+  </dialog>
 
   <dialog id="bioDialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form><h2>Biografia essenziale</h2><ol class="timeline-list"><li><time>1863</time> Nasce a Pescara.</li><li><time>1879</time> Pubblica <cite>Primo vere</cite>.</li><li><time>1880</time> Fa circolare la falsa notizia della propria morte.</li><li><time>1889</time> Pubblica <cite>Il piacere</cite>.</li><li><time>1892</time> <cite>La bestia elettiva</cite> testimonia la ricezione selettiva di Nietzsche.</li><li><time>1903</time> Escono i primi tre libri delle <cite>Laudi</cite>.</li><li><time>1918</time> Volo su Vienna.</li><li><time>1919–1920</time> Impresa di Fiume.</li><li><time>1921</time> Si stabilisce al Vittoriale.</li><li><time>1938</time> Muore a Gardone Riviera.</li></ol></dialog>
 
   <dialog id="timelineDialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form><h2>Timeline interattiva</h2><div class="timeline-ui" role="list"><button role="listitem" data-year="1863"><b>1863</b><span>Nascita</span></button><button role="listitem" data-year="1879"><b>1879</b><span>Primo vere</span></button><button role="listitem" data-year="1889"><b>1889</b><span>Il piacere</span></button><button role="listitem" data-year="1892"><b>1892</b><span>Nietzsche</span></button><button role="listitem" data-year="1903"><b>1903</b><span>Le Laudi</span></button><button role="listitem" data-year="1918"><b>1918</b><span>Vienna</span></button><button role="listitem" data-year="1919"><b>1919</b><span>Fiume</span></button><button role="listitem" data-year="1921"><b>1921</b><span>Vittoriale</span></button><button role="listitem" data-year="1938"><b>1938</b><span>Morte</span></button></div><output id="timelineOutput">Scegli una data per collegare vita, opere e trasformazioni dell’immagine pubblica.</output></dialog>
 
-  <dialog id="notesDialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form><h2>I miei appunti</h2><label for="notesArea">Le note restano su questo dispositivo.</label><textarea id="notesArea" rows="14" placeholder="Scrivi osservazioni, domande, collegamenti…"></textarea><div class="dialog-actions"><button id="saveNotes" type="button">Salva</button><button id="exportNotes" type="button">Esporta .txt</button><button id="clearNotes" type="button" class="danger">Svuota</button></div><p id="notesStatus" role="status"></p></dialog>
+  <dialog id="notesDialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form><h2>I miei taccuini</h2><p>Gli appunti sono organizzati per lezione e restano su questo dispositivo.</p><div id="notesOverview" class="notes-overview"></div></dialog>
 
-  <dialog id="imageDialog" class="image-dialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi immagine">×</button></form><div class="zoom-tools"><button type="button" data-zoom="-">−</button><button type="button" data-zoom="reset">Adatta</button><button type="button" data-zoom="+">+</button></div><div class="image-stage"><img id="dialogImage" alt=""></div><p id="dialogCaption"></p></dialog>
+  <dialog id="imageDialog" class="image-dialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi immagine">×</button></form><div class="zoom-tools"><button type="button" data-zoom="-" aria-label="Riduci">−</button><button type="button" data-zoom="reset">Adatta</button><button type="button" data-zoom="+" aria-label="Ingrandisci">+</button></div><div class="image-stage"><img id="dialogImage" alt=""></div><p id="dialogCaption"></p></dialog>
 </body>
 </html>

@@ -2,7 +2,7 @@
   "id": "./",
   "name": "Gabriele D’Annunzio — Libro vivo",
   "short_name": "D’Annunzio",
-  "description": "Percorso didattico interattivo in quindici lezioni su Gabriele D’Annunzio.",
+  "description": "Quindici lezioni su Gabriele D’Annunzio in un ambiente di studio con mappe sincronizzate, taccuino e verifiche.",
   "lang": "it",
   "start_url": "./index.html",
   "scope": "./",
