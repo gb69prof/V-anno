@@ -1,0 +1,9 @@
+.path-index {
+  transition: opacity .2s, transform .2s;
+}
+
+body.cover-visible .path-index {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(-120%);
+}
