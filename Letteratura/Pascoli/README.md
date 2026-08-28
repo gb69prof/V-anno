@@ -6,6 +6,8 @@ PWA didattica standalone per il quinto anno, costruita come volume della stessa 
 
 Il percorso comprende otto tappe: mondo precedente, fratture, immagine del mondo, poetica del fanciullino, forma, simbolismo, opere e conclusione. La settima tappa contiene tre laboratori autonomi con testo integrale e close reading: **X agosto**, **Il gelsomino notturno**, **Digitale purpurea**.
 
+Il laboratorio sul **Gelsomino notturno** collega una lezione visuale autonoma, importata e adattata nel percorso gelsomino/gelsomino.html: sei letture strofa per strofa, tredici immagini, simboli, laboratorio e collegamenti di ritorno alla PWA principale.
+
 Ogni tappa include domanda generatrice, lezione, dispositivo didattico, sintesi, saperi irrinunciabili, vocabolario, mappa, verifica a cinque quesiti, spiegazioni e recupero mirato. Il quiz finale contiene sedici domande.
 
 ## Fonti e criterio editoriale
@@ -34,7 +36,7 @@ Fonti esterne di controllo dichiarate nei materiali: Treccani, Dizionario Biogra
 - stampa pulita, layout mobile-first, prefers-reduced-motion;
 - manifest, icone e service worker con cache locale.
 
-Le chiavi localStorage iniziano tutte con pascoli-; la cache è pascoli-libro-vivo-v8. Gli asset interattivi hanno query di versione per aggiornare anche le installazioni già aperte. Le mappe sono pubblicate in JPEG ad alta qualità per garantire leggibilità e compatibilità.
+Le chiavi localStorage iniziano tutte con pascoli-; la cache è pascoli-libro-vivo-v9. Gli asset interattivi hanno query di versione per aggiornare anche le installazioni già aperte. Le mappe sono pubblicate in JPEG ad alta qualità per garantire leggibilità e compatibilità.
 
 ## Verifica locale
 
