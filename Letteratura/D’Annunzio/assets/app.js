@@ -118,6 +118,7 @@
   let pendingLessonId = null;
   let pendingSelection = null;
   let saveTimer = null;
+  let selectionTimer = null;
   let scrollFrame = 0;
   let toastTimer = null;
   let opener = null;
@@ -498,7 +499,10 @@
   function captureSelection() {
     if (studyApp.hidden || !movements[currentMovement]) return;
     const selection = getSelection();
-    if (!selection || selection.isCollapsed || !selection.rangeCount) return;
+    if (!selection || selection.isCollapsed || !selection.rangeCount) {
+      pendingSelection = null;
+      return updateReadingTools();
+    }
     const range = selection.getRangeAt(0);
     const ancestor = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
     const source = ancestor?.closest?.(".source-lesson") || range.startContainer.parentElement?.closest(".source-lesson");
@@ -910,6 +914,10 @@
     readingTools.addEventListener("pointerdown", event => { if (event.target.closest("button")) event.preventDefault(); });
     lessonContent.addEventListener("pointerup", () => setTimeout(captureSelection,0));
     lessonContent.addEventListener("keyup", event => { if (event.key === "Shift" || event.key.startsWith("Arrow")) setTimeout(captureSelection,0); });
+    document.addEventListener("selectionchange", () => {
+      clearTimeout(selectionTimer);
+      selectionTimer = setTimeout(captureSelection,90);
+    });
 
     $$('dialog').forEach(dialog => {
       dialog.addEventListener("click", event => { if (event.target === dialog) closeModal(dialog); });

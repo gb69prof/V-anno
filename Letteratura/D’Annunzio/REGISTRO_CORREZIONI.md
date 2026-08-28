@@ -31,7 +31,7 @@ Le grafie d’autore presenti nei brani antologici — per esempio «studii», �
 
 Per la datazione al 1880 della falsa notizia della morte è stata verificata la cronologia ufficiale della [Fondazione Il Vittoriale degli Italiani](https://www.vittoriale.it/gabriele-dannunzio).
 
-## Revisione degli strumenti di lettura — versione 4
+## Revisione degli strumenti di lettura — versione 5
 
 - Rimosso il menu flottante che si sovrapponeva ai comandi nativi di selezione di Safari su iPad.
 - Inserita nella colonna della lezione una barra stabile per evidenziare il passo selezionato, continuare la lettura e trasferire successivamente tutti i nuovi evidenziati nel taccuino.
