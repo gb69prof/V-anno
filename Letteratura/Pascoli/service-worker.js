@@ -1,15 +1,15 @@
-const CACHE = "pascoli-libro-vivo-v6";
+const CACHE = "pascoli-libro-vivo-v8";
 const SHELL = [
   "./","./index.html","./offline.html","./manifest.webmanifest",
-  "./assets/styles.css","./assets/cover-fix.css?v=6","./assets/app.js?v=6",
+  "./assets/styles.css","./assets/cover-fix.css?v=8","./assets/app.js?v=8",
   "./assets/icons/icon-180.png","./assets/icons/icon-192.png","./assets/icons/icon-512.png",
   "./assets/images/copertina-Pascoli.png","./assets/images/copertina-pascoli.webp",
-  "./assets/images/01_mappa_generale_percorso.webp","./assets/images/02_mondo_precedente.webp",
-  "./assets/images/03_fratture_e_nido.webp","./assets/images/04_immagine_del_mondo.webp",
-  "./assets/images/05_poetica_del_fanciullino.webp","./assets/images/06_forma_e_sintassi.webp",
-  "./assets/images/07_effetti_sonori.webp","./assets/images/08_simbolismo_rete_di_segni.webp",
-  "./assets/images/09_x_agosto.webp","./assets/images/10_gelsomino_notturno.webp",
-  "./assets/images/11_digitale_purpurea.webp","./assets/images/12_conclusione_grandezza_e_limite.webp"
+  "./assets/images/01_mappa_generale_percorso.jpg","./assets/images/02_mondo_precedente.jpg",
+  "./assets/images/03_fratture_e_nido.jpg","./assets/images/04_immagine_del_mondo.jpg",
+  "./assets/images/05_poetica_del_fanciullino.jpg","./assets/images/06_forma_e_sintassi.jpg",
+  "./assets/images/07_effetti_sonori.jpg","./assets/images/08_simbolismo_rete_di_segni.jpg",
+  "./assets/images/09_x_agosto.jpg","./assets/images/10_gelsomino_notturno.jpg",
+  "./assets/images/11_digitale_purpurea.jpg","./assets/images/12_conclusione_grandezza_e_limite.jpg"
 ];
 self.addEventListener("install", event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(()=>self.skipWaiting())));
 self.addEventListener("activate", event => event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith("pascoli-")&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
