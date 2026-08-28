@@ -30,3 +30,10 @@ Le grafie d’autore presenti nei brani antologici — per esempio «studii», �
 - Il service worker aggiorna soltanto le cache appartenenti a questa PWA, senza cancellare quelle di altri percorsi ospitati sullo stesso dominio.
 
 Per la datazione al 1880 della falsa notizia della morte è stata verificata la cronologia ufficiale della [Fondazione Il Vittoriale degli Italiani](https://www.vittoriale.it/gabriele-dannunzio).
+
+## Revisione degli strumenti di lettura — versione 4
+
+- Rimosso il menu flottante che si sovrapponeva ai comandi nativi di selezione di Safari su iPad.
+- Inserita nella colonna della lezione una barra stabile per evidenziare il passo selezionato, continuare la lettura e trasferire successivamente tutti i nuovi evidenziati nel taccuino.
+- Le evidenziature sono persistenti per lezione, vengono ripristinate alla riapertura e non sono duplicate quando vengono incollate nel taccuino.
+- La rimozione delle evidenziature non cancella le citazioni già conservate negli appunti.

@@ -102,7 +102,8 @@
   const studyGrid = $("#studyGrid");
   const readingPane = $("#readingPane");
   const lessonContent = $("#lessonContent");
-  const selectionTools = $("#selectionTools");
+  const readingTools = $("#readingTools");
+  const selectionStatus = $("#selectionStatus");
   const notebookText = $("#notebookText");
   const autosaveState = $("#autosaveState");
   const imageDialog = $("#imageDialog");
@@ -199,6 +200,7 @@
     $("#readingQuestion").textContent = movement.question;
     lessonContent.innerHTML = items.map(renderSourceLesson).join("");
     normalizeReadingMarkup();
+    items.forEach(item => restoreHighlights(item.id));
     renderLessonJump(items);
     renderSequence(route);
     readingPane.scrollTop = 0;
@@ -244,6 +246,7 @@
   function renderSpecial(route) {
     currentMovement = route;
     currentLessonId = null;
+    pendingSelection = null;
     studyApp.classList.add("resource-mode");
     $("#lessonJump").hidden = true;
     $("#studySectionLabel").textContent = "Risorse del percorso";
@@ -283,6 +286,7 @@
     $("#notebookTitle").textContent = `Taccuino · Lezione ${id}`;
     $$('[data-jump-lesson]').forEach(button => button.classList.toggle("active", button.dataset.jumpLesson === id));
     loadNotebook(id);
+    updateReadingTools();
     renderVisualChoices(item);
     safeSet("last-lesson", id);
   }
@@ -415,71 +419,200 @@
     $("#emptyCitations").hidden = currentNotebook.citations.length > 0;
   }
 
-  function captureSelection() {
-    if (studyApp.hidden || !movements[currentMovement]) return hideSelectionTools();
-    const selection = getSelection();
-    if (!selection || selection.isCollapsed || !selection.rangeCount) return hideSelectionTools();
-    const text = selection.toString().replace(/\s+/g, " ").trim();
-    if (!text) return hideSelectionTools();
-    const range = selection.getRangeAt(0);
-    const ancestor = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
-    if (!ancestor || !lessonContent.contains(ancestor)) return hideSelectionTools();
-    const source = ancestor.closest?.(".source-lesson") || range.startContainer.parentElement?.closest(".source-lesson");
-    if (!source) return hideSelectionTools();
-    const rect = range.getBoundingClientRect();
-    if (!rect.width && !rect.height) return hideSelectionTools();
-    pendingSelection = {text:text.slice(0,5000),lessonId:source.dataset.lessonId,range:range.cloneRange()};
-    selectionTools.hidden = false;
-    const halfWidth = Math.max(125, selectionTools.offsetWidth / 2);
-    const left = Math.min(innerWidth - halfWidth - 8, Math.max(halfWidth + 8, rect.left + rect.width / 2));
-    const top = Math.max(selectionTools.offsetHeight + 8, rect.top - 8);
-    selectionTools.style.left = `${left}px`;
-    selectionTools.style.top = `${top}px`;
+  function highlightsFor(id) {
+    const value = safeGet(`highlights-${id}`, []);
+    if (!Array.isArray(value)) return [];
+    return value.filter(item => item && Number.isInteger(item.start) && Number.isInteger(item.end) && item.end > item.start && typeof item.text === "string");
   }
 
-  function hideSelectionTools() {
-    selectionTools.hidden = true;
+  function saveHighlights(id, highlights) {
+    return safeSet(`highlights-${id}`, highlights);
   }
 
-  function addPendingSelection() {
-    if (!pendingSelection) return;
-    const item = getLesson(pendingSelection.lessonId);
-    const notebook = notebookFor(pendingSelection.lessonId);
-    notebook.citations.push({text:pendingSelection.text,source:item?.title || `Lezione ${pendingSelection.lessonId}`,date:new Date().toISOString()});
-    safeSet(`notebook-${pendingSelection.lessonId}`, notebook);
-    if (currentLessonId !== pendingSelection.lessonId) setActiveLesson(pendingSelection.lessonId);
-    else {
-      currentNotebook = notebook;
-      renderCitations();
+  function sourceTextFor(id) {
+    return $(`#lezione-${id} .source-text`, lessonContent);
+  }
+
+  function markTextOffsets(source, start, end, highlightId) {
+    if (!source || start < 0 || end <= start || end > source.textContent.length) return false;
+    const walker = document.createTreeWalker(source, NodeFilter.SHOW_TEXT);
+    const segments = [];
+    let offset = 0;
+    while (walker.nextNode()) {
+      const node = walker.currentNode;
+      const nodeEnd = offset + node.nodeValue.length;
+      if (nodeEnd > start && offset < end) {
+        segments.push({node,start:Math.max(0,start - offset),end:Math.min(node.nodeValue.length,end - offset)});
+      }
+      offset = nodeEnd;
+      if (offset >= end) break;
     }
-    getSelection()?.removeAllRanges();
-    hideSelectionTools();
-    showToast("Passo aggiunto al taccuino.");
-  }
-
-  function highlightPendingSelection() {
-    if (!pendingSelection?.range) return;
-    const range = pendingSelection.range;
-    const root = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
-    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-      acceptNode: node => node.nodeValue.trim() && range.intersectsNode(node) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT
-    });
-    const nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.reverse().forEach(node => {
-      const start = node === range.startContainer ? range.startOffset : 0;
-      const end = node === range.endContainer ? range.endOffset : node.nodeValue.length;
-      if (end <= start) return;
-      const selectedNode = node.splitText(start);
-      selectedNode.splitText(end - start);
+    segments.reverse().forEach(segment => {
+      if (segment.end <= segment.start || segment.node.parentElement?.closest(".student-highlight")) return;
+      const selectedNode = segment.node.splitText(segment.start);
+      selectedNode.splitText(segment.end - segment.start);
       const mark = document.createElement("mark");
       mark.className = "student-highlight";
+      mark.dataset.highlightId = highlightId;
+      mark.title = "Passo evidenziato";
       selectedNode.parentNode.insertBefore(mark, selectedNode);
       mark.append(selectedNode);
     });
+    return segments.length > 0;
+  }
+
+  function restoreHighlights(id) {
+    const source = sourceTextFor(id);
+    if (!source) return;
+    highlightsFor(id).sort((a,b) => a.start - b.start).forEach(item => markTextOffsets(source,item.start,item.end,item.id));
+  }
+
+  function citationMatchesHighlight(citation, highlight) {
+    if (citation.highlightId && citation.highlightId === highlight.id) return true;
+    return citation.text.replace(/\s+/g," ").trim() === highlight.text.replace(/\s+/g," ").trim();
+  }
+
+  function updateReadingTools() {
+    const highlights = currentLessonId ? highlightsFor(currentLessonId) : [];
+    const notebook = currentLessonId ? notebookFor(currentLessonId) : {citations:[]};
+    const waiting = highlights.filter(highlight => !notebook.citations.some(citation => citationMatchesHighlight(citation,highlight)));
+    const canHighlight = !!pendingSelection && pendingSelection.lessonId === currentLessonId;
+    $("#highlightSelection").disabled = !canHighlight;
+    $("#addSelection").disabled = !canHighlight;
+    $("#addHighlights").disabled = waiting.length === 0;
+    $("#clearHighlights").disabled = highlights.length === 0;
+    $("#highlightCount").textContent = String(waiting.length);
+    $("#addHighlights").setAttribute("aria-label", `Incolla nel taccuino ${waiting.length} passaggi evidenziati`);
+    if (canHighlight) {
+      const words = pendingSelection.text.split(/\s+/).filter(Boolean).length;
+      selectionStatus.textContent = `Selezione pronta: ${words} ${words === 1 ? "parola" : "parole"}. Puoi evidenziarla o incollarla subito.`;
+    } else if (highlights.length && waiting.length) {
+      selectionStatus.textContent = `${highlights.length} ${highlights.length === 1 ? "passaggio evidenziato" : "passaggi evidenziati"}; ${waiting.length} ${waiting.length === 1 ? "da incollare" : "da incollare"} nel taccuino.`;
+    } else if (highlights.length) {
+      selectionStatus.textContent = `Tutti i passaggi evidenziati sono già nel taccuino.`;
+    } else {
+      selectionStatus.textContent = "Seleziona un passo, poi evidenzialo.";
+    }
+  }
+
+  function captureSelection() {
+    if (studyApp.hidden || !movements[currentMovement]) return;
+    const selection = getSelection();
+    if (!selection || selection.isCollapsed || !selection.rangeCount) return;
+    const range = selection.getRangeAt(0);
+    const ancestor = range.commonAncestorContainer.nodeType === Node.ELEMENT_NODE ? range.commonAncestorContainer : range.commonAncestorContainer.parentElement;
+    const source = ancestor?.closest?.(".source-lesson") || range.startContainer.parentElement?.closest(".source-lesson");
+    const sourceText = source && $(".source-text",source);
+    if (!sourceText || !sourceText.contains(range.startContainer) || !sourceText.contains(range.endContainer)) return;
+    const rawText = range.toString();
+    const text = rawText.replace(/\s+/g, " ").trim();
+    if (!text) return;
+    const beforeStart = document.createRange();
+    beforeStart.selectNodeContents(sourceText);
+    beforeStart.setEnd(range.startContainer,range.startOffset);
+    const beforeEnd = document.createRange();
+    beforeEnd.selectNodeContents(sourceText);
+    beforeEnd.setEnd(range.endContainer,range.endOffset);
+    pendingSelection = {
+      text:text.slice(0,5000),
+      lessonId:source.dataset.lessonId,
+      start:beforeStart.toString().length,
+      end:beforeEnd.toString().length
+    };
+    if (currentLessonId !== pendingSelection.lessonId) setActiveLesson(pendingSelection.lessonId);
+    else updateReadingTools();
+  }
+
+  function addPendingSelection() {
+    if (!pendingSelection || pendingSelection.lessonId !== currentLessonId) return;
+    flushNotebook();
+    const selection = pendingSelection;
+    const item = getLesson(selection.lessonId);
+    const notebook = notebookFor(selection.lessonId);
+    const duplicate = notebook.citations.some(citation => citation.text.replace(/\s+/g," ").trim() === selection.text.replace(/\s+/g," ").trim());
+    let saved = true;
+    if (!duplicate) {
+      notebook.citations.push({text:selection.text,source:item?.title || `Lezione ${selection.lessonId}`,date:new Date().toISOString()});
+      saved = safeSet(`notebook-${selection.lessonId}`,notebook);
+      currentNotebook = notebook;
+      renderCitations();
+    }
+    pendingSelection = null;
     getSelection()?.removeAllRanges();
-    hideSelectionTools();
-    showToast("Passo evidenziato per questa sessione.");
+    updateReadingTools();
+    showToast(duplicate ? "Questo passo è già nel taccuino." : saved ? "Selezione incollata nel taccuino." : "Impossibile salvare la selezione nel taccuino.");
+  }
+
+  function highlightPendingSelection() {
+    if (!pendingSelection || pendingSelection.lessonId !== currentLessonId) return;
+    const selection = pendingSelection;
+    const source = sourceTextFor(selection.lessonId);
+    const highlights = highlightsFor(selection.lessonId);
+    if (!source || selection.end > source.textContent.length) {
+      pendingSelection = null;
+      updateReadingTools();
+      return showToast("La selezione non è più disponibile: seleziona di nuovo il passo.");
+    }
+    if (highlights.some(item => selection.start < item.end && selection.end > item.start)) {
+      pendingSelection = null;
+      getSelection()?.removeAllRanges();
+      updateReadingTools();
+      return showToast("Questa selezione contiene già un passaggio evidenziato.");
+    }
+    const item = getLesson(selection.lessonId);
+    const highlight = {
+      id:`h-${Date.now().toString(36)}-${Math.random().toString(36).slice(2,7)}`,
+      text:selection.text,
+      start:selection.start,
+      end:selection.end,
+      source:item?.title || `Lezione ${selection.lessonId}`,
+      date:new Date().toISOString()
+    };
+    highlights.push(highlight);
+    const saved = saveHighlights(selection.lessonId,highlights);
+    markTextOffsets(source,highlight.start,highlight.end,highlight.id);
+    pendingSelection = null;
+    getSelection()?.removeAllRanges();
+    updateReadingTools();
+    showToast(saved ? "Passo evidenziato. Puoi continuare a leggere." : "Passo evidenziato, ma il salvataggio locale non è disponibile.");
+  }
+
+  function addHighlightsToNotebook() {
+    if (!currentLessonId) return;
+    flushNotebook();
+    const highlights = highlightsFor(currentLessonId);
+    const notebook = notebookFor(currentLessonId);
+    const waiting = highlights.filter(highlight => !notebook.citations.some(citation => citationMatchesHighlight(citation,highlight)));
+    if (!waiting.length) return showToast("Non ci sono nuovi passaggi evidenziati da incollare.");
+    waiting.forEach(highlight => notebook.citations.push({
+      text:highlight.text,
+      source:highlight.source,
+      date:new Date().toISOString(),
+      highlightId:highlight.id
+    }));
+    const saved = safeSet(`notebook-${currentLessonId}`,notebook);
+    currentNotebook = notebook;
+    renderCitations();
+    updateReadingTools();
+    showToast(saved ? `${waiting.length} ${waiting.length === 1 ? "passaggio incollato" : "passaggi incollati"} nel taccuino.` : "Impossibile salvare i passaggi nel taccuino.");
+  }
+
+  function clearHighlights() {
+    if (!currentLessonId) return;
+    const highlights = highlightsFor(currentLessonId);
+    if (!highlights.length || !confirm(`Rimuovere ${highlights.length === 1 ? "il passaggio evidenziato" : `i ${highlights.length} passaggi evidenziati`} da questa lezione? Le citazioni già nel taccuino resteranno conservate.`)) return;
+    const source = sourceTextFor(currentLessonId);
+    const parents = new Set();
+    $$("mark.student-highlight",source).forEach(mark => {
+      parents.add(mark.parentNode);
+      mark.replaceWith(...mark.childNodes);
+    });
+    parents.forEach(parent => parent?.normalize());
+    saveHighlights(currentLessonId,[]);
+    pendingSelection = null;
+    getSelection()?.removeAllRanges();
+    updateReadingTools();
+    showToast("Evidenziature rimosse; il taccuino non è stato modificato.");
   }
 
   function downloadNotebook() {
@@ -506,6 +639,7 @@
     notebookText.value = "";
     safeSet(`notebook-${currentLessonId}`, currentNotebook);
     renderCitations();
+    updateReadingTools();
     autosaveState.textContent = "Taccuino cancellato";
   }
 
@@ -692,7 +826,6 @@
     addEventListener("pageshow", () => setTimeout(() => { handleRoute();updateCoverState(); }, 80));
     addEventListener("beforeunload", flushNotebook);
     readingPane.addEventListener("scroll", () => {
-      hideSelectionTools();
       if (!scrollFrame) scrollFrame = requestAnimationFrame(syncReadingContext);
     }, {passive:true});
 
@@ -747,6 +880,7 @@
         currentNotebook.citations.splice(Number(removeCitation.dataset.removeCitation),1);
         safeSet(`notebook-${currentLessonId}`,currentNotebook);
         renderCitations();
+        updateReadingTools();
         return;
       }
       const recovery = event.target.closest("[data-recovery-anchor]");
@@ -769,12 +903,13 @@
     notebookText.addEventListener("input", scheduleNotebookSave);
     $("#downloadNotes").addEventListener("click", downloadNotebook);
     $("#clearNotebook").addEventListener("click", clearNotebook);
-    $("#addSelection").addEventListener("click", addPendingSelection);
     $("#highlightSelection").addEventListener("click", highlightPendingSelection);
-    selectionTools.addEventListener("pointerdown", event => event.preventDefault());
+    $("#addSelection").addEventListener("click", addPendingSelection);
+    $("#addHighlights").addEventListener("click", addHighlightsToNotebook);
+    $("#clearHighlights").addEventListener("click", clearHighlights);
+    readingTools.addEventListener("pointerdown", event => { if (event.target.closest("button")) event.preventDefault(); });
     lessonContent.addEventListener("pointerup", () => setTimeout(captureSelection,0));
     lessonContent.addEventListener("keyup", event => { if (event.key === "Shift" || event.key.startsWith("Arrow")) setTimeout(captureSelection,0); });
-    document.addEventListener("pointerdown", event => { if (!selectionTools.contains(event.target) && !lessonContent.contains(event.target)) hideSelectionTools(); });
 
     $$('dialog').forEach(dialog => {
       dialog.addEventListener("click", event => { if (event.target === dialog) closeModal(dialog); });
@@ -783,7 +918,9 @@
     addEventListener("keydown", event => {
       if (event.key === "Escape") {
         $$('dialog[open]').forEach(closeModal);
-        hideSelectionTools();
+        pendingSelection = null;
+        getSelection()?.removeAllRanges();
+        updateReadingTools();
       }
       if (studyApp.hidden || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName) || event.metaKey || event.ctrlKey || event.altKey) return;
       if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
