@@ -7,3 +7,10 @@ body.cover-visible .path-index {
   pointer-events: none;
   transform: translateX(-120%);
 }
+
+dialog.fallback-open {
+  position: fixed;
+  inset: 5vh auto auto 50%;
+  z-index: 200;
+  transform: translateX(-50%);
+}

@@ -104,9 +104,11 @@
   const fonts=["small","medium","large"]; $("#fontBtn").addEventListener("click",()=>{html.dataset.font=fonts[(fonts.indexOf(html.dataset.font)+1)%3];safeSet("font",html.dataset.font);});
 
   const dialogs = $$("dialog"); let opener = null;
-  $$("[data-open]").forEach(btn=>btn.addEventListener("click",()=>{opener=btn;document.getElementById(btn.dataset.open)?.showModal();}));
-  dialogs.forEach(d=>d.addEventListener("close",()=>opener?.focus()));
-  dialogs.forEach(d=>d.addEventListener("click",e=>{if(e.target===d)d.close();}));
+  const openModal=d=>{if(!d)return;if(typeof d.showModal==="function")d.showModal();else{d.setAttribute("open","");d.classList.add("fallback-open");}};
+  const closeModal=d=>{if(typeof d.close==="function")d.close();else{d.removeAttribute("open");d.classList.remove("fallback-open");opener?.focus();}};
+  $$("[data-open]").forEach(btn=>btn.addEventListener("click",()=>{opener=btn;openModal(document.getElementById(btn.dataset.open));}));
+  dialogs.forEach(d=>{d.addEventListener("close",()=>opener?.focus());d.addEventListener("click",e=>{if(e.target===d)closeModal(d);});$(".dialog-close",d)?.addEventListener("click",e=>{e.preventDefault();closeModal(d);});});
+  addEventListener("keydown",e=>{if(e.key==="Escape")dialogs.filter(d=>d.hasAttribute("open")).forEach(closeModal);});
 
   const notes=$("#notesArea"), status=$("#notesStatus"); notes.value=safeGet("notes","");
   $("#saveNotes").addEventListener("click",()=>{safeSet("notes",notes.value);status.textContent="Appunti salvati.";});
@@ -114,7 +116,7 @@
   $("#exportNotes").addEventListener("click",()=>{const blob=new Blob([`Appunti — Giovanni Pascoli\n\n${notes.value}`],{type:"text/plain;charset=utf-8"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="appunti-pascoli.txt";a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);});
 
   const imageDialog=$("#imageDialog"), dialogImage=$("#dialogImage"), dialogCaption=$("#dialogCaption"); let zoom=1;
-  $$(".image-open").forEach(btn=>btn.addEventListener("click",()=>{opener=btn;zoom=1;dialogImage.style.setProperty("--zoom",1);dialogImage.src=btn.dataset.image;dialogImage.alt=btn.dataset.alt||$("img",btn)?.alt||"";dialogCaption.textContent=dialogImage.alt;imageDialog.showModal();}));
+  $$(".image-open").forEach(btn=>btn.addEventListener("click",()=>{opener=btn;zoom=1;dialogImage.style.setProperty("--zoom",1);dialogImage.src=btn.dataset.image;dialogImage.alt=btn.dataset.alt||$("img",btn)?.alt||"";dialogCaption.textContent=dialogImage.alt;openModal(imageDialog);}));
   $$("[data-zoom]").forEach(btn=>btn.addEventListener("click",()=>{zoom=btn.dataset.zoom==="reset"?1:Math.min(3,Math.max(.6,zoom+(btn.dataset.zoom==="+" ? .2 : -.2)));dialogImage.style.setProperty("--zoom",zoom);}));
 
   const symbols={nido:"Protegge e raccoglie, ma può chiudere. In X agosto il nido, anziché salvare, attende.",uccelli:"Creature fragili e voci naturali. La rondine uccisa rende universale la storia del padre.",fiori:"Sensualità, fecondità, pericolo e morte. Gelsomino e digitale cambiano valore secondo il contesto.",notte:"Spazio del mistero e della distanza. Le stelle possono sembrare pianto senza offrire risposta.",suoni:"Campane, gridi e richiami attraversano soglie. Il paesaggio diventa ascolto e memoria."};
