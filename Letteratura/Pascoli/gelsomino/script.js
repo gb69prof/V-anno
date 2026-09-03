@@ -41,13 +41,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const videoBox = document.getElementById('video-container');
   const backBtn = document.getElementById('btn-back');
   const iframe = videoBox ? videoBox.querySelector('iframe') : null;
+  const iframeSource = iframe ? (iframe.dataset.gbprofSrc || iframe.getAttribute('src') || '') : '';
+  let activatedOnce = false;
+
+  const focusVideoControl = () => {
+    requestAnimationFrame(() => {
+      const consent = videoBox?.querySelector('.gbprof-external-video button');
+      if (consent) {
+        consent.focus();
+        return;
+      }
+      const liveFrame = videoBox?.querySelector('iframe');
+      if (liveFrame) liveFrame.focus();
+      else backBtn?.focus();
+    });
+  };
+
   const openVideo = () => {
     if (!cover || !videoBox || !backBtn) return;
     cover.style.display = 'none';
     videoBox.style.display = 'block';
     backBtn.style.display = 'block';
-    backBtn.focus();
+    if (activatedOnce && iframe && iframe.isConnected && iframeSource && !iframe.getAttribute('src')) {
+      iframe.src = iframeSource;
+    }
+    focusVideoControl();
   };
+
   if (cover && videoBox && backBtn && iframe) {
     cover.addEventListener('click', openVideo);
     cover.addEventListener('keydown', event => {
@@ -57,7 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     backBtn.addEventListener('click', () => {
-      iframe.src = iframe.src;
+      if (iframe.isConnected && iframe.getAttribute('src')) {
+        activatedOnce = true;
+        iframe.removeAttribute('src');
+      }
       videoBox.style.display = 'none';
       backBtn.style.display = 'none';
       cover.style.display = 'block';
