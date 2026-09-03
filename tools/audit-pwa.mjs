@@ -19,6 +19,20 @@ const manifests=files.filter(f=>/manifest.*\.(?:json|webmanifest)$/i.test(f));
 for (const file of manifests) { const rel=path.relative(root,file); let m; try{m=JSON.parse(fs.readFileSync(file,"utf8"));}catch(e){failures.push(`${rel}: JSON non valido (${e.message})`);continue;} for(const k of ["name","short_name","start_url","display"]) if(!m[k]) failures.push(`${rel}: proprietà ${k} assente`); if(!Array.isArray(m.icons)||!m.icons.length) failures.push(`${rel}: icone assenti`); }
 const tracker=/google-analytics|googletagmanager|\bgtag\s*\(|\bfbq\s*\(|facebook\.net|matomo(?:\.js|\.php|\.cloud)?|plausible\.(?:io|js)|hotjar(?:\.com)?|document\.cookie/i;
 for(const file of files.filter(f=>/\.(?:html|js|mjs|ts|tsx)$/i.test(f)&&!f.includes(`${path.sep}tools${path.sep}`))) if(tracker.test(fs.readFileSync(file,"utf8"))) failures.push(`${path.relative(root,file)}: possibile tracker/cookie`);
-const lines=["# Audit automatico PWA","",`HTML: ${html.length} · manifest: ${manifests.length}`,`Errori automatici: ${failures.length} · avvisi: ${warnings.length}`,"","## Errori rilevati",...(failures.length?failures.map(x=>`- ${x}`):["- Nessun errore rilevato dai controlli automatici."]),"","## Avvisi",...(warnings.length?warnings.map(x=>`- ${x}`):["- Nessun avviso."]),"","_Questo audit automatico non sostituisce la verifica manuale con tastiera, screen reader e dispositivi reali._",""];
+
+// Un service worker su gbprof.it non deve cancellare cache appartenenti ad altre PWA.
+const workers = files.filter(file => /(?:^|\/)(?:sw|service-worker)\.js$/i.test(file.replaceAll(path.sep,"/")));
+for (const file of workers) {
+  const rel = path.relative(root,file), s = fs.readFileSync(file,"utf8");
+  const activateAt = s.search(/addEventListener\(\s*["']activate["']/i);
+  if (activateAt < 0) continue;
+  const fetchAt = s.slice(activateAt + 1).search(/addEventListener\(\s*["']fetch["']/i);
+  const activate = fetchAt < 0 ? s.slice(activateAt) : s.slice(activateAt, activateAt + 1 + fetchAt);
+  if (/caches\.keys\s*\(/i.test(activate) && /caches\.delete\s*\(/i.test(activate) && !/startsWith\s*\(/i.test(activate)) {
+    failures.push(`${rel}: pulizia cache potenzialmente globale; manca un filtro per il prefisso della PWA`);
+  }
+}
+
+const lines=["# Audit automatico PWA","",`HTML: ${html.length} · manifest: ${manifests.length} · service worker: ${workers.length}`,`Errori automatici: ${failures.length} · avvisi: ${warnings.length}`,"","## Errori rilevati",...(failures.length?failures.map(x=>`- ${x}`):["- Nessun errore rilevato dai controlli automatici."]),"","## Avvisi",...(warnings.length?warnings.map(x=>`- ${x}`):["- Nessun avviso."]),"","_Questo audit automatico non sostituisce la verifica manuale con tastiera, screen reader e dispositivi reali._",""];
 fs.writeFileSync(path.join(root,"AUDIT-PWA.md"),lines.join("\n"));
 console.log(`Audit scritto: ${failures.length} errori, ${warnings.length} avvisi.`);
