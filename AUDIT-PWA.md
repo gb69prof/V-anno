@@ -1,10 +1,10 @@
 # Audit automatico PWA
 
-HTML: 33 · manifest: 21
-Errori automatici: 0 · avvisi: 0
+HTML: 33 · manifest: 21 · service worker: 21
+Errori automatici: 1 · avvisi: 0
 
 ## Errori rilevati
-- Nessun errore rilevato dai controlli automatici.
+- Letteratura/Pirandello/service-worker.js: pulizia cache potenzialmente globale; manca un filtro per il prefisso della PWA
 
 ## Avvisi
 - Nessun avviso.
