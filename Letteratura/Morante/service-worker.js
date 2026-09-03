@@ -1,5 +1,9 @@
 const CACHE_NAME = "morante-v1.0.0";
 const CORE_ASSETS = [
+  "../../pwa-common/gbprof-accessibility.css?v=1",
+  "../../pwa-common/gbprof-accessibility.js?v=1",
+  "../../privacy.html",
+  "../../accessibilita.html",
   "./",
   "./index.html",
   "./styles.css",
@@ -31,7 +35,7 @@ self.addEventListener("install", event => {
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))))
+      .then(keys => Promise.all(keys.filter(key => key !== CACHE_NAME && key.startsWith(String(CACHE_NAME).includes("-v") ? String(CACHE_NAME).replace(/-v.*$/i, "-") : String(CACHE_NAME))).map(key => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });

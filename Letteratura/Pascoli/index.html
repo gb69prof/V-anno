@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="stylesheet" href="assets/cover-fix.css?v=10">
   <script src="assets/app.js?v=10" defer></script>
+  <link rel="stylesheet" href="../../pwa-common/gbprof-accessibility.css?v=1">
 </head>
 <body class="cover-visible">
   <a class="skip-link" href="#contenuto">Vai al contenuto</a>
@@ -276,5 +277,6 @@
   <dialog id="notesDialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi">×</button></form><h2>I miei appunti</h2><label for="notesArea">Le note restano su questo dispositivo.</label><textarea id="notesArea" rows="14" placeholder="Scrivi osservazioni, domande, collegamenti…"></textarea><div class="dialog-actions"><button id="saveNotes" type="button">Salva</button><button id="exportNotes" type="button">Esporta .txt</button><button id="clearNotes" type="button" class="danger">Svuota</button></div><p id="notesStatus" role="status"></p></dialog>
 
   <dialog id="imageDialog" class="image-dialog"><form method="dialog"><button class="dialog-close" aria-label="Chiudi immagine">×</button></form><div class="zoom-tools"><button type="button" data-zoom="-">−</button><button type="button" data-zoom="reset">Adatta</button><button type="button" data-zoom="+">+</button></div><div class="image-stage"><img id="dialogImage" alt=""></div><p id="dialogCaption"></p></dialog>
+  <script src="../../pwa-common/gbprof-accessibility.js?v=1"></script>
 </body>
 </html>

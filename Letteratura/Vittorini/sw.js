@@ -1,5 +1,9 @@
 const CACHE = "vittorini-v1";
 const ASSETS = [
+  "../../pwa-common/gbprof-accessibility.css?v=1",
+  "../../pwa-common/gbprof-accessibility.js?v=1",
+  "../../privacy.html",
+  "../../accessibilita.html",
   "./", "./index.html", "./styles.css", "./hero-photo.css", "./content.js", "./app.js",
   "./manifest.webmanifest", "./assets/icon.svg", "./assets/icon-192.png",
   "./assets/icon-512.png", "./assets/images/hero-vittorini.png", "./assets/maps/01-mondo.svg",
@@ -14,7 +18,7 @@ self.addEventListener("install", event => {
 
 self.addEventListener("activate", event => {
   event.waitUntil(
-    caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))
+    caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE && key.startsWith(String(CACHE).includes("-v") ? String(CACHE).replace(/-v.*$/i, "-") : String(CACHE))).map(key => caches.delete(key))))
       .then(() => self.clients.claim())
   );
 });

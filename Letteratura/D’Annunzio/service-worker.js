@@ -1,5 +1,9 @@
 const CACHE = 'dannunzio-ambiente-studio-v6';
 const CORE = [
+  "../../pwa-common/gbprof-accessibility.css?v=1",
+  "../../pwa-common/gbprof-accessibility.js?v=1",
+  "../../privacy.html",
+  "../../accessibilita.html",
   './', './index.html', './offline.html', './manifest.webmanifest',
   './assets/styles.css?v=6', './assets/lessons-data.js?v=6', './assets/quiz-data.js?v=6', './assets/app.js?v=6',
   './assets/icons/favicon-32.png', './assets/icons/icon-180.png',

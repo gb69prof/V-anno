@@ -1,6 +1,10 @@
 const CACHE_PREFIX = "gbprof-gadda-";
 const CACHE = `${CACHE_PREFIX}v1.0.5`;
 const CORE = [
+  "../../pwa-common/gbprof-accessibility.css?v=1",
+  "../../pwa-common/gbprof-accessibility.js?v=1",
+  "../../privacy.html",
+  "../../accessibilita.html",
   "./", "./index.html", "./styles.css", "./content.js", "./app.js", "./offline.html",
   "./manifest.webmanifest", "./assets/icons/icon.svg", "./assets/icons/icon-180.png", "./assets/icons/icon-192.png", "./assets/icons/icon-512.png", "./assets/images/gadda-ritratto.jpg",
   "./assets/maps/01-mondo.svg", "./assets/maps/02-fratture.svg", "./assets/maps/03-immagine.svg",
