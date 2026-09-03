@@ -1,10 +1,10 @@
 # Audit automatico PWA
 
 HTML: 33 · manifest: 21
-Errori automatici: 1 · avvisi: 0
+Errori automatici: 0 · avvisi: 0
 
 ## Errori rilevati
-- Letteratura/Pascoli/gelsomino/gelsomino.html: iframe remoto caricato automaticamente
+- Nessun errore rilevato dai controlli automatici.
 
 ## Avvisi
 - Nessun avviso.
