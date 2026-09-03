@@ -1,0 +1,38 @@
+name: Adeguamento PWA gbprof
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/gbprof-compliance.yml'
+      - 'tools/**'
+      - 'pwa-common/**'
+      - 'privacy.html'
+      - 'accessibilita.html'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Applica standard a HTML e service worker
+        run: |
+          node tools/apply-pwa-standard.mjs
+          node tools/cache-pwa-standard.mjs
+      - name: Audit automatico
+        run: node tools/audit-pwa.mjs
+      - name: Registra gli adeguamenti
+        run: |
+          git config user.name "gbprof compliance bot"
+          git config user.email "gb69prof@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Applica standard gbprof a tutte le PWA"
+            git push
+          fi
