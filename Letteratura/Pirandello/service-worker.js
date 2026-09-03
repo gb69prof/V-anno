@@ -1,4 +1,5 @@
-const VERSION = 'pirandello-gbprof-v2.0.0';
+const CACHE_PREFIX = 'pirandello-gbprof-';
+const VERSION = `${CACHE_PREFIX}v2.0.1`;
 const SHELL_CACHE = `${VERSION}-shell`;
 const RUNTIME_CACHE = `${VERSION}-runtime`;
 
@@ -12,7 +13,11 @@ const SHELL = [
   './assets/images/copertina-pirandello.webp',
   './assets/icons/icon-180.png',
   './assets/icons/icon-192.png',
-  './assets/icons/icon-512.png'
+  './assets/icons/icon-512.png',
+  '../../pwa-common/gbprof-accessibility.css?v=1',
+  '../../pwa-common/gbprof-accessibility.js?v=1',
+  '../../privacy.html',
+  '../../accessibilita.html'
 ];
 
 self.addEventListener('install', (event) => {
@@ -23,7 +28,11 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys()
-      .then((keys) => Promise.all(keys.filter((key) => ![SHELL_CACHE, RUNTIME_CACHE].includes(key)).map((key) => caches.delete(key))))
+      .then((keys) => Promise.all(
+        keys
+          .filter((key) => key.startsWith(CACHE_PREFIX) && ![SHELL_CACHE, RUNTIME_CACHE].includes(key))
+          .map((key) => caches.delete(key))
+      ))
       .then(() => self.clients.claim())
   );
 });
